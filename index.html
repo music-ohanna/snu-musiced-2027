@@ -1,0 +1,857 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2027 서울대학교 음악교육 국제 심포지엄</title>
+<meta name="description" content="포스트휴먼 시대의 음악교육 재구상: 실천을 위한 함의 · 2027년 1월 8일(금) 서울대학교 사범대학 사범교육협력센터(12동) 401호">
+<meta property="og:title" content="2027 서울대학교 음악교육 국제 심포지엄">
+<meta property="og:description" content="Reimagining Music Education in the Posthuman Era: Implications for Practice · 8 January 2027, Seoul National University">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 글꼴: KoPub World 돋움체(한국출판인회의, 무료). 파일이 굵기마다 약 2MB라 swap으로 먼저 기본 글꼴을 보여 준다 */
+@font-face{font-family:"KoPubWorld Dotum";font-weight:400;font-display:swap;
+  src:url("https://cdn.jsdelivr.net/npm/font-kopubworld@1.0.3/fonts/KoPubWorld-Dotum-Medium.woff2") format("woff2")}
+@font-face{font-family:"KoPubWorld Dotum";font-weight:700;font-display:swap;
+  src:url("https://cdn.jsdelivr.net/npm/font-kopubworld@1.0.3/fonts/KoPubWorld-Dotum-Bold.woff2") format("woff2")}
+
+/* Layout: 메뉴별 페이지 전환(해시 라우팅). 흰 바탕 + 남색, 홈 상단에만 남색 띠 */
+:root{
+  --navy:#0f2a6b;
+  --navy-deep:#0a1d4d;
+  --navy-tint:#eef2fa;
+  --bg:#ffffff;
+  --fg:#18213d;
+  --muted:#5d6684;
+  --line:#e1e5ef;
+  --brass:#a07a2c;
+  --ph-bg:#fff4d6;
+  --ph-fg:#7a5a12;
+  --f-body:"KoPubWorld Dotum","KoPubWorldDotum","KoPub World 돋움체","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:80px}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.75;word-break:keep-all}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:var(--navy)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body:not([data-lang="en"]) .en{display:none}
+body[data-lang="en"] .ko{display:none}
+.ph{background:var(--ph-bg);color:var(--ph-fg);padding:0 .3em;border-radius:3px;font-weight:500}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:68px;position:relative}
+.brand{display:block;flex:none;line-height:0}
+.brand img{height:40px;width:auto;max-width:56vw}
+nav.menu{margin-left:auto;display:flex;gap:2px}
+nav.menu a{text-decoration:none;font-size:15px;font-weight:500;padding:8px 9px;border-radius:4px;color:var(--fg);white-space:nowrap}
+nav.menu a:hover{color:var(--navy);background:var(--navy-tint)}
+nav.menu a[aria-current="page"]{color:var(--navy);box-shadow:inset 0 -2px 0 var(--navy);border-radius:0}
+nav.menu a:focus-visible,.lang button:focus-visible,.burger:focus-visible,.btn:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.lang button{all:unset;cursor:pointer;font-size:12px;font-weight:700;padding:5px 11px;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.lang button[aria-pressed="false"] .flag{opacity:.55}
+.lang button:hover .flag{opacity:1}
+.burger{all:unset;display:none;cursor:pointer;padding:8px}
+.burger span{display:block;width:20px;height:2px;background:var(--navy);margin:4px 0}
+@media (max-width:1120px){
+  .burger{display:block}
+  .lang{margin-left:auto}
+  nav.menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));box-shadow:0 8px 16px rgba(15,42,107,.08)}
+  nav.menu.open{display:flex}
+  nav.menu a{padding:12px 6px}
+  nav.menu a[aria-current="page"]{box-shadow:inset 3px 0 0 var(--navy);padding-left:12px}
+}
+@media (max-width:420px){.brand img{height:32px}}
+
+/* Pages */
+.view{padding-block:56px 80px}
+.page-head{margin-bottom:36px;padding-bottom:20px;border-bottom:2px solid var(--navy)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.page-head h1{font-size:clamp(26px,4vw,36px);margin:4px 0 0;color:var(--navy);line-height:1.3;text-wrap:balance}
+.page-head p{margin:8px 0 0;color:var(--muted)}
+h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
+.prose{max-width:none}
+.prose p{margin:0 0 1em}
+
+/* Home hero */
+.hero{background:var(--navy);color:#fff;text-align:center}
+.hero .wrap{padding-block:72px 64px}
+.hero .eyebrow{font-family:var(--f-body);color:#d9bd7a;font-size:clamp(16px,2vw,21px);letter-spacing:.06em;font-weight:700}
+.hero h1{font-size:clamp(30px,5.4vw,54px);line-height:1.25;margin:16px auto 8px;font-weight:700;text-wrap:balance;max-width:15em}
+.hero .tag{font-size:clamp(18px,2.4vw,23px);color:#c7d0ea;margin:0}
+.hero .en-line{font-size:15px;color:#aab6dc;margin:10px 0 0}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 48px;margin:36px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);max-width:900px}
+.facts div{min-width:0}
+.facts dt{font-size:12px;color:#aab6dc;letter-spacing:.06em}
+.facts dd{margin:2px 0 0;font-size:17px;font-weight:500}
+.dday{display:inline-block;margin-top:28px;font-family:var(--f-mono);font-size:14px;color:#d9bd7a;border:1px solid rgba(217,189,122,.5);border-radius:999px;padding:3px 12px}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+@media (max-width:960px){.quick{grid-template-columns:repeat(2,1fr)}}
+.quick a{display:block;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:20px}
+.quick a:hover{border-color:var(--navy);background:var(--navy-tint)}
+.quick b{display:block;color:var(--navy);font-size:18px;font-weight:700;margin-bottom:2px}
+.quick span{color:var(--muted);font-size:14px}
+@media (max-width:720px){.quick{grid-template-columns:1fr}}
+.notice{border:1px solid var(--line);border-radius:8px}
+.notice li{display:flex;gap:16px;padding:14px 18px;border-top:1px solid var(--line)}
+.notice li:first-child{border-top:0}
+.notice ul{list-style:none;margin:0;padding:0}
+.notice time{font-family:var(--f-mono);font-size:13px;color:var(--muted);white-space:nowrap;padding-top:2px}
+
+/* About */
+.strands{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--navy)}
+.strand{padding:20px 20px 8px 0;min-width:0}
+.strand+.strand{padding-left:20px;border-left:1px solid var(--line)}
+.strand .num{font-family:var(--f-mono);font-size:12px;color:var(--brass);letter-spacing:.1em}
+.strand h3{font-size:18px;margin:4px 0 8px;color:var(--navy)}
+.strand p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:760px){.strands{grid-template-columns:1fr}.strand,.strand+.strand{padding:18px 0;border-left:0;border-bottom:1px solid var(--line)}}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;margin:0;font-size:15px}
+.kv dt{color:var(--muted);white-space:nowrap;font-weight:500}
+.kv dd{margin:0;min-width:0}
+.info-card{border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;padding:4px 24px 22px;margin-bottom:40px}
+.info-card h2.sub{margin:18px 0 14px}
+@media (max-width:560px){.info-card{padding:2px 16px 18px}.info-card .kv{grid-template-columns:1fr;gap:0}.info-card .kv dt{font-size:13px;margin-top:10px}.info-card .kv dt:first-of-type{margin-top:0}}
+
+/* Program (talk list) */
+.session{margin-bottom:48px}
+.session-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;font-size:22px;color:var(--navy);margin:0 0 4px}
+.session-title small{font-family:var(--f-mono);font-size:13px;color:var(--muted);font-weight:400}
+.session-desc{color:var(--muted);margin:0 0 16px;font-size:15px}
+.talk{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.talk>*{min-width:0}
+.photo{aspect-ratio:1/1;max-width:100%;border-radius:50%;background:var(--navy-tint);display:grid;place-items:center;color:var(--muted);font-size:11px;letter-spacing:.06em}
+.talk .who{font-weight:700;font-size:17px}
+.talk .who span.aff{font-weight:400;color:var(--muted)}
+.talk .title{margin:4px 0 0;font-size:17px;color:var(--navy);font-weight:500}
+.talk .kind{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--navy);border-radius:3px;padding:0 7px;margin-right:6px;vertical-align:2px}
+.talk .abs{margin:8px 0 0;color:var(--muted);font-size:15px}
+.talk .time{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.slim{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);color:var(--muted)}
+.slim .time{font-family:var(--f-mono);font-size:13px;min-width:96px}
+.slim b{color:var(--fg);font-weight:500}
+@media (max-width:560px){.talk{grid-template-columns:72px 1fr;gap:14px}}
+
+/* Speakers */
+.keynote{display:grid;grid-template-columns:180px 1fr;gap:28px;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:8px;padding:24px}
+.keynote>*{min-width:0}
+.keynote .photo{border-radius:8px}
+@media (max-width:600px){.keynote{grid-template-columns:1fr}.keynote .photo{max-width:160px}}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px}
+.card{min-width:0}
+.card .photo{border-radius:8px;margin-bottom:12px}
+.card .name{font-weight:700}
+.card .aff{color:var(--muted);font-size:14px}
+.card .topic{font-size:14px;margin-top:6px;color:var(--navy)}
+
+/* Venue */
+.slider .main{position:relative;aspect-ratio:2/1;border-radius:8px;overflow:hidden;background:repeating-linear-gradient(135deg,var(--navy-tint) 0 8px,#f7f9fd 8px 16px)}
+.slider img{display:block;width:100%;height:100%;object-fit:cover}
+.slider .cap{position:absolute;left:0;bottom:0;background:rgba(10,29,77,.82);color:#fff;font-size:14px;font-weight:500;padding:8px 14px;border-top-right-radius:6px}
+.slider .cap:empty{display:none}
+.slider .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:8px}
+.slider .thumbs button{all:unset;cursor:pointer;aspect-ratio:3/2;border-radius:4px;overflow:hidden;opacity:.5;outline:2px solid transparent;outline-offset:-2px;background:var(--navy-tint)}
+.slider .thumbs button[aria-current="true"]{opacity:1;outline-color:var(--accent,var(--navy))}
+.slider .thumbs button:focus-visible{outline-color:var(--navy);opacity:1}
+.slider .c{display:none}
+.place{display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:end;margin-top:20px}
+.place>*{min-width:0}
+.place h3{margin:0;font-size:22px;color:var(--navy)}
+.place p{margin:2px 0 0;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--navy);color:var(--navy);border-radius:999px;padding:6px 14px;background:var(--bg)}
+.chip:hover{background:var(--navy);color:#fff}
+@media (max-width:640px){.place{grid-template-columns:1fr}}
+.opts{display:grid;gap:14px}
+.opt{display:grid;grid-template-columns:36px 1fr;gap:16px;border:1px solid var(--line);border-radius:8px;padding:20px}
+.opt>*{min-width:0}
+.opt .n{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+.opt h3{margin:2px 0 6px;font-size:18px;color:var(--navy)}
+.opt p{margin:0 0 6px}
+.opt ol{margin:4px 0 0;padding-left:1.2em}
+.opt li{margin:2px 0}
+.opt ul{margin:10px 0 0;padding-left:1.2em;font-size:15px}
+.lead{margin:-4px 0 16px;color:var(--muted);max-width:70ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;font-weight:500;color:var(--navy)}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:4px;padding:1px 8px;background:var(--navy-tint);color:var(--navy);margin-bottom:6px}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:0 7px;border-radius:3px;color:#fff;vertical-align:1px}
+.b-l2{background:#2a9a44}.b-sl{background:#5f7fb8}.b-bus{background:#3567d0}.b-vil{background:#3f8d33}.b-air{background:#7a6236}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.stay{border:1px solid var(--line);border-radius:8px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:start}
+.stay>*{min-width:0}
+.stay h3{margin:0;color:var(--navy);font-size:18px}
+.stay p{margin:4px 0 0;color:var(--muted);font-size:15px}
+@media (max-width:640px){.stay{grid-template-columns:1fr}}
+
+/* Archive */
+.archive{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.archive li{border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;justify-content:space-between;gap:8px}
+.archive .soon{font-size:12px;color:var(--muted);white-space:nowrap}
+/* 보도자료 카드: 섬네일(16:9) + 매체·날짜 + 제목 + 요약 */
+.press{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.press-card{display:flex;flex-direction:column;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+.press-card:hover{border-color:var(--navy)}
+.press-thumb{position:relative;aspect-ratio:16/9;background:repeating-linear-gradient(135deg,var(--navy-tint) 0 8px,#f7f9fd 8px 16px)}
+.press-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.press-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:13px}
+.press-body{display:grid;gap:4px;padding:14px 16px 16px}
+.press-src{font-size:12px;color:var(--muted)}
+.press-title{font-size:16px;color:var(--navy);line-height:1.45}
+.press-sum{font-size:14px;color:var(--muted)}
+.press-more{margin-top:4px;font-size:13px;font-weight:500;color:var(--navy)}
+
+/* Contact */
+.form-embed{max-width:760px;margin:0 auto;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;overflow:hidden;background:#fff}
+.form-embed iframe{display:block;width:100%;height:1000px;border:0}
+footer .foot-link{color:#fff;font-weight:500}
+
+/* Home: 포스터 + 공지사항 */
+.home-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:32px;align-items:start;margin-top:48px}
+.poster{margin:0}
+.poster-frame{position:relative;aspect-ratio:1/1.414;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:repeating-linear-gradient(135deg,var(--navy-tint) 0 8px,#f7f9fd 8px 16px)}
+.poster-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.poster-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px}
+.poster figcaption{margin-top:10px}
+@media (max-width:720px){.home-grid{grid-template-columns:1fr}.poster{max-width:300px;margin:0 auto}}
+
+footer{background:var(--navy-deep);color:#b9c3e0;font-size:12.5px;line-height:1.7}
+footer .wrap{padding-block:22px;display:grid;gap:10px}
+footer .foot-event{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px}
+footer .foot-addr{margin:0;color:#8f9cc4}
+footer .foot-addr b{color:#b9c3e0}
+footer .tel{white-space:nowrap}
+footer b{color:#fff;font-weight:500}
+.h-en{font-size:.5em;font-weight:500;color:var(--brass);margin-left:.35em;letter-spacing:.02em}
+/* 프로그램의 연사 이름 링크 → 연사 페이지에서 이력을 펼친다 */
+.pl{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
+.pl:hover{color:var(--navy);text-decoration-color:var(--navy)}
+/* 연사 이름 옆 드롭 화살표: 누르면 아래에 이력이 펼쳐진다 */
+.bio-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:4px}
+.bio-btn:hover{color:var(--navy)}
+.bio-btn:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.chev{width:18px;height:18px;padding:3px;box-sizing:border-box;border:1px solid var(--line);border-radius:50%;color:var(--navy);flex:none;transition:transform .2s}
+.bio-btn:hover .chev{border-color:var(--navy)}
+.bio-btn[aria-expanded="true"] .chev{transform:rotate(180deg);background:var(--navy-tint);border-color:var(--navy)}
+.bio{padding:14px 16px;background:#f7f9fd;border-left:3px solid var(--navy);border-radius:4px;font-size:15px;color:var(--fg);font-weight:400}
+.bio p{margin:0 0 .6em}
+.bio p:last-child{margin:0}
+.people .bio{grid-column:1/-1;margin:4px 0 6px}
+.ptable .bio-row td{padding:0 12px 14px;border-bottom:1px solid var(--line)}
+.ptable tr:has(+ .bio-row:not([hidden])) td:not(.aff){border-bottom:0}
+.bio[hidden],.bio-row[hidden]{display:none !important}
+
+.lang button{display:inline-flex;align-items:center;gap:6px}
+.flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
+.talk{grid-template-columns:1fr}
+.talk .who span.aff{margin-left:0}
+.people{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.people li{display:grid;grid-template-columns:minmax(90px,140px) minmax(0,1fr) minmax(0,1.4fr);gap:6px 24px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.people li>*{min-width:0}
+.p-name{font-weight:700}
+.p-aff{color:var(--muted);font-size:15px}
+.p-title{color:var(--navy);font-weight:500}
+.ptable{width:100%;border-collapse:collapse;border-top:1px solid var(--line);font-size:15px}
+.ptable th{font-size:13px;font-weight:500;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+.ptable td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.ptable td.aff{width:36%;color:var(--muted);vertical-align:middle;border-right:1px solid var(--line);background:#fafbfe}
+.ptable td.nm{width:22%;font-weight:700;white-space:nowrap}
+.ptable td.tt{color:var(--navy);font-weight:500}
+@media (max-width:680px){.ptable thead{display:none}.ptable,.ptable tbody,.ptable tr,.ptable td{display:block;width:auto}.ptable tr{padding:10px 0;border-bottom:1px solid var(--line)}.ptable td{border:0;padding:2px 0}.ptable td.aff{margin:0 0 8px;padding:8px 10px;border-radius:4px;background:var(--navy-tint);color:var(--navy);font-weight:500}}
+@media (max-width:680px){.people li{grid-template-columns:1fr;gap:2px}}
+.map{position:relative;margin-top:20px;border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:16/9;max-width:100%;background:var(--navy-tint)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:1}
+.map-fallback{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:16px}
+@media (max-width:560px){.map{aspect-ratio:4/3}}
+.zoom{position:absolute;right:10px;top:50%;transform:translateY(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:4px;background:#fff;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.3);padding:4px}
+.zoom button{all:unset;cursor:pointer;width:30px;height:30px;display:grid;place-items:center;font-size:20px;font-weight:700;color:var(--navy);border-radius:4px}
+.zoom button:hover{background:var(--navy-tint)}
+.zoom button:focus-visible{outline:2px solid var(--navy)}
+.zoom input{writing-mode:vertical-lr;direction:rtl;width:24px;height:120px;margin:0;accent-color:var(--navy);cursor:pointer}
+@media (max-width:560px){.zoom input{height:80px}}
+.map-hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+/* For Speakers: 1단계(도착일)=금색, 2단계(행사일)=남색. 같은 단계는 같은 색 */
+.phase-a{--accent:#8a6620;--accent-tint:#f7f0e1}
+.phase-b{--accent:var(--navy);--accent-tint:var(--navy-tint)}
+small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2px}
+.trip{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-bottom:8px}
+.trip-card{display:grid;gap:2px;align-content:start;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:16px 18px;background:var(--bg)}
+.trip-card:hover{background:var(--accent-tint)}
+.trip-step{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.trip-card b{font-size:20px;color:var(--accent)}
+.trip-note{font-size:13px;color:var(--muted)}
+.trip-arrow{align-self:center;font-size:22px;font-weight:700;color:var(--muted)}
+@media (max-width:640px){.trip{grid-template-columns:1fr}.trip-arrow{justify-self:center;transform:rotate(90deg)}}
+.phase{margin-top:56px;padding-top:20px;border-top:4px solid var(--accent)}
+.phase-tag{display:inline-block;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);border-radius:3px;padding:2px 9px}
+.phase-head h2{font-size:clamp(21px,3vw,26px);color:var(--accent);margin:10px 0 20px;text-wrap:balance}
+.phase .opt .n{background:var(--accent)}
+.phase .opt h3{color:var(--accent)}
+.phase .pill{background:var(--accent-tint);color:var(--accent);margin:0 0 0 6px;vertical-align:2px}
+.phase .meta{color:var(--accent);border-top-color:var(--accent-tint)}
+.phase .opt p{margin:0 0 8px}
+.place-card{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:20px;margin:20px 0}
+.place-top{display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:start}
+.place-top>*{min-width:0}
+.place-card h3{margin:0;font-size:20px;color:var(--accent)}
+.place-card p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.place-card .map{margin-top:16px}
+.nmap{position:relative;display:block;margin-top:16px;border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:2/1;background:var(--navy-tint)}
+.nmap img{display:block;width:100%;height:100%;object-fit:cover}
+.nmap-btn{position:absolute;right:10px;bottom:10px;background:#03c75a;color:#fff;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.nmap:hover .nmap-btn{background:#02a64b}
+@media (max-width:560px){.nmap{aspect-ratio:4/3}}
+@media (max-width:640px){.place-top{grid-template-columns:1fr}}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px;margin-top:4px}
+.step{display:inline-flex;align-items:center;gap:4px;background:var(--navy-tint);border-radius:4px;padding:3px 9px;font-size:15px}
+.step:last-child{background:var(--navy);color:#fff;font-weight:500}
+.arr{color:var(--brass);font-weight:700}
+.b-arex{background:#2b7fb8}
+.tip{margin:10px 0 0;font-size:14px;color:var(--muted)}
+.tip b{color:var(--fg)}
+@media (max-width:560px){.lang button{padding:6px 9px}.top .wrap{gap:10px}.brand img{height:30px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="홈"><img src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QMraHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjc4RkFBQzY5OUFCMTExRUM4NTI2QkZGRkY4Q0EzOTdBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjc4RkFBQzZBOUFCMTExRUM4NTI2QkZGRkY4Q0EzOTdBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzhGQUFDNjc5QUIxMTFFQzg1MjZCRkZGRjhDQTM5N0EiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzhGQUFDNjg5QUIxMTFFQzg1MjZCRkZGRjhDQTM5N0EiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAABAQEBAQEBAQEBAQEBAQEBAQEB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" alt="서울대학교 사범대학 협동과정 음악교육전공"></a>
+    <nav class="menu" id="menu">
+      <a href="#home" data-nav="home"><span class="ko">홈</span><span class="en">Home</span></a>
+      <a href="#about" data-nav="about"><span class="ko">행사 소개</span><span class="en">About</span></a>
+      <a href="#program" data-nav="program"><span class="ko">프로그램</span><span class="en">Program</span></a>
+      <a href="#speakers" data-nav="speakers"><span class="ko">연사</span><span class="en">Speakers</span></a>
+      <a href="#venue" data-nav="venue"><span class="ko">오시는 길</span><span class="en">Venue &amp; Travel</span></a>
+      <a href="#guide" data-nav="guide" lang="en">For Speakers</a>
+      <a href="#archive" data-nav="archive"><span class="ko">자료실</span><span class="en">Archive</span></a>
+      <a href="#contact" data-nav="contact"><span class="ko">문의</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btn-ko" aria-pressed="true" aria-label="한국어" title="한국어"><svg class="flag" viewBox="0 0 36 24" aria-hidden="true"><rect width="36" height="24" fill="#fff"/><g transform="rotate(33.69 18 12)"><path d="M12 12a6 6 0 0 1 12 0z" fill="#cd2e3a"/><path d="M12 12a6 6 0 0 0 12 0z" fill="#0047a0"/><circle cx="15" cy="12" r="3" fill="#cd2e3a"/><circle cx="21" cy="12" r="3" fill="#0047a0"/></g><g fill="#000">
+<g transform="translate(9.3 6.2) rotate(-56.31)"><rect x="-3" y="-2" width="6" height="1"/><rect x="-3" y="-.5" width="6" height="1"/><rect x="-3" y="1" width="6" height="1"/></g>
+<g transform="translate(26.7 6.2) rotate(56.31)"><rect x="-3" y="-2" width="2.6" height="1"/><rect x=".4" y="-2" width="2.6" height="1"/><rect x="-3" y="-.5" width="6" height="1"/><rect x="-3" y="1" width="2.6" height="1"/><rect x=".4" y="1" width="2.6" height="1"/></g>
+<g transform="translate(9.3 17.8) rotate(56.31)"><rect x="-3" y="-2" width="6" height="1"/><rect x="-3" y="-.5" width="2.6" height="1"/><rect x=".4" y="-.5" width="2.6" height="1"/><rect x="-3" y="1" width="6" height="1"/></g>
+<g transform="translate(26.7 17.8) rotate(-56.31)"><rect x="-3" y="-2" width="2.6" height="1"/><rect x=".4" y="-2" width="2.6" height="1"/><rect x="-3" y="-.5" width="2.6" height="1"/><rect x=".4" y="-.5" width="2.6" height="1"/><rect x="-3" y="1" width="2.6" height="1"/><rect x=".4" y="1" width="2.6" height="1"/></g></g></svg></button>
+      <button type="button" id="btn-en" aria-pressed="false" aria-label="English" title="English"><svg class="flag" viewBox="0 0 36 24" aria-hidden="true"><rect width="36" height="24" fill="#fff"/><rect y="0.000" width="36" height="1.846" fill="#b22234"/><rect y="3.692" width="36" height="1.846" fill="#b22234"/><rect y="7.385" width="36" height="1.846" fill="#b22234"/><rect y="11.077" width="36" height="1.846" fill="#b22234"/><rect y="14.769" width="36" height="1.846" fill="#b22234"/><rect y="18.462" width="36" height="1.846" fill="#b22234"/><rect y="22.154" width="36" height="1.846" fill="#b22234"/><rect width="15.4" height="12.923" fill="#3c3b6e"/></svg></button>
+    </div>
+    <button class="burger" id="burger" aria-label="메뉴" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ============ HOME ============ -->
+<div data-view="home">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="ko">2027 서울대학교 음악교육 국제 심포지엄</span><span class="en">SNU International Symposium on Music Education 2027</span></div>
+      <h1><span class="ko">포스트휴먼 시대의 음악교육 재구상</span><span class="en">Reimagining Music Education in the Posthuman Era</span></h1>
+      <p class="tag"><span class="ko">실천을 위한 함의</span><span class="en">Implications for Practice</span></p>
+      <p class="en-line ko">Reimagining Music Education in the Posthuman Era: Implications for Practice</p>
+      <dl class="facts">
+        <div><dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) <span class="ph">00:00–00:00</span></span><span class="en">Fri, 8 January 2027 <span class="ph">00:00–00:00</span></span></dd></div>
+        <div><dt><span class="ko">장소</span><span class="en">Venue</span></dt><dd><span class="ko">서울대학교 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Bldg. 12, College of Education, SNU</span></dd></div>
+        <div><dt><span class="ko">언어</span><span class="en">Language</span></dt><dd><span class="ko">한국어 · 영어</span><span class="en">Korean · English</span></dd></div>
+      </dl>
+      <span class="dday" id="dday"></span>
+    </div>
+  </section>
+  <section class="view" style="padding-top:48px">
+    <div class="wrap">
+      <div class="quick">
+        <a href="#program"><b><span class="ko">프로그램</span><span class="en">Program</span></b><span><span class="ko">기조강연과 세 개의 연구발표 세션</span><span class="en">Keynote and three research sessions</span></span></a>
+        <a href="#speakers"><b><span class="ko">연사</span><span class="en">Speakers</span></b><span><span class="ko">기조강연, 국내외 발표자, 포스터 발표</span><span class="en">Keynote, presenters, and posters</span></span></a>
+        <a href="#venue"><b><span class="ko">오시는 길</span><span class="en">Venue &amp; Travel</span></b><span><span class="ko">지도, 지하철·버스, 가는 길 사진</span><span class="en">Map, subway, bus, route photos</span></span></a>
+        <a href="#guide" lang="en"><b>For Speakers</b><span>Airport, Hoam Faculty House, the day</span></a>
+      </div>
+      <!-- 포스터: poster/poster.jpg(이미지)와 poster/poster.pdf를 올리면 자동으로 보인다. PDF를 올리면 내려받기 버튼의 hidden을 지운다 -->
+      <div class="home-grid">
+        <figure class="poster">
+          <div class="poster-frame"><img src="poster/poster.jpg" alt="심포지엄 포스터 / Symposium poster" onerror="this.remove()"><span class="poster-empty"><span class="ko">포스터 준비 중</span><span class="en">Poster coming soon</span></span></div>
+          <figcaption><a class="chip" href="poster/poster.pdf" download hidden><span class="ko">포스터 내려받기 (PDF)</span><span class="en">Download poster (PDF)</span></a></figcaption>
+        </figure>
+        <div>
+          <h2 class="sub" style="margin-top:0"><span class="ko">공지사항</span><span class="en">News</span></h2>
+          <div class="notice"><ul>
+            <li><time><span class="ph">0000.00.</span></time><span><span class="ko">연사 및 발표 제목 공개 <span class="ph">ooo</span></span><span class="en">Speakers and talk titles announced <span class="ph">ooo</span></span></span></li>
+            <li><time><span class="ph">0000.00.</span></time><span><span class="ko">포스터 공개</span><span class="en">Poster released</span></span></li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="view" data-view="about" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1><span class="ko">행사 소개 <small class="h-en">About the Symposium</small></span><span class="en">About the Symposium</span></h1>
+      <p><span class="ko">서울대학교에서 학생 주도형으로 열리는 첫 음악교육 국제 학술포럼</span><span class="en">The first student-led international forum on music education at Seoul National University</span></p></div>
+    <!-- 행사 정보: 페이지 맨 위. PC는 두 칸, 휴대폰은 항목 이름 아래에 내용 -->
+    <div class="info-card">
+      <h2 class="sub"><span class="ko">행사 정보</span><span class="en">Details</span></h2>
+      <dl class="kv">
+        <dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) <span class="ph">00:00–00:00</span></span><span class="en">Friday, 8 January 2027 <span class="ph">00:00–00:00</span></span></dd>
+        <dt><span class="ko">장소</span><span class="en">Venue</span></dt><dd><span class="ko">서울대학교 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Building 12, College of Education, Seoul National University</span></dd>
+        <dt><span class="ko">언어</span><span class="en">Language</span></dt><dd><span class="ko">한국어 · 영어</span><span class="en">Korean · English</span></dd>
+        <dt><span class="ko">주최</span><span class="en">Host</span></dt><dd><span class="ko">서울대학교 사범대학 협동과정 음악교육전공</span><span class="en">Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></dd>
+        <dt><span class="ko">지원</span><span class="en">Support</span></dt><dd><span class="ko">서울대학교 연구처 대학원생 주도 국제 심포지엄 지원사업</span><span class="en">SNU Office of Research Affairs, Graduate Student-led Global Symposium Grant</span></dd>
+        <dt><span class="ko">대상</span><span class="en">Audience</span></dt><dd><span class="ko">음악교육 연구자, 교사, 대학원생 및 관심 있는 누구나</span><span class="en">Researchers, teachers, graduate students, and anyone interested</span></dd>
+      </dl>
+    </div>
+
+    <div class="prose">
+      <p class="ko">서울대학교 협동과정 음악교육전공 대학원생들이 기획하고 운영하는 심포지엄입니다. 생성형 AI와 디지털 미디어로 음악을 만들고 듣는 방식이 달라지는 지금, 국내외 신진 연구자와 교사가 모여 포스트휴먼 시대 음악교육의 이론과 실천을 함께 논의합니다.</p>
+      <p class="en">The symposium is planned and run by graduate students of the Interdisciplinary Program of Music Education at College of Education, Seoul National University. As generative AI and digital media change how music is made and heard, early-career researchers and teachers from Korea and abroad will discuss the theory and practice of music education in the posthuman era.</p>
+    </div>
+
+    <h2 class="sub"><span class="ko">주요 논의</span><span class="en">Key Topics</span></h2>
+    <div class="strands">
+      <div class="strand"><div class="num">SESSION 1</div><h3><span class="ko">이론적 검토</span><span class="en">Theoretical Inquiry</span></h3>
+        <p class="ko">포스트휴먼·신물질주의 관점에서 인간–기계–음악의 관계와 음악적 경험의 의미를 다시 봅니다.</p>
+        <p class="en">Revisiting human–machine–music relations and musical experience through posthuman and new materialist lenses.</p></div>
+      <div class="strand"><div class="num">SESSION 2</div><h3><span class="ko">기술과 실천</span><span class="en">Technology &amp; Practice</span></h3>
+        <p class="ko">생성형 AI와 디지털 도구가 바꾸는 수업 설계와 교수·학습 사례를 살펴봅니다.</p>
+        <p class="en">How generative AI and digital tools are changing lesson design and classroom practice.</p></div>
+      <div class="strand"><div class="num">SESSION 3</div><h3><span class="ko">윤리와 비판</span><span class="en">Ethics &amp; Critique</span></h3>
+        <p class="ko">창작 주체성, 저작권, 데이터 편향 문제를 검토하고 교육적 대안을 찾습니다.</p>
+        <p class="en">Examining authorship, copyright and data bias, and looking for educational responses.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAM ============ -->
+<section class="view" data-view="program" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1><span class="ko">프로그램 <small class="h-en">Program</small></span><span class="en">Program</span></h1>
+      <p><span class="ko">2027년 1월 8일(금) · 사범교육협력센터(12동) 401호</span><span class="en">Friday, 8 January 2027 · Room 401, Bldg. 12</span></p></div>
+    <div class="session">
+      <h2 class="session-title"><span class="ko">오전 세션</span><span class="en">Morning Session</span><small class="ph">00:00–00:00</small></h2>
+      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">등록</span><span class="en">Registration</span></b></div>
+      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">개회사</span><span class="en">Opening Remarks</span></b> <span class="ph">ooo</span></div>
+      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">축하공연</span><span class="en">Celebratory Performance</span></b> <span class="ph">ooo</span></div>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers" data-bio="bio-jeong">정다샘</a><span class="aff">(<span class="ko">서강대학교</span><span class="en">Sogang University</span>)</span></div>
+        <p class="title"><span class="kind"><span class="ko">기조강연</span><span class="en">Keynote</span></span><span class="ph">발표 제목 ooo</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time ph">00:00–00:00</div></article>
+      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">연구발표 세션 1 · 이론적 검토</span><span class="en">Session 1 · Theoretical Inquiry</span></b></p>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers" data-bio="bio-intl-1"><span class="ph">ooo</span></a><span class="aff">(<span class="ph">ooo University</span>)</span></div>
+        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time ph">00:00–00:00</div></article>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers" data-bio="bio-moon"><span class="ph">ooo</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time ph">00:00–00:00</div></article>
+      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">점심</span><span class="en">Lunch</span></b></div>
+    </div>
+    <div class="session">
+      <h2 class="session-title"><span class="ko">오후 세션</span><span class="en">Afternoon Session</span><small class="ph">00:00–00:00</small></h2>
+      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">연구발표 세션 2 · 기술과 실천</span><span class="en">Session 2 · Technology &amp; Practice</span></b></p>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers" data-bio="bio-intl-2"><span class="ph">ooo</span></a><span class="aff">(<span class="ph">ooo University</span>)</span></div>
+        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time ph">00:00–00:00</div></article>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers" data-bio="bio-lee"><span class="ph">ooo</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time ph">00:00–00:00</div></article>
+      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">포스터 발표</span><span class="en">Poster Session</span></b></p>
+      <div class="slim"><span class="time ph">00:00</span><span><span class="ko">포스터 발표와 다과 (발표 목록은 <a href="#speakers">연사</a> 페이지 참고)</span><span class="en">Posters &amp; coffee (see the <a href="#speakers">Speakers</a> page for the list)</span></span></div>
+      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">연구발표 세션 3 · 윤리와 비판</span><span class="en">Session 3 · Ethics &amp; Critique</span></b></p>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers" data-bio="bio-intl-3"><span class="ph">ooo</span></a><span class="aff">(<span class="ph">ooo University</span>)</span></div>
+        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time ph">00:00–00:00</div></article>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers" data-bio="bio-jang"><span class="ph">ooo</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time ph">00:00–00:00</div></article>
+      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">패널 토론</span><span class="en">Panel Discussion</span></b></div>
+      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">종합 토론 및 질의응답</span><span class="en">General Discussion &amp; Q&amp;A</span></b></div>
+      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">폐회</span><span class="en">Closing</span></b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEAKERS ============ -->
+<section class="view" data-view="speakers" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1><span class="ko">연사 <small class="h-en">Speakers</small></span><span class="en">Speakers</span></h1>
+      <p><span class="ko">발표자와 발표 제목은 확정되는 대로 올립니다. 이름 옆 화살표를 누르면 이력이 펼쳐집니다.</span><span class="en">Speakers and titles will be posted as they are confirmed. Click the arrow next to a name to see the biography.</span></p></div>
+    <h2 class="sub" style="margin-top:0"><span class="ko">기조강연</span><span class="en">Keynote</span></h2>
+    <ul class="people">
+      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-jeong"><span class="ko">정다샘</span><span class="en">Dasaem Jeong</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ko">서강대학교 교수</span><span class="en">Professor, Sogang University</span></div><div class="p-title"><span class="ph">강연 제목 ooo</span></div><div class="bio" id="bio-jeong" hidden><p><span class="ko">정다샘 교수의 이력과 연구는 개인 홈페이지에서 볼 수 있습니다.</span><span class="en">See Professor Jeong's personal website for biography and research.</span></p><p><a class="chip" href="https://jdasam.github.io/" target="_blank" rel="noopener"><span class="ko">개인 홈페이지</span><span class="en">Personal website</span> · jdasam.github.io</a></p></div></li>
+    </ul>
+    <h2 class="sub"><span class="ko">해외 발표자</span><span class="en">International Presenters</span></h2>
+    <ul class="people">
+      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-1"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(미국) · 박사과정</span><span class="en">(USA) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-1" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
+      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-2"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(대만) · 박사과정</span><span class="en">(Taiwan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-2" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
+      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-3"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-3" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
+      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-4"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-4" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
+      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-5"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-5" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
+    </ul>
+    <h2 class="sub"><span class="ko">구두 발표</span><span class="en">Oral Presentations</span></h2>
+    <!-- 같은 과정끼리 소속 칸을 합친다(rowspan). 이름은 가나다순 -->
+    <table class="ptable">
+      <thead><tr><th><span class="ko">소속·과정</span><span class="en">Affiliation</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">발표 제목</span><span class="en">Title</span></th></tr></thead>
+      <tbody>
+        <tr><td class="aff" rowspan="6"><span class="ko">서울대학교 사범대학 협동과정 음악교육전공 박사과정</span><span class="en">Ph.D. Student, Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></td><td class="nm"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-moon"><span class="ko">문현경</span><span class="en">Hyunkyung Moon</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td><td class="tt"><span class="ph">발표 제목 ooo</span></td></tr>
+        <tr class="bio-row" id="bio-moon" hidden><td colspan="2"><div class="bio"><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></td></tr>
+        <tr><td class="nm"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-lee"><span class="ko">이리비</span><span class="en"><span class="ph">이리비</span></span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td><td class="tt"><span class="ph">발표 제목 ooo</span></td></tr>
+        <tr class="bio-row" id="bio-lee" hidden><td colspan="2"><div class="bio"><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></td></tr>
+        <tr><td class="nm"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-jang"><span class="ko">장개림</span><span class="en"><span class="ph">장개림</span></span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td><td class="tt"><span class="ph">발표 제목 ooo</span></td></tr>
+        <tr class="bio-row" id="bio-jang" hidden><td colspan="2"><div class="bio"><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></td></tr>
+      </tbody>
+    </table>
+    <h2 class="sub"><span class="ko">포스터 발표</span><span class="en">Poster Presentations</span></h2>
+    <table class="ptable">
+      <thead><tr><th><span class="ko">소속·과정</span><span class="en">Affiliation</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">포스터 제목</span><span class="en">Title</span></th></tr></thead>
+      <tbody>
+        <tr><td class="aff" rowspan="5"><span class="ko">서울대학교 사범대학 협동과정 음악교육전공 석사과정</span><span class="en">M.A. Student, Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></td><td class="nm"><span class="ko">김단비</span><span class="en">Danbi Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">김희진</span><span class="en">Heejin Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">오한나</span><span class="en">Hanna Oh</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">임수아</span><span class="en">Sua Lim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">황현지</span><span class="en">Hyunji Hwang</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="aff" rowspan="6"><span class="ko">서울대학교 사범대학 협동과정 음악교육전공 박사과정</span><span class="en">Ph.D. Student, Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></td><td class="nm"><span class="ko">김지원</span><span class="en">Jiwon Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">문주영</span><span class="en">Juyoung Moon</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">박시준</span><span class="en">Sijun Park</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">이단아</span><span class="en">Dana Lee</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">이지예</span><span class="en">Jiye Lee</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">홍상희</span><span class="en">Sanghee Hong</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ VENUE ============ -->
+<!-- 오시는 길(국내 참석자용). For Speakers의 Step 2와 같은 구성(장소 카드+지도 → 사진 → 오시는 방법), 지도는 네이버 지도 -->
+<section class="view" data-view="venue" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1><span class="ko">오시는 길 <small class="h-en">Venue &amp; Travel</small></span><span class="en">Venue &amp; Travel</span></h1>
+      <p><span class="ko">서울대학교 관악캠퍼스 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Building 12, College of Education, SNU Gwanak Campus</span></p></div>
+
+    <div class="phase-b">
+      <div class="place-card" style="margin-top:0">
+        <div class="place-top">
+          <div><h3><span class="ko">사범교육협력센터 (12동) 401호</span><span class="en">Building 12, Room 401</span></h3>
+            <p><span class="ko">서울대학교 사범대학 · 관악캠퍼스</span><span class="en">College of Education, Seoul National University</span></p>
+            <p class="addr"><span class="ko">08826 서울특별시 관악구 관악로 1</span><span class="en">1 Gwanak-ro, Gwanak-gu, Seoul 08826</span></p></div>
+          <div class="links">
+            <a class="chip" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%20%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener"><span class="ko">네이버 지도</span><span class="en">Naver Map</span></a>
+            <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener"><span class="ko">구글 지도</span><span class="en">Google Maps</span></a>
+          </div>
+        </div>
+        <!-- 네이버 지도: 네이버 지도 페이지는 다른 사이트 안에 넣을 수 없어서, '지도 퍼가기'와 같은 방식(지도 이미지 + 네이버 지도 링크)으로 넣는다. 좌표 126.95477, 37.45969 = 12동 -->
+        <a class="nmap" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%20%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener">
+          <img src="https://simg.pstatic.net/static.map/v2/map/staticmap.bin?caller=smarteditor&amp;markers=pos%3A126.95477%2037.45969%7CviewSizeRatio%3A0.7%7Ctype%3Ad%7Ccolor%3A0x11cc73%7Csize%3Amid&amp;w=1000&amp;h=500&amp;scale=2&amp;center=126.95477%2C37.45969&amp;level=16" alt="네이버 지도: 서울대학교 사범교육협력센터(12동) 위치">
+          <span class="nmap-btn"><span class="ko">네이버 지도에서 크게 보기</span><span class="en">Open in Naver Map</span></span>
+        </a>
+      </div>
+
+      <!-- 가는 길 사진: photos/route-1.jpg ~ route-5.jpg. 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
+      <div class="slider" data-slider>
+        <div class="main"><img src="photos/route-1.jpg" alt=""><span class="cap"></span></div>
+        <div class="thumbs">
+          <button type="button" data-src="photos/route-1.jpg"><img src="photos/route-1.jpg" alt=""><span class="c"><span class="ko">사범대학 가는 길 (카페 파스쿠치 앞)</span><span class="en">Road to the College of Education, past Caffè Pascucci</span></span></button>
+          <button type="button" data-src="photos/route-2.jpg"><img src="photos/route-2.jpg" alt=""><span class="c"><span class="ko">사범대학 연결 통로 아래 길</span><span class="en">Road under the College of Education bridge</span></span></button>
+          <button type="button" data-src="photos/route-3.jpg"><img src="photos/route-3.jpg" alt=""><span class="c"><span class="ko">10-1동 교육정보관</span><span class="en">Building 10-1, Education Information Hall</span></span></button>
+          <button type="button" data-src="photos/route-4.jpg"><img src="photos/route-4.jpg" alt=""><span class="c"><span class="ko">10-1동 입구</span><span class="en">Building 10-1 entrance</span></span></button>
+          <button type="button" data-src="photos/route-5.jpg"><img src="photos/route-5.jpg" alt=""><span class="c"><span class="ko">10-1동 로비</span><span class="en">Building 10-1 lobby</span></span></button>
+        </div>
+      </div>
+
+      <h2 class="sub"><span class="ko">대중교통으로 오시는 길</span><span class="en">By Public Transportation</span></h2>
+      <!-- 정류장·도보 시간: 네이버 지도 '서울대학교 관악캠퍼스 12동(사범교육협력센터)' 주변 정류장 정보 + 서울대 공식 대중교통 안내 -->
+      <div class="opts">
+        <div class="opt"><div class="n">1</div><div>
+          <h3><span class="ko">낙성대역 + 마을버스</span><span class="en">Nakseongdae Stn. + Village Bus</span> <span class="pill"><span class="ko">가장 가까운 정류장</span><span class="en">Closest stop</span></span></h3>
+          <div class="chain"><span class="step"><span class="badge b-l2">2</span> <span class="ko">낙성대역 4번 출구</span><span class="en">Nakseongdae Stn. Exit 4</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-vil">관악02-1</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">노천강당 하차</span><span class="en">Nocheon Gangdang stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
+          <div class="meta"><span><span class="ko">정류장에서 도보 2분 (130m)</span><span class="en">2 min walk from the stop (130 m)</span></span><span><span class="ko">관악02-2는 노천강당에 서지 않습니다</span><span class="en">Bus 02-2 does not stop here</span></span></div>
+        </div></div>
+        <div class="opt"><div class="n">2</div><div>
+          <h3><span class="ko">서울대입구역 + 버스</span><span class="en">Seoul Nat'l Univ. Stn. + Bus</span></h3>
+          <div class="chain"><span class="step"><span class="badge b-l2">2</span> <span class="ko">서울대입구역 3번 출구</span><span class="en">Seoul Nat'l Univ. Stn. Exit 3</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-bus">5511</span> <span class="badge b-bus">5513</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">관악사삼거리(기숙사삼거리) 하차</span><span class="en">Gwanaksa Samgeori stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
+          <div class="meta"><span><span class="ko">정류장에서 도보 약 7분 (390m)</span><span class="en">About 7 min walk from the stop (390 m)</span></span></div>
+        </div></div>
+        <div class="opt"><div class="n">3</div><div>
+          <h3><span class="ko">관악산(서울대)역 + 버스</span><span class="en">Gwanaksan (SNU) Stn. + Bus</span></h3>
+          <div class="chain"><span class="step"><span class="badge b-sl">신림</span> <span class="ko">관악산(서울대)역 1번 출구</span><span class="en">Gwanaksan (SNU) Stn. Exit 1</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-bus">5516</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">관악사삼거리(기숙사삼거리) 하차</span><span class="en">Gwanaksa Samgeori stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
+          <div class="meta"><span><span class="ko">정류장에서 도보 약 7분 (390m)</span><span class="en">About 7 min walk from the stop (390 m)</span></span></div>
+        </div></div>
+      </div>
+      <p class="note"><span class="ko">* 관악사삼거리는 서울대 안내에서 '기숙사삼거리'로 적힌 정류장입니다. 도보 시간은 네이버 지도 기준입니다.</span><span class="en">* Gwanaksa Samgeori is listed as "Gisuksa Samgeori" in SNU's guide. Walking times are from Naver Map.</span></p>
+      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.snu.ac.kr/about/gwanak/transportation/public" target="_blank" rel="noopener"><span class="ko">서울대 대중교통 안내</span><span class="en">SNU transport guide</span></a></div>
+    </div>
+
+    <div class="stay" style="margin-top:36px">
+      <div><h3>For Speakers</h3>
+        <p><span class="ko">해외 연사 안내(인천공항 → 호암교수회관, 행사 당일 이동)는 별도 페이지에 있습니다.</span><span class="en">Airport transfer, accommodation and the day's route for overseas speakers.</span></p></div>
+      <div class="links"><a class="chip" href="#guide">For Speakers</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR SPEAKERS ============ -->
+<!-- 해외 연사 안내(영어 고정). 1단계 도착일(금색) / 2단계 행사일(남색)으로 나누고, 같은 단계의 요소는 같은 색을 쓴다(유사성의 원리) -->
+<section class="view" data-view="guide" hidden>
+  <div class="wrap" lang="en">
+    <div class="page-head"><div class="eyebrow">For Speakers</div><h1>Information for Overseas Speakers</h1>
+      <p>Your trip has two parts: arrive at Hoam Faculty House the day before, then come to the venue on the symposium day.</p></div>
+
+    <div class="trip">
+      <a class="trip-card phase-a" href="#guide" data-jump="arrive"><span class="trip-step">Step 1 · Thu 7 Jan</span><b>Arrival</b><span>Incheon Airport → Hoam Faculty House <small lang="ko">호암교수회관</small></span><span class="trip-note">Your accommodation</span></a>
+      <span class="trip-arrow" aria-hidden="true">→</span>
+      <a class="trip-card phase-b" href="#guide" data-jump="dayof"><span class="trip-step">Step 2 · Fri 8 Jan</span><b>Symposium Day</b><span>Hoam Faculty House → Building 12, Room 401 <small lang="ko">12동 401호</small></span><span class="trip-note">The venue</span></a>
+    </div>
+
+    <!-- 1단계: 도착일 -->
+    <div class="phase phase-a" id="arrive">
+      <div class="phase-head"><span class="phase-tag">Step 1 · Thu 7 Jan · Arrival</span><h2>Incheon Airport → Hoam Faculty House</h2></div>
+
+      <div class="place-card">
+        <div class="place-top">
+          <div><h3>Hoam Faculty House <small lang="ko">호암교수회관</small></h3>
+            <p>Seoul National University guesthouse. Your room is booked by the organizers.</p>
+            <p class="addr">Bldg. 125, 1 Gwanak-ro, Gwanak-gu, Seoul 08826<br>Check-in <span class="ph">00:00</span> · Check-out <span class="ph">00:00</span></p></div>
+          <div class="links"><a class="chip" href="https://snuhoam.co.kr/stay/" target="_blank" rel="noopener">Official website</a><a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=Hoam+Faculty+House,+Seoul+National+University" target="_blank" rel="noopener">Google Maps</a></div>
+        </div>
+        <div class="map" data-q="%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%ED%98%B8%EC%95%94%EA%B5%90%EC%88%98%ED%9A%8C%EA%B4%80">
+          <iframe title="Hoam Faculty House map" src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%ED%98%B8%EC%95%94%EA%B5%90%EC%88%98%ED%9A%8C%EA%B4%80&amp;z=16&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-fallback">If the map does not load, use the Google Maps button.</div>
+          <div class="zoom"><button type="button" class="zin" aria-label="Zoom in">+</button><input type="range" min="12" max="19" value="16" aria-label="Map zoom"><button type="button" class="zout" aria-label="Zoom out">−</button></div>
+        </div>
+      </div>
+
+      <div class="opts">
+        <div class="opt"><div class="n">1</div><div>
+          <h3>Airport Limousine Bus <span class="pill">Bus 6017 · recommended</span></h3>
+          <p>Board bus 6017 at Terminal 1 (1F, Gate 6B) or Terminal 2 (B1F Transportation Center, platform <span class="ph">26 or 27</span>). Tickets are sold at the counter in the arrivals hall.</p>
+          <p>Stay on to the last stop, <b>Hoam Faculty House</b> <small lang="ko">호암교수회관</small>. Bus 6003 goes to the SNU Main Gate instead, so avoid it.</p>
+          <div class="meta"><span>70–110 min</span><span>KRW 17,000</span></div>
+        </div></div>
+        <div class="opt"><div class="n">2</div><div>
+          <h3>Airport Railroad + Subway + Village Bus <span class="pill">AREX · Line 2 · Bus</span></h3>
+          <p>Take the AREX all-stop train to <b>Hongik Univ. Station</b> <small lang="ko">홍대입구역</small>. Change to Line 2 toward Sindorim and get off at <b>Nakseongdae Station</b> <small lang="ko">낙성대역</small>.</p>
+          <p>From Exit 4, take village bus Gwanak 02-1 or 02-2 <small lang="ko">관악02-1 · 02-2</small> to the Hoam Faculty House stop, or walk 20 minutes uphill.</p>
+          <div class="meta"><span>100–120 min</span><span>About KRW 5,000 with a T-money card</span></div>
+        </div></div>
+        <div class="opt"><div class="n">3</div><div>
+          <h3>Taxi <span class="pill">Door to door</span></h3>
+          <p>Taxis wait outside the arrivals hall. Ask for <b>Seoul National University Hoam Faculty House</b> <small lang="ko">서울대학교 호암교수회관</small>.</p>
+          <div class="meta"><span>60–80 min, depending on traffic</span></div>
+        </div></div>
+      </div>
+      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.google.com/maps/dir/?api=1&amp;origin=Incheon+International+Airport&amp;destination=Hoam+Faculty+House,+Seoul+National+University&amp;travelmode=transit" target="_blank" rel="noopener">Directions in Google Maps</a></div>
+    </div>
+
+    <!-- 2단계: 행사일 -->
+    <div class="phase phase-b" id="dayof">
+      <div class="phase-head"><span class="phase-tag">Step 2 · Fri 8 Jan · Symposium Day</span><h2>Hoam Faculty House → Building 12, Room 401</h2></div>
+
+      <!-- 가는 길 사진: photos/route-1.jpg ~ route-5.jpg. 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
+      <div class="slider" data-slider>
+        <div class="main"><img src="photos/route-1.jpg" alt=""><span class="cap"></span></div>
+        <div class="thumbs">
+          <button type="button" data-src="photos/route-1.jpg"><img src="photos/route-1.jpg" alt=""><span class="c">Road to the College of Education, past Caffè Pascucci</span></button>
+          <button type="button" data-src="photos/route-2.jpg"><img src="photos/route-2.jpg" alt=""><span class="c">Road under the College of Education bridge</span></button>
+          <button type="button" data-src="photos/route-3.jpg"><img src="photos/route-3.jpg" alt=""><span class="c">Building 10-1, Education Information Hall</span></button>
+          <button type="button" data-src="photos/route-4.jpg"><img src="photos/route-4.jpg" alt=""><span class="c">Building 10-1 entrance</span></button>
+          <button type="button" data-src="photos/route-5.jpg"><img src="photos/route-5.jpg" alt=""><span class="c">Building 10-1 lobby</span></button>
+        </div>
+      </div>
+
+      <div class="place-card">
+        <div class="place-top">
+          <div><h3>Building 12, Room 401 <small lang="ko">사범교육협력센터(12동) 401호</small></h3>
+            <p>College of Education, Seoul National University (Gwanak Campus)</p>
+            <p class="addr">1 Gwanak-ro, Gwanak-gu, Seoul 08826</p></div>
+          <div class="links"><a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener">Google Maps</a></div>
+        </div>
+        <div class="map" data-q="%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0">
+          <iframe title="Venue map" src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0&amp;z=16&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-fallback">If the map does not load, use the Google Maps button.</div>
+          <div class="zoom"><button type="button" class="zin" aria-label="Zoom in">+</button><input type="range" min="12" max="19" value="16" aria-label="Map zoom"><button type="button" class="zout" aria-label="Zoom out">−</button></div>
+        </div>
+      </div>
+
+      <div class="opts">
+        <div class="opt"><div class="n">A</div><div>
+          <h3>Village Bus <span class="pill">Bus 02-1</span></h3>
+          <p>At the stop in front of Hoam, take village bus <b>Gwanak 02-1</b> <small lang="ko">관악02-1</small>. Bus 02-2 goes to another part of campus. Get off at <b>Nocheon Gangdang</b> <small lang="ko">노천강당</small>.</p>
+          <p>Building 12 is a 2-minute walk (130 m) from the stop. Room 401 is on the 4th floor.</p>
+          <div class="meta"><span>Tap your T-money card when you board</span></div>
+        </div></div>
+        <div class="opt"><div class="n">B</div><div>
+          <h3>On Foot <span class="pill">Walk</span></h3>
+          <p>Go up through the SNU Back Gate <small lang="ko">서울대 후문</small>, past the Gwanak Residence Halls <small lang="ko">관악학생생활관</small>, to Gwanaksa Samgeori <small lang="ko">관악사삼거리</small>, then on to Building 12.</p>
+          <div class="meta"><span>About <span class="ph">00 min</span></span></div>
+        </div></div>
+      </div>
+      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hoam+Faculty+House,+Seoul+National+University&amp;destination=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0&amp;travelmode=transit" target="_blank" rel="noopener">Directions in Google Maps</a></div>
+    </div>
+    <p class="note">* Times and fares are approximate.</p>
+  </div>
+</section>
+
+<!-- ============ ARCHIVE ============ -->
+<section class="view" data-view="archive" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1><span class="ko">자료실 <small class="h-en">Archive</small></span><span class="en">Archive</span></h1>
+      <p><span class="ko">보도자료와 행사 기록을 이곳에 올립니다.</span><span class="en">Press coverage and symposium records are posted here.</span></p></div>
+
+    <!-- 보도자료: 카드 하나에 섬네일(press/press-1.jpg …) + 매체·날짜 + 제목 + 기사 링크. 기사가 나오면 href와 ooo를 채우고, 섬네일 파일을 press 폴더에 넣는다. 카드는 복사해서 늘린다 -->
+    <h2 class="sub" style="margin-top:0"><span class="ko">보도자료</span><span class="en">Press</span></h2>
+    <div class="press">
+      <a class="press-card" href="#archive">
+        <div class="press-thumb"><img src="press/press-1.jpg" alt="" onerror="this.remove()"><span class="press-empty"><span class="ko">섬네일</span><span class="en">Thumbnail</span></span></div>
+        <div class="press-body">
+          <span class="press-src"><span class="ph">매체 ooo</span> · <span class="ph">0000.00.00.</span></span>
+          <b class="press-title"><span class="ph">기사 제목 ooo</span></b>
+          <span class="press-sum"><span class="ph">기사 요약 한두 줄 ooo</span></span>
+          <span class="press-more"><span class="ko">기사 보기</span><span class="en">Read article</span></span>
+        </div>
+      </a>
+      <a class="press-card" href="#archive">
+        <div class="press-thumb"><img src="press/press-2.jpg" alt="" onerror="this.remove()"><span class="press-empty"><span class="ko">섬네일</span><span class="en">Thumbnail</span></span></div>
+        <div class="press-body">
+          <span class="press-src"><span class="ph">매체 ooo</span> · <span class="ph">0000.00.00.</span></span>
+          <b class="press-title"><span class="ph">기사 제목 ooo</span></b>
+          <span class="press-sum"><span class="ph">기사 요약 한두 줄 ooo</span></span>
+          <span class="press-more"><span class="ko">기사 보기</span><span class="en">Read article</span></span>
+        </div>
+      </a>
+    </div>
+
+    <h2 class="sub"><span class="ko">행사 기록</span><span class="en">Records</span></h2>
+    <ul class="archive">
+      <li><span><span class="ko">발표자료집 · 초록집</span><span class="en">Abstracts</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
+      <li><span><span class="ko">프로시딩</span><span class="en">Proceedings</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
+      <li><span><span class="ko">행사 사진</span><span class="en">Photos</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
+      <li><span><span class="ko">발표 영상</span><span class="en">Videos</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============ CONTACT ============ -->
+<!-- 문의: 구글 설문을 페이지에 바로 넣는다(행사 공식 이메일은 없음). 응답은 드라이브 '2027 심포지엄 문의 응답' 시트 -->
+<section class="view" data-view="contact" hidden>
+  <div class="wrap">
+    <div class="page-head"><h1><span class="ko">문의 <small class="h-en">Contact</small></span><span class="en">Contact</span></h1>
+      <p><span class="ko">아래 양식에 질문을 남기면 적어 주신 이메일로 답변을 보내 드립니다(최대 2–3일 소요).</span><span class="en">Leave your question below and we will reply to the email address you give within 2–3 days.</span></p></div>
+    <div class="form-embed">
+      <iframe title="문의 양식 / Contact form" src="https://docs.google.com/forms/d/e/1FAIpQLSdtvCaSzrPk_G6Pigb33OkUBeoUucMDuE56PQzzFuowk_5ueg/viewform?embedded=true" loading="lazy">Loading…</iframe>
+    </div>
+    <p class="note" style="text-align:center"><span class="ko">양식이 보이지 않으면</span><span class="en">If the form does not load,</span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtvCaSzrPk_G6Pigb33OkUBeoUucMDuE56PQzzFuowk_5ueg/viewform" target="_blank" rel="noopener"><span class="ko">새 창에서 열기</span><span class="en">open it in a new window</span></a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <!-- 바닥글: 행사 이름·문의 한 줄 + 학과 주소 한 줄(한국어 화면은 한국어만, 영어 화면은 영어만). 영문 명칭은 학과 공식 명칭 -->
+  <div class="wrap">
+    <div class="foot-event"><b><span class="ko">2027 서울대학교 음악교육 국제 심포지엄 - 포스트휴먼 시대의 음악교육 재구상</span><span class="en">SNU International Symposium on Music Education 2027 - Reimagining Music Education in the Posthuman Era</span></b><a class="foot-link" href="#contact"><span class="ko">문의 (Contact us)</span><span class="en">Contact us</span></a></div>
+    <p class="foot-addr ko"><b>서울대학교 사범대학 협동과정 음악교육전공</b> · Add. 08826 서울시 관악구 관악로 1 서울대학교 사범대학 9동 213호<br><span class="tel">Tel. 02-880-9052</span></p>
+    <p class="foot-addr en"><b>Interdisciplinary Program of Music Education at College of Education, Seoul National University</b> · Bldg #9, 1 Gwanak-ro, Gwanak-gu, Seoul 08826, Republic of KOREA<br><span class="tel">Tel. +82-2-880-9052</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var body=document.body, ko=document.getElementById('btn-ko'), en=document.getElementById('btn-en');
+  var views=[].slice.call(document.querySelectorAll('[data-view]'));
+  var navs=[].slice.call(document.querySelectorAll('[data-nav]'));
+  var names=views.map(function(v){return v.getAttribute('data-view')});
+
+  function route(){
+    var h=(location.hash||'').replace('#','');
+    if(names.indexOf(h)<0) h='home';
+    views.forEach(function(v){v.hidden=v.getAttribute('data-view')!==h});
+
+    navs.forEach(function(a){ if(a.getAttribute('data-nav')===h) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',route);
+
+  function setLang(l){
+    body.setAttribute('data-lang',l);
+    document.documentElement.lang=l;
+    ko.setAttribute('aria-pressed',l==='ko');en.setAttribute('aria-pressed',l==='en');
+    try{localStorage.setItem('sym-lang',l)}catch(e){}
+    dday();
+  }
+  ko.addEventListener('click',function(){setLang('ko')});
+  en.addEventListener('click',function(){setLang('en')});
+
+  var burger=document.getElementById('burger'), menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+  menu.addEventListener('click',function(e){if(e.target.closest('a')){menu.classList.remove('open');burger.setAttribute('aria-expanded',false)}});
+
+  function dday(){
+    var el=document.getElementById('dday');
+    var days=Math.ceil((new Date('2027-01-08T00:00:00+09:00')-new Date())/86400000);
+    var l=body.getAttribute('data-lang');
+    if(days>0){el.hidden=false;el.textContent='D-'+days}
+    else if(days===0){el.hidden=false;el.textContent=(l==='en'?'Today':'오늘 개최')}
+    else el.hidden=true;
+  }
+  // 지도 확대·축소: 구글 지도 iframe은 Ctrl 없이 휠 확대가 안 되므로 z 값을 바꿔 다시 불러온다
+  [].forEach.call(document.querySelectorAll('.map[data-q]'),function(m){
+    var f=m.querySelector('iframe'), r=m.querySelector('.zoom input'), t;
+    function go(){f.src='https://maps.google.com/maps?q='+m.getAttribute('data-q')+'&z='+r.value+'&output=embed'}
+    r.addEventListener('input',function(){clearTimeout(t);t=setTimeout(go,250)});
+    m.querySelector('.zin').addEventListener('click',function(){r.stepUp();go()});
+    m.querySelector('.zout').addEventListener('click',function(){r.stepDown();go()});
+  });
+
+  // 가는 길 사진: 썸네일을 누르면 큰 사진과 캡션이 바뀐다. 사진 파일이 없으면 줄무늬 칸만 보인다
+  [].forEach.call(document.querySelectorAll('[data-slider]'),function(s){
+    var img=s.querySelector('.main img'), cap=s.querySelector('.cap'), btns=[].slice.call(s.querySelectorAll('.thumbs button'));
+    function show(b){img.style.visibility='';img.src=b.getAttribute('data-src');cap.innerHTML=b.querySelector('.c').innerHTML;btns.forEach(function(x){x.setAttribute('aria-current',x===b)})}
+    img.addEventListener('error',function(){img.style.visibility='hidden'});
+    btns.forEach(function(b){b.addEventListener('click',function(){show(b)});b.querySelector('img').addEventListener('error',function(){this.style.visibility='hidden'})});
+    show(btns[0]);
+  });
+
+  // For Speakers 위 단계 카드: 해시 라우팅을 건드리지 않고 해당 단계로 스크롤
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-jump]'); if(!a) return;
+    e.preventDefault(); document.getElementById(a.getAttribute('data-jump')).scrollIntoView({behavior:'smooth'});
+  });
+
+  // 연사 이력: 이름 옆 화살표를 누르면 펼치고 접는다. 프로그램의 이름(data-bio)은 연사 페이지로 가서 펼친다
+  function openBio(id,open){
+    var panel=document.getElementById(id), btn=document.querySelector('[aria-controls="'+id+'"]');
+    if(!panel||!btn) return;
+    panel.hidden=!open; btn.setAttribute('aria-expanded',open);
+    return btn;
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.bio-btn');
+    if(b){ openBio(b.getAttribute('aria-controls'), b.getAttribute('aria-expanded')!=='true'); return; }
+    var l=e.target.closest('[data-bio]'); if(!l) return;
+    e.preventDefault(); location.hash='speakers';
+    setTimeout(function(){ var t=openBio(l.getAttribute('data-bio'),true); if(t) t.scrollIntoView({behavior:'smooth',block:'center'}); },60);
+  });
+
+  var saved=null;try{saved=localStorage.getItem('sym-lang')}catch(e){}
+  setLang(saved==='en'?'en':'ko');
+  route();
+})();
+</script>
+</body>
+</html>
