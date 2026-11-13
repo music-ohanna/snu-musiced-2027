@@ -162,6 +162,13 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .slider .thumbs button[aria-current="true"]{opacity:1;outline-color:var(--accent,var(--navy))}
 .slider .thumbs button:focus-visible{outline-color:var(--navy);opacity:1}
 .slider .c{display:none}
+/* 사진 넘기기 화살표: 사진을 가리지 않게 썸네일 줄 오른쪽에 둔다(JS가 .srow로 묶음) */
+.slider .srow{display:flex;align-items:center;gap:12px;margin-top:8px}
+.slider .srow .thumbs{flex:1;min-width:0;margin-top:0}
+.slider .snav{display:flex;gap:8px;flex:none}
+.slider .nav{width:40px;height:40px;border:1.5px solid var(--navy);border-radius:50%;background:var(--bg);color:var(--navy);font-size:26px;line-height:34px;text-align:center;cursor:pointer;padding:0;transition:background .2s,color .2s}
+.slider .nav:hover,.slider .nav:focus-visible{background:var(--navy);color:#fff}
+@media (max-width:560px){.slider .nav{width:34px;height:34px;font-size:22px;line-height:28px}.slider .srow{gap:8px}}
 .place{display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:end;margin-top:20px}
 .place>*{min-width:0}
 .place h3{margin:0;font-size:22px;color:var(--navy)}
@@ -244,8 +251,8 @@ footer .tel{display:inline-block;margin-top:4px;white-space:nowrap;color:#fff;fo
 footer .tel:hover{text-decoration:underline}footer b{color:#fff;font-weight:500}
 .h-en{font-size:.5em;font-weight:500;color:var(--brass);margin-left:.35em;letter-spacing:.02em}
 /* 연사 이름 링크: 프로그램 → 연사 페이지, 정다샘 교수 → 개인 홈페이지 */
-.pl{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
-.pl:hover{color:var(--navy);text-decoration-color:var(--navy)}
+.pl{color:var(--navy);text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:rgba(10,29,77,.3);text-underline-offset:4px;border-radius:3px;padding:0 2px;margin:0 -2px}
+.pl:hover,.pl:focus-visible{background:var(--navy-tint);text-decoration-color:var(--navy)}
 
 .lang button{display:inline-flex;align-items:center;gap:6px}
 .flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
@@ -512,7 +519,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">11:20–12:00</div></article>
       <div class="slim"><span class="time">12:00–13:10</span><span><b><span class="ko">점심식사</span><span class="en">Lunch</span></b> <span class="ko">(<a href="https://joo.is/snuform" target="_blank" rel="noopener">사전 신청</a> 시 런치박스 제공)</span><span class="en">(lunch box provided with <a href="https://joo.is/snuform" target="_blank" rel="noopener">pre-registration</a>)</span><br><b><span class="ko">포스터 발표</span><span class="en">Poster Session</span></b> · <span class="ko">포스터 목록은 <a href="#speakers">연사</a> 페이지 참고</span><span class="en">See the <a href="#speakers">Speakers</a> page for the posters</span></span></div>
-      <div class="slim"><span class="time">13:10–13:30</span><span><b><span class="ko">연주</span><span class="en">Performance</span></b> · <span class="ko"><a href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">수제천</a> &amp; <a href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">최옥삼류 가야금 산조</a> · 서울대학교 국악과</span><span class="en"><a href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">Su Je Cheon</a> &amp; <a href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">Choi Ok-sam Style Gayageum Sanjo</a> · Dept. of Korean Traditional Music, SNU</span></span></div>
+      <div class="slim"><span class="time">13:10–13:30</span><span><b><span class="ko">연주</span><span class="en">Performance</span></b> · <span class="ko"><a class="pl" href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">수제천</a> &amp; <a class="pl" href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">최옥삼류 가야금 산조</a> · 서울대학교 국악과</span><span class="en"><a class="pl" href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">Su Je Cheon</a> &amp; <a class="pl" href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">Choi Ok-sam Style Gayageum Sanjo</a> · Dept. of Korean Traditional Music, SNU</span></span></div>
     </div>
     <div class="session">
       <h2 class="session-title"><span class="ko">세션 2</span><span class="en">Session 2</span><small>13:30–14:30</small></h2>
@@ -840,12 +847,25 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     m.querySelector('.zout').addEventListener('click',function(){r.stepDown();go()});
   });
 
-  // 가는 길 사진: 썸네일을 누르면 큰 사진과 캡션이 바뀐다. 사진 파일이 없으면 줄무늬 칸만 보인다
+  // 가는 길 사진: 썸네일이나 큰 사진 좌우 화살표를 누르면 사진과 캡션이 바뀐다. 휴대폰은 좌우로 밀어도 넘어간다. 사진 파일이 없으면 줄무늬 칸만 보인다
   [].forEach.call(document.querySelectorAll('[data-slider]'),function(s){
-    var img=s.querySelector('.main img'), cap=s.querySelector('.cap'), btns=[].slice.call(s.querySelectorAll('.thumbs button'));
-    function show(b){img.style.visibility='';img.src=b.getAttribute('data-src');cap.innerHTML=b.querySelector('.c').innerHTML;btns.forEach(function(x){x.setAttribute('aria-current',x===b)})}
+    var main=s.querySelector('.main'), img=s.querySelector('.main img'), cap=s.querySelector('.cap'), btns=[].slice.call(s.querySelectorAll('.thumbs button')), cur=0;
+    function show(b){cur=btns.indexOf(b);img.style.visibility='';img.src=b.getAttribute('data-src');cap.innerHTML=b.querySelector('.c').innerHTML;btns.forEach(function(x){x.setAttribute('aria-current',x===b)})}
+    function step(d){show(btns[(cur+d+btns.length)%btns.length])}
     img.addEventListener('error',function(){img.style.visibility='hidden'});
     btns.forEach(function(b){b.addEventListener('click',function(){show(b)});b.querySelector('img').addEventListener('error',function(){this.style.visibility='hidden'})});
+    if(btns.length>1){
+      // 화살표는 사진을 가리지 않게 썸네일 줄 오른쪽에 둔다
+      var thumbs=s.querySelector('.thumbs'), row=document.createElement('div'), snav=document.createElement('div');
+      row.className='srow'; snav.className='snav'; thumbs.parentNode.insertBefore(row,thumbs); row.appendChild(thumbs); row.appendChild(snav);
+      [['prev','‹','이전 사진 / Previous photo',-1],['next','›','다음 사진 / Next photo',1]].forEach(function(a){
+        var n=document.createElement('button'); n.type='button'; n.className='nav '+a[0]; n.textContent=a[1]; n.setAttribute('aria-label',a[2]); n.title=a[2];
+        n.addEventListener('click',function(){step(a[3])}); snav.appendChild(n);
+      });
+      var x0=null;
+      main.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+      main.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)step(dx<0?1:-1)});
+    }
     show(btns[0]);
   });
 
