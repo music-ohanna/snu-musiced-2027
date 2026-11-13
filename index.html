@@ -157,18 +157,17 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .slider img{display:block;width:100%;height:100%;object-fit:cover}
 .slider .cap{position:absolute;left:0;bottom:0;background:rgba(10,29,77,.82);color:#fff;font-size:14px;font-weight:500;padding:8px 14px;border-top-right-radius:6px}
 .slider .cap:empty{display:none}
-.slider .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:8px}
+.slider .thumbs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,120px);justify-content:center;gap:8px;margin-top:10px}
 .slider .thumbs button{all:unset;cursor:pointer;aspect-ratio:3/2;border-radius:4px;overflow:hidden;opacity:.5;outline:2px solid transparent;outline-offset:-2px;background:var(--navy-tint)}
 .slider .thumbs button[aria-current="true"]{opacity:1;outline-color:var(--accent,var(--navy))}
 .slider .thumbs button:focus-visible{outline-color:var(--navy);opacity:1}
 .slider .c{display:none}
-/* 사진 넘기기 화살표: 사진을 가리지 않게 썸네일 줄 오른쪽에 둔다(JS가 .srow로 묶음) */
-.slider .srow{display:flex;align-items:center;gap:12px;margin-top:8px}
-.slider .srow .thumbs{flex:1;min-width:0;margin-top:0}
-.slider .snav{display:flex;gap:8px;flex:none}
+/* 사진 넘기기 화살표: 사진 밖 왼쪽·오른쪽(JS가 .sframe으로 묶음). 휴대폰은 사진 폭을 지키려고 사진 바로 아래 양 끝으로 내린다 */
+.slider .sframe{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px}
+@media (max-width:560px){.slider .sframe{grid-template-columns:1fr 1fr;gap:8px}.slider .sframe .main{grid-column:1/-1;grid-row:1}.slider .sframe .nav.prev{grid-row:2;justify-self:start}.slider .sframe .nav.next{grid-row:2;justify-self:end}}
 .slider .nav{width:40px;height:40px;border:1.5px solid var(--navy);border-radius:50%;background:var(--bg);color:var(--navy);font-size:26px;line-height:34px;text-align:center;cursor:pointer;padding:0;transition:background .2s,color .2s}
 .slider .nav:hover,.slider .nav:focus-visible{background:var(--navy);color:#fff}
-@media (max-width:560px){.slider .nav{width:34px;height:34px;font-size:22px;line-height:28px}.slider .srow{gap:8px}}
+@media (max-width:560px){.slider .nav{width:34px;height:34px;font-size:22px;line-height:28px}}
 .place{display:grid;grid-template-columns:1fr auto;gap:12px 24px;align-items:end;margin-top:20px}
 .place>*{min-width:0}
 .place h3{margin:0;font-size:22px;color:var(--navy)}
@@ -216,7 +215,8 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 /* Contact */
 .form-embed{max-width:760px;margin:0 auto;border:1px solid var(--line);border-top:4px solid var(--navy);border-radius:8px;overflow:hidden;background:#fff}
 .form-embed iframe{display:block;width:100%;height:1000px;border:0}
-footer .foot-link{color:#fff;font-weight:500}
+footer .foot-link{color:#fff;font-weight:500;text-decoration:none}
+footer .foot-link:hover,footer .foot-link:focus-visible{text-decoration:underline;text-underline-offset:3px}
 
 /* Home: 포스터 + 공지사항 */
 .home-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:760px;margin-top:16px}
@@ -251,7 +251,7 @@ footer .tel{display:inline-block;margin-top:4px;white-space:nowrap;color:#fff;fo
 footer .tel:hover{text-decoration:underline}footer b{color:#fff;font-weight:500}
 .h-en{font-size:.5em;font-weight:500;color:var(--brass);margin-left:.35em;letter-spacing:.02em}
 /* 연사 이름 링크: 프로그램 → 연사 페이지, 정다샘 교수 → 개인 홈페이지 */
-.pl{color:var(--navy);text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:rgba(10,29,77,.3);text-underline-offset:4px;border-radius:3px;padding:0 2px;margin:0 -2px}
+.pl{color:var(--navy);text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(10,29,77,.25);text-underline-offset:4px;border-radius:3px;padding:0 2px;margin:0 -2px}
 .pl:hover,.pl:focus-visible{background:var(--navy-tint);text-decoration-color:var(--navy)}
 
 .lang button{display:inline-flex;align-items:center;gap:6px}
@@ -266,7 +266,7 @@ footer .tel:hover{text-decoration:underline}footer b{color:#fff;font-weight:500}
 .p-title{color:var(--navy);font-weight:500}
 .ptable{width:100%;border-collapse:collapse;border-top:1px solid var(--line);font-size:15px}
 .ptable th{font-size:13px;font-weight:500;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
-.ptable td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.ptable td{padding:12px;border-bottom:1px solid var(--line);vertical-align:middle}
 .ptable td.aff{width:11%;color:var(--muted);font-size:15px;text-align:center;white-space:nowrap;vertical-align:middle;border-right:1px solid var(--line);background:#fafbfe}
 .ptable td.nm{width:13%;font-weight:700;white-space:nowrap}
 .ptable td.tt{color:var(--navy);font-weight:500}
@@ -855,12 +855,12 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     img.addEventListener('error',function(){img.style.visibility='hidden'});
     btns.forEach(function(b){b.addEventListener('click',function(){show(b)});b.querySelector('img').addEventListener('error',function(){this.style.visibility='hidden'})});
     if(btns.length>1){
-      // 화살표는 사진을 가리지 않게 썸네일 줄 오른쪽에 둔다
-      var thumbs=s.querySelector('.thumbs'), row=document.createElement('div'), snav=document.createElement('div');
-      row.className='srow'; snav.className='snav'; thumbs.parentNode.insertBefore(row,thumbs); row.appendChild(thumbs); row.appendChild(snav);
+      // 화살표는 사진을 가리지 않게 사진 밖 왼쪽·오른쪽에 둔다(.sframe으로 사진과 화살표를 묶음)
+      var frame=document.createElement('div'); frame.className='sframe'; main.parentNode.insertBefore(frame,main);
       [['prev','‹','이전 사진 / Previous photo',-1],['next','›','다음 사진 / Next photo',1]].forEach(function(a){
         var n=document.createElement('button'); n.type='button'; n.className='nav '+a[0]; n.textContent=a[1]; n.setAttribute('aria-label',a[2]); n.title=a[2];
-        n.addEventListener('click',function(){step(a[3])}); snav.appendChild(n);
+        n.addEventListener('click',function(){step(a[3])}); frame.appendChild(n);
+        if(a[0]==='prev') frame.appendChild(main);
       });
       var x0=null;
       main.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
