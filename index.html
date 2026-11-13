@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>2027 서울대학교 음악교육 국제 심포지엄</title>
 <meta name="description" content="포스트휴먼 시대의 음악교육 재구상: 실천을 위한 함의 · 2027년 1월 8일(금) 서울대학교 사범대학 사범교육협력센터(12동) 401호">
+<!-- 홈페이지 제작자(화면에는 보이지 않음) -->
+<meta name="author" content="오한나 (Hanna Oh)">
 <meta property="og:title" content="2027 서울대학교 음악교육 국제 심포지엄">
 <meta property="og:description" content="Reimagining Music Education in the Posthuman Era: Implications for Practice · 8 January 2027, Seoul National University">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,7 +93,11 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .facts div{min-width:0}
 .facts dt{font-size:12px;color:#aab6dc;letter-spacing:.06em}
 .facts dd{margin:2px 0 0;font-size:17px;font-weight:500}
-.dday{display:inline-block;margin-top:28px;font-family:var(--f-mono);font-size:14px;color:#d9bd7a;border:1px solid rgba(217,189,122,.5);border-radius:999px;padding:3px 12px}
+.hero-cta{margin-top:32px}
+.reg{display:inline-flex;align-items:center;gap:10px;background:#d9bd7a;color:var(--navy);text-decoration:none;font-size:17px;font-weight:700;border-radius:999px;padding:12px 26px}
+.reg:hover{background:#e6cf96}
+.reg svg{width:20px;height:20px;flex:none}
+.dday{display:block;width:max-content;margin:20px auto 0;font-family:var(--f-mono);font-size:14px;color:#d9bd7a;border:1px solid rgba(217,189,122,.5);border-radius:999px;padding:3px 12px}
 .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
 @media (max-width:960px){.quick{grid-template-columns:repeat(2,1fr)}}
 .quick a{display:block;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:20px}
@@ -99,11 +105,6 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .quick b{display:block;color:var(--navy);font-size:18px;font-weight:700;margin-bottom:2px}
 .quick span{color:var(--muted);font-size:14px}
 @media (max-width:720px){.quick{grid-template-columns:1fr}}
-.notice{border:1px solid var(--line);border-radius:8px}
-.notice li{display:flex;gap:16px;padding:14px 18px;border-top:1px solid var(--line)}
-.notice li:first-child{border-top:0}
-.notice ul{list-style:none;margin:0;padding:0}
-.notice time{font-family:var(--f-mono);font-size:13px;color:var(--muted);white-space:nowrap;padding-top:2px}
 
 /* About */
 .strands{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--navy)}
@@ -166,6 +167,7 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .place h3{margin:0;font-size:22px;color:var(--navy)}
 .place p{margin:2px 0 0;color:var(--muted)}
 .links{display:flex;flex-wrap:wrap;gap:8px}
+.chip .mi{width:16px;height:16px;vertical-align:-3px;margin-right:6px}
 .chip{font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--navy);color:var(--navy);border-radius:999px;padding:6px 14px;background:var(--bg)}
 .chip:hover{background:var(--navy);color:#fff}
 @media (max-width:640px){.place{grid-template-columns:1fr}}
@@ -213,44 +215,34 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 footer .foot-link{color:#fff;font-weight:500}
 
 /* Home: 포스터 + 공지사항 */
-.home-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:32px;align-items:start;margin-top:48px}
+.posters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:760px;align-items:start}
 .poster{margin:0}
 .poster-frame{position:relative;aspect-ratio:1/1.414;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:repeating-linear-gradient(135deg,var(--navy-tint) 0 8px,#f7f9fd 8px 16px)}
-.poster-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.poster-frame:has(img){aspect-ratio:auto}
+.poster-frame a{display:block;position:relative;z-index:1}
+.poster-frame img{display:block;width:100%;height:auto}
 .poster-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px}
-.poster figcaption{margin-top:10px}
-@media (max-width:720px){.home-grid{grid-template-columns:1fr}.poster{max-width:300px;margin:0 auto}}
+.click-hint{font-size:.62em;font-weight:500;color:var(--muted)}
+.poster-note{margin:14px 0 0}
+.poster-note:has(> .chip[hidden]:only-child){display:none}
+@media (max-width:720px){.posters{gap:12px}}
 
 footer{background:var(--navy-deep);color:#b9c3e0;font-size:12.5px;line-height:1.7}
 footer .wrap{padding-block:22px;display:grid;gap:10px}
 footer .foot-event{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px}
 footer .foot-addr{margin:0;color:#8f9cc4}
 footer .foot-addr b{color:#b9c3e0}
-footer .tel{white-space:nowrap}
-footer b{color:#fff;font-weight:500}
+footer .tel{display:inline-block;margin-top:4px;white-space:nowrap;color:#fff;font-size:14.5px;font-weight:500;letter-spacing:.02em;text-decoration:none}
+footer .tel:hover{text-decoration:underline}footer b{color:#fff;font-weight:500}
 .h-en{font-size:.5em;font-weight:500;color:var(--brass);margin-left:.35em;letter-spacing:.02em}
-/* 프로그램의 연사 이름 링크 → 연사 페이지에서 이력을 펼친다 */
+/* 연사 이름 링크: 프로그램 → 연사 페이지, 정다샘 교수 → 개인 홈페이지 */
 .pl{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}
 .pl:hover{color:var(--navy);text-decoration-color:var(--navy)}
-/* 연사 이름 옆 드롭 화살표: 누르면 아래에 이력이 펼쳐진다 */
-.bio-btn{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:4px}
-.bio-btn:hover{color:var(--navy)}
-.bio-btn:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
-.chev{width:18px;height:18px;padding:3px;box-sizing:border-box;border:1px solid var(--line);border-radius:50%;color:var(--navy);flex:none;transition:transform .2s}
-.bio-btn:hover .chev{border-color:var(--navy)}
-.bio-btn[aria-expanded="true"] .chev{transform:rotate(180deg);background:var(--navy-tint);border-color:var(--navy)}
-.bio{padding:14px 16px;background:#f7f9fd;border-left:3px solid var(--navy);border-radius:4px;font-size:15px;color:var(--fg);font-weight:400}
-.bio p{margin:0 0 .6em}
-.bio p:last-child{margin:0}
-.people .bio{grid-column:1/-1;margin:4px 0 6px}
-.ptable .bio-row td{padding:0 12px 14px;border-bottom:1px solid var(--line)}
-.ptable tr:has(+ .bio-row:not([hidden])) td:not(.aff){border-bottom:0}
-.bio[hidden],.bio-row[hidden]{display:none !important}
 
 .lang button{display:inline-flex;align-items:center;gap:6px}
 .flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
 .talk{grid-template-columns:1fr}
-.talk .who span.aff{margin-left:0}
+.talk .who span.aff{margin-left:.35em}
 .people{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .people li{display:grid;grid-template-columns:minmax(90px,140px) minmax(0,1fr) minmax(0,1.4fr);gap:6px 24px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .people li>*{min-width:0}
@@ -260,9 +252,11 @@ footer b{color:#fff;font-weight:500}
 .ptable{width:100%;border-collapse:collapse;border-top:1px solid var(--line);font-size:15px}
 .ptable th{font-size:13px;font-weight:500;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
 .ptable td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
-.ptable td.aff{width:36%;color:var(--muted);vertical-align:middle;border-right:1px solid var(--line);background:#fafbfe}
-.ptable td.nm{width:22%;font-weight:700;white-space:nowrap}
+.ptable td.aff{width:11%;color:var(--muted);font-size:15px;text-align:center;white-space:nowrap;vertical-align:middle;border-right:1px solid var(--line);background:#fafbfe}
+.ptable td.nm{width:13%;font-weight:700;white-space:nowrap}
 .ptable td.tt{color:var(--navy);font-weight:500}
+.pt-aff{margin:-4px 0 12px;font-size:14px;color:var(--muted)}
+@media (max-width:680px){.ptable td.aff,.ptable td.nm{width:auto}.ptable td.aff{text-align:left}}
 @media (max-width:680px){.ptable thead{display:none}.ptable,.ptable tbody,.ptable tr,.ptable td{display:block;width:auto}.ptable tr{padding:10px 0;border-bottom:1px solid var(--line)}.ptable td{border:0;padding:2px 0}.ptable td.aff{margin:0 0 8px;padding:8px 10px;border-radius:4px;background:var(--navy-tint);color:var(--navy);font-weight:500}}
 @media (max-width:680px){.people li{grid-template-columns:1fr;gap:2px}}
 .map{position:relative;margin-top:20px;border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:16/9;max-width:100%;background:var(--navy-tint)}
@@ -302,6 +296,9 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 .place-card h3{margin:0;font-size:20px;color:var(--accent)}
 .place-card p{margin:4px 0 0;color:var(--muted);font-size:15px}
 .place-card .map{margin-top:16px}
+/* For Speakers 도착지 강조 사진(12동 간판) */
+.dest{margin:16px 0 0}
+.dest img{display:block;width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:8px;border:3px solid var(--accent)}
 .nmap{position:relative;display:block;margin-top:16px;border:1px solid var(--line);border-radius:8px;overflow:hidden;aspect-ratio:2/1;background:var(--navy-tint)}
 .nmap img{display:block;width:100%;height:100%;object-fit:cover}
 .nmap-btn{position:absolute;right:10px;bottom:10px;background:#03c75a;color:#fff;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;box-shadow:0 1px 4px rgba(0,0,0,.25)}
@@ -310,6 +307,13 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 @media (max-width:640px){.place-top{grid-template-columns:1fr}}
 .chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px;margin-top:4px}
 .step{display:inline-flex;align-items:center;gap:4px;background:var(--navy-tint);border-radius:4px;padding:3px 9px;font-size:15px}
+.chain .badge{font-size:15px;line-height:1.5;padding:1px 8px;border-radius:4px}
+.chain .b-vil{font-size:16px;padding:2px 10px}
+.pill-rec{background:#d23b2f;color:#fff;font-size:13px;padding:2px 9px;vertical-align:2px}
+.link-big{display:inline-flex;align-items:center;gap:8px;margin-top:8px;background:var(--navy);color:#fff;text-decoration:none;font-size:16px;font-weight:700;border-radius:999px;padding:12px 22px}
+.link-big:hover{background:var(--navy-deep)}
+/* 경로 상자 안 사진: 휴대폰에서는 왼쪽 번호 칸(36px+간격 16px)까지 넓혀 쓴다 */
+@media (max-width:560px){.opt .slider{margin-left:-52px}}
 .step:last-child{background:var(--navy);color:#fff;font-weight:500}
 .arr{color:var(--brass);font-weight:700}
 .b-arex{background:#2b7fb8}
@@ -355,10 +359,12 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
       <p class="tag"><span class="ko">실천을 위한 함의</span><span class="en">Implications for Practice</span></p>
       <p class="en-line ko">Reimagining Music Education in the Posthuman Era: Implications for Practice</p>
       <dl class="facts">
-        <div><dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) <span class="ph">00:00–00:00</span></span><span class="en">Fri, 8 January 2027 <span class="ph">00:00–00:00</span></span></dd></div>
+        <div><dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) 09:30–16:00</span><span class="en">Fri, 8 January 2027, 09:30–16:00</span></dd></div>
         <div><dt><span class="ko">장소</span><span class="en">Venue</span></dt><dd><span class="ko">서울대학교 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Bldg. 12, College of Education, SNU</span></dd></div>
         <div><dt><span class="ko">언어</span><span class="en">Language</span></dt><dd><span class="ko">한국어 · 영어</span><span class="en">Korean · English</span></dd></div>
       </dl>
+      <!-- 사전 신청: 구글 설문(joo.is/snuform 짧은 주소) -->
+      <div class="hero-cta"><a class="reg" href="https://joo.is/snuform" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 11h6M9 15h4"/></svg><span class="ko">사전 신청하기</span><span class="en">Pre-register</span></a></div>
       <span class="dday" id="dday"></span>
     </div>
   </section>
@@ -370,20 +376,17 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <a href="#venue"><b><span class="ko">오시는 길</span><span class="en">Venue &amp; Travel</span></b><span><span class="ko">지도, 지하철·버스, 가는 길 사진</span><span class="en">Map, subway, bus, route photos</span></span></a>
         <a href="#guide" lang="en"><b>For Speakers</b><span>Airport, Hoam Faculty House, the day</span></a>
       </div>
-      <!-- 포스터: poster/poster.jpg(이미지)와 poster/poster.pdf를 올리면 자동으로 보인다. PDF를 올리면 내려받기 버튼의 hidden을 지운다 -->
-      <div class="home-grid">
+      <!-- 포스터: 한국어 poster/poster.jpg, 영어 poster/poster-en.jpg를 나란히(두 언어 화면 모두). 미리캔버스에서 내려받아 같은 이름으로 바꿔 넣는다. 누르면 새 창에서 크게 보인다. PDF를 올리면 내려받기 버튼의 hidden을 지운다 -->
+      <h2 class="sub"><span class="ko">포스터 <small class="click-hint">(클릭해서 확대)</small></span><span class="en">Posters <small class="click-hint">(click to enlarge)</small></span></h2>
+      <div class="posters">
         <figure class="poster">
-          <div class="poster-frame"><img src="poster/poster.jpg" alt="심포지엄 포스터 / Symposium poster" onerror="this.remove()"><span class="poster-empty"><span class="ko">포스터 준비 중</span><span class="en">Poster coming soon</span></span></div>
-          <figcaption><a class="chip" href="poster/poster.pdf" download hidden><span class="ko">포스터 내려받기 (PDF)</span><span class="en">Download poster (PDF)</span></a></figcaption>
+          <div class="poster-frame"><a href="poster/poster.jpg" target="_blank" rel="noopener"><img src="poster/poster.jpg" alt="심포지엄 포스터(한국어)" onerror="this.parentNode.remove()"></a><span class="poster-empty"><span class="ko">포스터 준비 중</span><span class="en">Poster coming soon</span></span></div>
         </figure>
-        <div>
-          <h2 class="sub" style="margin-top:0"><span class="ko">공지사항</span><span class="en">News</span></h2>
-          <div class="notice"><ul>
-            <li><time><span class="ph">0000.00.</span></time><span><span class="ko">연사 및 발표 제목 공개 <span class="ph">ooo</span></span><span class="en">Speakers and talk titles announced <span class="ph">ooo</span></span></span></li>
-            <li><time><span class="ph">0000.00.</span></time><span><span class="ko">포스터 공개</span><span class="en">Poster released</span></span></li>
-          </ul></div>
-        </div>
+        <figure class="poster">
+          <div class="poster-frame"><a href="poster/poster-en.jpg" target="_blank" rel="noopener"><img src="poster/poster-en.jpg" alt="Symposium poster (English)" onerror="this.parentNode.remove()"></a><span class="poster-empty"><span class="ko">포스터 준비 중</span><span class="en">Poster coming soon</span></span></div>
+        </figure>
       </div>
+      <p class="poster-note"><a class="chip" href="poster/poster.pdf" download hidden><span class="ko">포스터 내려받기 (PDF)</span><span class="en">Download poster (PDF)</span></a></p>
     </div>
   </section>
 </div>
@@ -397,7 +400,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     <div class="info-card">
       <h2 class="sub"><span class="ko">행사 정보</span><span class="en">Details</span></h2>
       <dl class="kv">
-        <dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) <span class="ph">00:00–00:00</span></span><span class="en">Friday, 8 January 2027 <span class="ph">00:00–00:00</span></span></dd>
+        <dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) 09:30–16:00</span><span class="en">Friday, 8 January 2027, 09:30–16:00</span></dd>
         <dt><span class="ko">장소</span><span class="en">Venue</span></dt><dd><span class="ko">서울대학교 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Building 12, College of Education, Seoul National University</span></dd>
         <dt><span class="ko">언어</span><span class="en">Language</span></dt><dd><span class="ko">한국어 · 영어</span><span class="en">Korean · English</span></dd>
         <dt><span class="ko">주최</span><span class="en">Host</span></dt><dd><span class="ko">서울대학교 사범대학 협동과정 음악교육전공</span><span class="en">Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></dd>
@@ -430,59 +433,74 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 <section class="view" data-view="program" hidden>
   <div class="wrap">
     <div class="page-head"><h1><span class="ko">프로그램 <small class="h-en">Program</small></span><span class="en">Program</span></h1>
-      <p><span class="ko">2027년 1월 8일(금) · 사범교육협력센터(12동) 401호</span><span class="en">Friday, 8 January 2027 · Room 401, Bldg. 12</span></p></div>
-    <div class="session">
-      <h2 class="session-title"><span class="ko">오전 세션</span><span class="en">Morning Session</span><small class="ph">00:00–00:00</small></h2>
-      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">등록</span><span class="en">Registration</span></b></div>
-      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">개회사</span><span class="en">Opening Remarks</span></b> <span class="ph">ooo</span></div>
-      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">축하공연</span><span class="en">Celebratory Performance</span></b> <span class="ph">ooo</span></div>
-      <article class="talk">
-        <div class="who"><a class="pl" href="#speakers" data-bio="bio-jeong">정다샘</a><span class="aff">(<span class="ko">서강대학교</span><span class="en">Sogang University</span>)</span></div>
-        <p class="title"><span class="kind"><span class="ko">기조강연</span><span class="en">Keynote</span></span><span class="ph">발표 제목 ooo</span></p>
-        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
-        <div class="time ph">00:00–00:00</div></article>
-      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">연구발표 세션 1 · 이론적 검토</span><span class="en">Session 1 · Theoretical Inquiry</span></b></p>
-      <article class="talk">
-        <div class="who"><a class="pl" href="#speakers" data-bio="bio-intl-1"><span class="ph">ooo</span></a><span class="aff">(<span class="ph">ooo University</span>)</span></div>
-        <p class="title"><span class="ph">발표 제목 ooo</span></p>
-        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
-        <div class="time ph">00:00–00:00</div></article>
-      <article class="talk">
-        <div class="who"><a class="pl" href="#speakers" data-bio="bio-moon"><span class="ph">ooo</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
-        <p class="title"><span class="ph">발표 제목 ooo</span></p>
-        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
-        <div class="time ph">00:00–00:00</div></article>
-      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">점심</span><span class="en">Lunch</span></b></div>
+      <p><span class="ko">2027년 1월 8일(금) 09:30–16:00 · 사범교육협력센터(12동) 401호</span><span class="en">Friday, 8 January 2027, 09:30–16:00 · Room 401, Bldg. 12</span></p></div>
+    <!-- 시간표는 프로그램 포스터(poster/poster.jpg) 기준. 이름은 연사 페이지로, 정다샘 교수는 개인 홈페이지로 연결 -->
+    <div class="session" style="margin-bottom:32px">
+      <div class="slim"><span class="time">09:30–10:00</span><b><span class="ko">등록</span><span class="en">Registration</span></b></div>
     </div>
     <div class="session">
-      <h2 class="session-title"><span class="ko">오후 세션</span><span class="en">Afternoon Session</span><small class="ph">00:00–00:00</small></h2>
-      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">연구발표 세션 2 · 기술과 실천</span><span class="en">Session 2 · Technology &amp; Practice</span></b></p>
+      <h2 class="session-title"><span class="ko">세션 1</span><span class="en">Session 1</span><small>10:00–11:00</small></h2>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers" data-bio="bio-intl-2"><span class="ph">ooo</span></a><span class="aff">(<span class="ph">ooo University</span>)</span></div>
-        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <div class="who"><a class="pl" href="#speakers"><span class="ko">장개림</span><span class="en">Kailin Zhang</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <p class="title">A Posthumanist Reconsideration of AI and Music Education: Insights from a Review of Chinese Research</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
-        <div class="time ph">00:00–00:00</div></article>
+        <div class="time">10:00–10:20</div></article>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers" data-bio="bio-lee"><span class="ph">ooo</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
-        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <div class="who"><a class="pl" href="#speakers">Otsubo Risako</a><span class="aff">(Tokyo University of the Arts, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
+        <p class="title">The Effective Teaching Strategies and Learning Environments for Developing Piano Students’ Expertise and Motivation</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
-        <div class="time ph">00:00–00:00</div></article>
-      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">포스터 발표</span><span class="en">Poster Session</span></b></p>
-      <div class="slim"><span class="time ph">00:00</span><span><span class="ko">포스터 발표와 다과 (발표 목록은 <a href="#speakers">연사</a> 페이지 참고)</span><span class="en">Posters &amp; coffee (see the <a href="#speakers">Speakers</a> page for the list)</span></span></div>
-      <p class="session-desc" style="margin:28px 0 0"><b style="color:var(--navy)"><span class="ko">연구발표 세션 3 · 윤리와 비판</span><span class="en">Session 3 · Ethics &amp; Critique</span></b></p>
+        <div class="time">10:20–10:40</div></article>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers" data-bio="bio-intl-3"><span class="ph">ooo</span></a><span class="aff">(<span class="ph">ooo University</span>)</span></div>
-        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <div class="who"><a class="pl" href="#speakers">Wei-Ming, Low</a><span class="aff">(Taiwan Normal University, <span class="ko">대만</span><span class="en">Taiwan</span>)</span></div>
+        <p class="title">Beyond the Classroom: Exploring Professional Service among Music Teachers in Taiwan</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
-        <div class="time ph">00:00–00:00</div></article>
+        <div class="time">10:40–11:00</div></article>
+      <div class="slim"><span class="time">11:00–11:10</span><b><span class="ko">휴식</span><span class="en">Break</span></b></div>
+    </div>
+    <div class="session">
+      <h2 class="session-title"><span class="ko">환영 및 기조강연</span><span class="en">Welcome &amp; Keynote Address</span><small>11:10–12:00</small></h2>
+      <div class="slim"><span class="time">11:10–11:20</span><span><b><span class="ko">환영 인사</span><span class="en">Welcome Remarks</span></b> · <span class="ko">이민정 교수(서울대학교 음악교육 전공주임)</span><span class="en">Prof. Min Jung Lee (College of Music, Seoul National University)</span></span></div>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers" data-bio="bio-jang"><span class="ph">ooo</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
-        <p class="title"><span class="ph">발표 제목 ooo</span></p>
+        <div class="who"><a class="pl" href="https://jdasam.github.io/" target="_blank" rel="noopener"><span class="ko">정다샘 교수</span><span class="en">Prof. Dasaem Jeong</span></a><span class="aff">(<span class="ko">서강대학교</span><span class="en">Sogang University</span>)</span></div>
+        <p class="title"><span class="kind"><span class="ko">기조강연</span><span class="en">Keynote</span></span><span class="ph">발표 제목 ooo</span></p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
-        <div class="time ph">00:00–00:00</div></article>
-      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">패널 토론</span><span class="en">Panel Discussion</span></b></div>
-      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">종합 토론 및 질의응답</span><span class="en">General Discussion &amp; Q&amp;A</span></b></div>
-      <div class="slim"><span class="time ph">00:00</span><b><span class="ko">폐회</span><span class="en">Closing</span></b></div>
+        <div class="time">11:20–12:00</div></article>
+      <div class="slim"><span class="time">12:00–13:10</span><span><b><span class="ko">점심식사</span><span class="en">Lunch</span></b> <span class="ko">(<a href="https://joo.is/snuform" target="_blank" rel="noopener">사전 신청</a> 시 런치박스 제공)</span><span class="en">(lunch box provided with <a href="https://joo.is/snuform" target="_blank" rel="noopener">pre-registration</a>)</span><br><b><span class="ko">포스터 발표</span><span class="en">Poster Session</span></b> · <span class="ko">포스터 목록은 <a href="#speakers">연사</a> 페이지 참고</span><span class="en">See the <a href="#speakers">Speakers</a> page for the posters</span></span></div>
+      <div class="slim"><span class="time">13:10–13:30</span><span><b><span class="ko">연주</span><span class="en">Performance</span></b> · <span class="ko"><a href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">수제천</a> &amp; <a href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">최옥삼류 가야금 산조</a> · 서울대학교 국악과</span><span class="en"><a href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">Su Je Cheon</a> &amp; <a href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">Choi Ok-sam Style Gayageum Sanjo</a> · Dept. of Korean Traditional Music, SNU</span></span></div>
+    </div>
+    <div class="session">
+      <h2 class="session-title"><span class="ko">세션 2</span><span class="en">Session 2</span><small>13:30–14:30</small></h2>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers"><span class="ko">이리비</span><span class="en">Ri Bi Lee</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <p class="title"><span class="ko">개념적 은유를 활용한 초등 장단 교수 학습 방안 연구: 호흡과 움직임을 중심으로</span><span class="en">A Study on Teaching and Learning Korean Traditional Rhythmic Patterns in Elementary Schools Using Conceptual Metaphors: Focusing on Breathing and Movement</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time">13:30–13:50</div></article>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers">Mayuko Sato</a><span class="aff">(Hiroshima University, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
+        <p class="title">Development of Experience from Instrument-Making to Music-Making: An Analysis of Teachers’ Narratives Based on Affordance Theory</p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time">13:50–14:10</div></article>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers">Zhilin Zhan</a><span class="aff">(Eastman School of Music, <span class="ko">미국</span><span class="en">USA</span>)</span></div>
+        <p class="title">Music Teachers’ Voices on Professional Development Experiences and Satisfaction Across Diverse Student Demographic Profiles</p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time">14:10–14:30</div></article>
+      <div class="slim"><span class="time">14:30–14:40</span><b><span class="ko">휴식</span><span class="en">Break</span></b></div>
+    </div>
+    <div class="session">
+      <h2 class="session-title"><span class="ko">세션 3</span><span class="en">Session 3</span><small>14:40–15:20</small></h2>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers">Sawa Tsunoda</a><span class="aff">(Tokyo University of the Arts, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
+        <p class="title">The Meaning of Musical Experiences in Japanese High School Choir Clubs: An Analysis of Narratives from Former Choir Club Members</p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time">14:40–15:00</div></article>
+      <article class="talk">
+        <div class="who"><a class="pl" href="#speakers"><span class="ko">문현경</span><span class="en">HyunKyung Moon</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <p class="title"><span class="ko">음악 감상문 작성에서 학습지원조건에 따른 차이 분석</span><span class="en">Analysis of Differences in Music Appreciation Writing by Learning Support Conditions</span></p>
+        <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
+        <div class="time">15:00–15:20</div></article>
+      <div class="slim"><span class="time">15:20–15:40</span><b><span class="ko">질의응답</span><span class="en">Q&amp;A</span></b></div>
+      <div class="slim"><span class="time">15:40–16:00</span><b><span class="ko">폐회식</span><span class="en">Closing Ceremony</span></b></div>
     </div>
   </div>
 </section>
@@ -491,42 +509,41 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 <section class="view" data-view="speakers" hidden>
   <div class="wrap">
     <div class="page-head"><h1><span class="ko">연사 <small class="h-en">Speakers</small></span><span class="en">Speakers</span></h1>
-      <p><span class="ko">발표자와 발표 제목은 확정되는 대로 올립니다. 이름 옆 화살표를 누르면 이력이 펼쳐집니다.</span><span class="en">Speakers and titles will be posted as they are confirmed. Click the arrow next to a name to see the biography.</span></p></div>
+      <p><span class="ko">발표자와 발표 제목은 확정되는 대로 올립니다.</span><span class="en">Speakers and titles will be posted as they are confirmed.</span></p></div>
     <h2 class="sub" style="margin-top:0"><span class="ko">기조강연</span><span class="en">Keynote</span></h2>
     <ul class="people">
-      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-jeong"><span class="ko">정다샘</span><span class="en">Dasaem Jeong</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ko">서강대학교 교수</span><span class="en">Professor, Sogang University</span></div><div class="p-title"><span class="ph">강연 제목 ooo</span></div><div class="bio" id="bio-jeong" hidden><p><span class="ko">정다샘 교수의 이력과 연구는 개인 홈페이지에서 볼 수 있습니다.</span><span class="en">See Professor Jeong's personal website for biography and research.</span></p><p><a class="chip" href="https://jdasam.github.io/" target="_blank" rel="noopener"><span class="ko">개인 홈페이지</span><span class="en">Personal website</span> · jdasam.github.io</a></p></div></li>
+      <li><div class="p-name"><a class="pl" href="https://jdasam.github.io/" target="_blank" rel="noopener"><span class="ko">정다샘</span><span class="en">Dasaem Jeong</span></a></div><div class="p-aff"><span class="ko">서강대학교 교수</span><span class="en">Professor, Sogang University</span></div><div class="p-title"><span class="ph">강연 제목 ooo</span></div></li>
     </ul>
     <h2 class="sub"><span class="ko">해외 발표자</span><span class="en">International Presenters</span></h2>
     <ul class="people">
-      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-1"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(미국) · 박사과정</span><span class="en">(USA) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-1" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
-      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-2"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(대만) · 박사과정</span><span class="en">(Taiwan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-2" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
-      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-3"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-3" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
-      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-4"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-4" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
-      <li><div class="p-name"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-intl-5"><span class="ph">ooo</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="p-aff"><span class="ph">ooo University</span> <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title"><span class="ph">발표 제목 ooo</span></div><div class="bio" id="bio-intl-5" hidden><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></li>
+      <li><div class="p-name">Zhilin Zhan</div><div class="p-aff">Eastman School of Music <span class="ko">(미국) · 박사과정</span><span class="en">(USA) · Ph.D. Student</span></div><div class="p-title">Music Teachers’ Voices on Professional Development Experiences and Satisfaction Across Diverse Student Demographic Profiles</div></li>
+      <li><div class="p-name">Wei-Ming, Low</div><div class="p-aff">Taiwan Normal University <span class="ko">(대만) · 박사과정</span><span class="en">(Taiwan) · Ph.D. Student</span></div><div class="p-title">Beyond the Classroom: Exploring Professional Service among Music Teachers in Taiwan</div></li>
+      <li><div class="p-name">Otsubo Risako</div><div class="p-aff">Tokyo University of the Arts <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title">The Effective Teaching Strategies and Learning Environments for Developing Piano Students’ Expertise and Motivation</div></li>
+      <li><div class="p-name">Mayuko Sato</div><div class="p-aff">Hiroshima University <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title">Development of Experience from Instrument-Making to Music-Making: An Analysis of Teachers’ Narratives Based on Affordance Theory</div></li>
+      <li><div class="p-name">Sawa Tsunoda</div><div class="p-aff">Tokyo University of the Arts <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title">The Meaning of Musical Experiences in Japanese High School Choir Clubs: An Analysis of Narratives from Former Choir Club Members</div></li>
     </ul>
     <h2 class="sub"><span class="ko">구두 발표</span><span class="en">Oral Presentations</span></h2>
+    <p class="pt-aff"><span class="ko">소속: 서울대학교 사범대학 협동과정 음악교육전공</span><span class="en">Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></p>
     <!-- 같은 과정끼리 소속 칸을 합친다(rowspan). 이름은 가나다순 -->
     <table class="ptable">
-      <thead><tr><th><span class="ko">소속·과정</span><span class="en">Affiliation</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">발표 제목</span><span class="en">Title</span></th></tr></thead>
+      <thead><tr><th><span class="ko">과정</span><span class="en">Degree</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">발표 제목</span><span class="en">Title</span></th></tr></thead>
       <tbody>
-        <tr><td class="aff" rowspan="6"><span class="ko">서울대학교 사범대학 협동과정 음악교육전공 박사과정</span><span class="en">Ph.D. Student, Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></td><td class="nm"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-moon"><span class="ko">문현경</span><span class="en">Hyunkyung Moon</span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td><td class="tt"><span class="ph">발표 제목 ooo</span></td></tr>
-        <tr class="bio-row" id="bio-moon" hidden><td colspan="2"><div class="bio"><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></td></tr>
-        <tr><td class="nm"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-lee"><span class="ko">이리비</span><span class="en"><span class="ph">이리비</span></span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td><td class="tt"><span class="ph">발표 제목 ooo</span></td></tr>
-        <tr class="bio-row" id="bio-lee" hidden><td colspan="2"><div class="bio"><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></td></tr>
-        <tr><td class="nm"><button type="button" class="bio-btn" aria-expanded="false" aria-controls="bio-jang"><span class="ko">장개림</span><span class="en"><span class="ph">장개림</span></span><svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></td><td class="tt"><span class="ph">발표 제목 ooo</span></td></tr>
-        <tr class="bio-row" id="bio-jang" hidden><td colspan="2"><div class="bio"><p><span class="ph"><span class="ko">이력 ooo</span><span class="en">Biography ooo</span></span></p></div></td></tr>
+        <tr><td class="aff" rowspan="3"><span class="ko">박사과정</span><span class="en">Ph.D.</span></td><td class="nm"><span class="ko">문현경</span><span class="en">HyunKyung Moon</span></td><td class="tt"><span class="ko">음악 감상문 작성에서 학습지원조건에 따른 차이 분석</span><span class="en">Analysis of Differences in Music Appreciation Writing by Learning Support Conditions</span></td></tr>
+        <tr><td class="nm"><span class="ko">이리비</span><span class="en">Ri Bi Lee</span></td><td class="tt"><span class="ko">개념적 은유를 활용한 초등 장단 교수 학습 방안 연구: 호흡과 움직임을 중심으로</span><span class="en">A Study on Teaching and Learning Korean Traditional Rhythmic Patterns in Elementary Schools Using Conceptual Metaphors: Focusing on Breathing and Movement</span></td></tr>
+        <tr><td class="nm"><span class="ko">장개림</span><span class="en">Kailin Zhang</span></td><td class="tt">A Posthumanist Reconsideration of AI and Music Education: Insights from a Review of Chinese Research</td></tr>
       </tbody>
     </table>
     <h2 class="sub"><span class="ko">포스터 발표</span><span class="en">Poster Presentations</span></h2>
+    <p class="pt-aff"><span class="ko">소속: 서울대학교 사범대학 협동과정 음악교육전공</span><span class="en">Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></p>
     <table class="ptable">
-      <thead><tr><th><span class="ko">소속·과정</span><span class="en">Affiliation</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">포스터 제목</span><span class="en">Title</span></th></tr></thead>
+      <thead><tr><th><span class="ko">과정</span><span class="en">Degree</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">포스터 제목</span><span class="en">Title</span></th></tr></thead>
       <tbody>
-        <tr><td class="aff" rowspan="5"><span class="ko">서울대학교 사범대학 협동과정 음악교육전공 석사과정</span><span class="en">M.A. Student, Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></td><td class="nm"><span class="ko">김단비</span><span class="en">Danbi Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="aff" rowspan="5"><span class="ko">석사과정</span><span class="en">M.A.</span></td><td class="nm"><span class="ko">김단비</span><span class="en">Danbi Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">김희진</span><span class="en">Heejin Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">오한나</span><span class="en">Hanna Oh</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">임수아</span><span class="en">Sua Lim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">황현지</span><span class="en">Hyunji Hwang</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
-        <tr><td class="aff" rowspan="6"><span class="ko">서울대학교 사범대학 협동과정 음악교육전공 박사과정</span><span class="en">Ph.D. Student, Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></td><td class="nm"><span class="ko">김지원</span><span class="en">Jiwon Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="aff" rowspan="6"><span class="ko">박사과정</span><span class="en">Ph.D.</span></td><td class="nm"><span class="ko">김지원</span><span class="en">Jiwon Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">문주영</span><span class="en">Juyoung Moon</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">박시준</span><span class="en">Sijun Park</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">이단아</span><span class="en">Dana Lee</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
@@ -551,8 +568,8 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
             <p><span class="ko">서울대학교 사범대학 · 관악캠퍼스</span><span class="en">College of Education, Seoul National University</span></p>
             <p class="addr"><span class="ko">08826 서울특별시 관악구 관악로 1</span><span class="en">1 Gwanak-ro, Gwanak-gu, Seoul 08826</span></p></div>
           <div class="links">
-            <a class="chip" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%20%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener"><span class="ko">네이버 지도</span><span class="en">Naver Map</span></a>
-            <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener"><span class="ko">구글 지도</span><span class="en">Google Maps</span></a>
+            <a class="chip" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90%20%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener"><svg class="mi" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="4" fill="#03C75A"/><path d="M5.5 5h3l3 4.6V5h3v10h-3l-3-4.6V15h-3z" fill="#fff"/></svg><span class="ko">네이버 지도</span><span class="en">Naver Map</span></a>
+            <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener"><svg class="mi" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5a6 6 0 0 0-6 6c0 4.4 6 11 6 11s6-6.6 6-11a6 6 0 0 0-6-6z" fill="#EA4335"/><circle cx="10" cy="7.5" r="2.3" fill="#fff"/></svg><span class="ko">구글 지도</span><span class="en">Google Maps</span></a>
           </div>
         </div>
         <!-- 네이버 지도: 네이버 지도 페이지는 다른 사이트 안에 넣을 수 없어서, '지도 퍼가기'와 같은 방식(지도 이미지 + 네이버 지도 링크)으로 넣는다. 좌표 126.95477, 37.45969 = 12동 -->
@@ -562,37 +579,29 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         </a>
       </div>
 
-      <!-- 가는 길 사진: photos/route-1.jpg ~ route-3.jpg. 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
-      <div class="slider" data-slider>
-        <div class="main"><img src="photos/route-1.jpg" alt=""><span class="cap"></span></div>
-        <div class="thumbs">
-          <button type="button" data-src="photos/route-1.jpg"><img src="photos/route-1.jpg" alt=""><span class="c"><span class="ko">관악02-1 노천강당 정류장</span><span class="en">Gwanak 02-1 bus stop, Nocheon Gangdang</span></span></button>
-          <button type="button" data-src="photos/route-2.jpg"><img src="photos/route-2.jpg" alt=""><span class="c"><span class="ko">정류장 옆 인도</span><span class="en">Sidewalk next to the stop</span></span></button>
-          <button type="button" data-src="photos/route-3.jpg"><img src="photos/route-3.jpg" alt=""><span class="c"><span class="ko">사범교육협력센터(12동)</span><span class="en">Building 12, College of Education</span></span></button>
-        </div>
-      </div>
-
       <h2 class="sub"><span class="ko">대중교통으로 오시는 길</span><span class="en">By Public Transportation</span></h2>
-      <!-- 정류장·도보 시간: 네이버 지도 '서울대학교 관악캠퍼스 12동(사범교육협력센터)' 주변 정류장 정보 + 서울대 공식 대중교통 안내 -->
+      <!-- 서울대 공식 대중교통 안내 기준: 노천강당(14-1)에 서는 버스는 관악02-1뿐. 다른 노선은 공식 안내로 연결. 가는 길 사진은 이 경로 상자 안에 둔다 -->
       <div class="opts">
         <div class="opt"><div class="n">1</div><div>
-          <h3><span class="ko">낙성대역 + 마을버스</span><span class="en">Nakseongdae Stn. + Village Bus</span> <span class="pill"><span class="ko">가장 가까운 정류장</span><span class="en">Closest stop</span></span></h3>
+          <h3><span class="ko">낙성대역 + 마을버스</span><span class="en">Nakseongdae Stn. + Village Bus</span> <span class="pill pill-rec"><span class="ko">추천 경로</span><span class="en">Recommended</span></span></h3>
           <div class="chain"><span class="step"><span class="badge b-l2">2</span> <span class="ko">낙성대역 4번 출구</span><span class="en">Nakseongdae Stn. Exit 4</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-vil">관악02-1</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">노천강당 하차</span><span class="en">Nocheon Gangdang stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
-          <div class="meta"><span><span class="ko">정류장에서 도보 2분 (130m)</span><span class="en">2 min walk from the stop (130 m)</span></span><span><span class="ko">관악02-2는 노천강당에 서지 않습니다</span><span class="en">Bus 02-2 does not stop here</span></span></div>
+          <div class="meta"><span><span class="ko">노천강당 정류장에 서는 버스는 관악02-1뿐입니다 (관악02-2는 서지 않음)</span><span class="en">Only bus 02-1 stops at Nocheon Gangdang (02-2 does not)</span></span></div>
+          <!-- 가는 길 사진: photos/route-1.jpg ~ route-3.jpg(순서 번호·표시를 사진에 그려 넣음). 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
+          <div class="slider" data-slider style="margin-top:18px">
+            <div class="main"><img src="photos/route-1.jpg" alt=""><span class="cap"></span></div>
+            <div class="thumbs">
+              <button type="button" data-src="photos/route-1.jpg"><img src="photos/route-1.jpg" alt=""><span class="c"><span class="ko">1. 노천강당에서 내려 12동 쪽으로</span><span class="en">1. Get off at Nocheon Gangdang</span></span></button>
+              <button type="button" data-src="photos/route-2.jpg"><img src="photos/route-2.jpg" alt=""><span class="c"><span class="ko">2. 왼쪽 12동, 오른쪽 카페 파스쿠치</span><span class="en">2. Building 12 on the left, Caffè Pascucci on the right</span></span></button>
+              <button type="button" data-src="photos/route-3.jpg"><img src="photos/route-3.jpg" alt=""><span class="c"><span class="ko">3. 12동 4층 401호</span><span class="en">3. Room 401, 4th floor, Building 12</span></span></button>
+            </div>
+          </div>
         </div></div>
         <div class="opt"><div class="n">2</div><div>
-          <h3><span class="ko">서울대입구역 + 버스</span><span class="en">Seoul Nat'l Univ. Stn. + Bus</span></h3>
-          <div class="chain"><span class="step"><span class="badge b-l2">2</span> <span class="ko">서울대입구역 3번 출구</span><span class="en">Seoul Nat'l Univ. Stn. Exit 3</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-bus">5511</span> <span class="badge b-bus">5513</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">관악사삼거리(기숙사삼거리) 하차</span><span class="en">Gwanaksa Samgeori stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
-          <div class="meta"><span><span class="ko">정류장에서 도보 약 7분 (390m)</span><span class="en">About 7 min walk from the stop (390 m)</span></span></div>
-        </div></div>
-        <div class="opt"><div class="n">3</div><div>
-          <h3><span class="ko">관악산(서울대)역 + 버스</span><span class="en">Gwanaksan (SNU) Stn. + Bus</span></h3>
-          <div class="chain"><span class="step"><span class="badge b-sl">신림</span> <span class="ko">관악산(서울대)역 1번 출구</span><span class="en">Gwanaksan (SNU) Stn. Exit 1</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-bus">5516</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">관악사삼거리(기숙사삼거리) 하차</span><span class="en">Gwanaksa Samgeori stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
-          <div class="meta"><span><span class="ko">정류장에서 도보 약 7분 (390m)</span><span class="en">About 7 min walk from the stop (390 m)</span></span></div>
+          <h3><span class="ko">그 외의 노선</span><span class="en">Other Routes</span></h3>
+          <p><span class="ko">다른 노선으로 오시는 분은 서울대학교 공식 홈페이지의 대중교통 안내를 참고하세요. 서울대입구역(5511·5513), 관악산(서울대)역(5516)에서 오는 버스는 노천강당이 아니라 기숙사삼거리에 섭니다.</span><span class="en">For other routes, see the public transportation guide on the official Seoul National University website. Buses from Seoul Nat'l Univ. Stn. (5511, 5513) and Gwanaksan (SNU) Stn. (5516) stop at Gisuksa Samgeori, not Nocheon Gangdang.</span></p>
+          <a class="link-big" href="https://www.snu.ac.kr/about/gwanak/transportation/public" target="_blank" rel="noopener"><span class="ko">서울대학교 공식 홈페이지 대중교통 안내</span><span class="en">SNU official website: Public Transportation</span><span aria-hidden="true">↗</span></a>
         </div></div>
       </div>
-      <p class="note"><span class="ko">* 관악사삼거리는 서울대 안내에서 '기숙사삼거리'로 적힌 정류장입니다. 도보 시간은 네이버 지도 기준입니다.</span><span class="en">* Gwanaksa Samgeori is listed as "Gisuksa Samgeori" in SNU's guide. Walking times are from Naver Map.</span></p>
-      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.snu.ac.kr/about/gwanak/transportation/public" target="_blank" rel="noopener"><span class="ko">서울대 대중교통 안내</span><span class="en">SNU transport guide</span></a></div>
     </div>
 
     <div class="stay" style="margin-top:36px">
@@ -625,7 +634,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
           <div><h3>Hoam Faculty House <small lang="ko">호암교수회관</small></h3>
             <p>Seoul National University guesthouse. Your room is booked by the organizers.</p>
             <p class="addr">Bldg. 125, 1 Gwanak-ro, Gwanak-gu, Seoul 08826<br>Check-in <span class="ph">00:00</span> · Check-out <span class="ph">00:00</span></p></div>
-          <div class="links"><a class="chip" href="https://snuhoam.co.kr/stay/" target="_blank" rel="noopener">Official website</a><a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=Hoam+Faculty+House,+Seoul+National+University" target="_blank" rel="noopener">Google Maps</a></div>
+          <div class="links"><a class="chip" href="https://snuhoam.co.kr/stay/" target="_blank" rel="noopener">Official website</a><a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=Hoam+Faculty+House,+Seoul+National+University" target="_blank" rel="noopener"><svg class="mi" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5a6 6 0 0 0-6 6c0 4.4 6 11 6 11s6-6.6 6-11a6 6 0 0 0-6-6z" fill="#EA4335"/><circle cx="10" cy="7.5" r="2.3" fill="#fff"/></svg>Google Maps</a></div>
         </div>
         <div class="map" data-q="%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%ED%98%B8%EC%95%94%EA%B5%90%EC%88%98%ED%9A%8C%EA%B4%80">
           <iframe title="Hoam Faculty House map" src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%ED%98%B8%EC%95%94%EA%B5%90%EC%88%98%ED%9A%8C%EA%B4%80&amp;z=16&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -653,30 +662,24 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
           <div class="meta"><span>60–80 min, depending on traffic</span></div>
         </div></div>
       </div>
-      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.google.com/maps/dir/?api=1&amp;origin=Incheon+International+Airport&amp;destination=Hoam+Faculty+House,+Seoul+National+University&amp;travelmode=transit" target="_blank" rel="noopener">Directions in Google Maps</a></div>
+      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.google.com/maps/dir/?api=1&amp;origin=Incheon+International+Airport&amp;destination=Hoam+Faculty+House,+Seoul+National+University&amp;travelmode=transit" target="_blank" rel="noopener"><svg class="mi" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5a6 6 0 0 0-6 6c0 4.4 6 11 6 11s6-6.6 6-11a6 6 0 0 0-6-6z" fill="#EA4335"/><circle cx="10" cy="7.5" r="2.3" fill="#fff"/></svg>Directions in Google Maps</a></div>
     </div>
 
     <!-- 2단계: 행사일 -->
     <div class="phase phase-b" id="dayof">
       <div class="phase-head"><span class="phase-tag">Step 2 · Fri 8 Jan · Symposium Day</span><h2>Hoam Faculty House → Building 12, Room 401</h2></div>
 
-      <!-- 가는 길 사진: photos/route-1.jpg ~ route-3.jpg. 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
-      <div class="slider" data-slider>
-        <div class="main"><img src="photos/route-1.jpg" alt=""><span class="cap"></span></div>
-        <div class="thumbs">
-          <button type="button" data-src="photos/route-1.jpg"><img src="photos/route-1.jpg" alt=""><span class="c">Gwanak 02-1 bus stop, Nocheon Gangdang <small lang="ko">노천강당</small></span></button>
-          <button type="button" data-src="photos/route-2.jpg"><img src="photos/route-2.jpg" alt=""><span class="c">Sidewalk next to the stop</span></button>
-          <button type="button" data-src="photos/route-3.jpg"><img src="photos/route-3.jpg" alt=""><span class="c">Building 12, College of Education <small lang="ko">사범교육협력센터(12동)</small></span></button>
-        </div>
-      </div>
-
       <div class="place-card">
         <div class="place-top">
           <div><h3>Building 12, Room 401 <small lang="ko">사범교육협력센터(12동) 401호</small></h3>
             <p>College of Education, Seoul National University (Gwanak Campus)</p>
             <p class="addr">1 Gwanak-ro, Gwanak-gu, Seoul 08826</p></div>
-          <div class="links"><a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener">Google Maps</a></div>
+          <div class="links"><a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0" target="_blank" rel="noopener"><svg class="mi" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5a6 6 0 0 0-6 6c0 4.4 6 11 6 11s6-6.6 6-11a6 6 0 0 0-6-6z" fill="#EA4335"/><circle cx="10" cy="7.5" r="2.3" fill="#fff"/></svg>Google Maps</a></div>
         </div>
+        <!-- 도착지 강조: 걸어오든 버스를 타든 찾아야 할 12동 간판 사진 -->
+        <figure class="dest">
+          <img src="photos/dest.jpg" alt="Building 12 with the College of Education 12 sign">
+        </figure>
         <div class="map" data-q="%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0">
           <iframe title="Venue map" src="https://maps.google.com/maps?q=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0&amp;z=16&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
           <div class="map-fallback">If the map does not load, use the Google Maps button.</div>
@@ -686,18 +689,27 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 
       <div class="opts">
         <div class="opt"><div class="n">A</div><div>
-          <h3>Village Bus <span class="pill">Bus 02-1</span></h3>
-          <p>At the stop in front of Hoam, take village bus <b>Gwanak 02-1</b> <small lang="ko">관악02-1</small>. Bus 02-2 goes to another part of campus. Get off at <b>Nocheon Gangdang</b> <small lang="ko">노천강당</small>.</p>
-          <p>Building 12 is a 2-minute walk (130 m) from the stop. Room 401 is on the 4th floor.</p>
-          <div class="meta"><span>Tap your T-money card when you board</span></div>
+          <h3>On Foot <span class="pill">Walk</span></h3>
+          <p>From Hoam, walk along the main campus road through the SNU Back Gate <small lang="ko">서울대 후문</small>, past the Gwanak Residence Halls <small lang="ko">관악학생생활관</small>, to Gisuksa Samgeori <small lang="ko">기숙사삼거리</small>, then on to Building 12.</p>
+          <div class="meta"><span>About 25–30 min · 1.2 km</span></div>
         </div></div>
         <div class="opt"><div class="n">B</div><div>
-          <h3>On Foot <span class="pill">Walk</span></h3>
-          <p>Go up through the SNU Back Gate <small lang="ko">서울대 후문</small>, past the Gwanak Residence Halls <small lang="ko">관악학생생활관</small>, to Gwanaksa Samgeori <small lang="ko">관악사삼거리</small>, then on to Building 12.</p>
-          <div class="meta"><span>About <span class="ph">00 min</span></span></div>
+          <h3>Village Bus <span class="pill">Bus 02-1</span></h3>
+          <p>At the stop in front of Hoam, take village bus <b>Gwanak 02-1</b> <small lang="ko">관악02-1</small>. Bus 02-2 goes to another part of campus. Get off at <b>Nocheon Gangdang</b> <small lang="ko">노천강당</small>.</p>
+          <p>Building 12 is a short walk from the stop. Room 401 is on the 4th floor.</p>
+          <div class="meta"><span>About 7 min (bus 4 min) · KRW 1,200</span><span>Tap your T-money card when you board</span></div>
+          <!-- 가는 길 사진: photos/route-1.jpg ~ route-3.jpg(순서 번호·표시를 사진에 그려 넣음). 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
+          <div class="slider" data-slider style="margin-top:18px">
+            <div class="main"><img src="photos/route-1.jpg" alt=""><span class="cap"></span></div>
+            <div class="thumbs">
+              <button type="button" data-src="photos/route-1.jpg"><img src="photos/route-1.jpg" alt=""><span class="c">1. Get off at Nocheon Gangdang <small lang="ko">노천강당</small></span></button>
+              <button type="button" data-src="photos/route-2.jpg"><img src="photos/route-2.jpg" alt=""><span class="c">2. Building 12 on the left, Caffè Pascucci on the right</span></button>
+              <button type="button" data-src="photos/route-3.jpg"><img src="photos/route-3.jpg" alt=""><span class="c">3. Room 401, 4th floor <small lang="ko">사범교육협력센터(12동) 401호</small></span></button>
+            </div>
+          </div>
         </div></div>
       </div>
-      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hoam+Faculty+House,+Seoul+National+University&amp;destination=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0&amp;travelmode=transit" target="_blank" rel="noopener">Directions in Google Maps</a></div>
+      <div class="links" style="margin-top:12px"><a class="chip" href="https://www.google.com/maps/dir/?api=1&amp;origin=Hoam+Faculty+House,+Seoul+National+University&amp;destination=%EC%84%9C%EC%9A%B8%EB%8C%80%ED%95%99%EA%B5%90+%EC%82%AC%EB%B2%94%EA%B5%90%EC%9C%A1%ED%98%91%EB%A0%A5%EC%84%BC%ED%84%B0&amp;travelmode=transit" target="_blank" rel="noopener"><svg class="mi" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5a6 6 0 0 0-6 6c0 4.4 6 11 6 11s6-6.6 6-11a6 6 0 0 0-6-6z" fill="#EA4335"/><circle cx="10" cy="7.5" r="2.3" fill="#fff"/></svg>Directions in Google Maps</a></div>
     </div>
     <p class="note">* Times and fares are approximate.</p>
   </div>
@@ -734,10 +746,8 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 
     <h2 class="sub"><span class="ko">행사 기록</span><span class="en">Records</span></h2>
     <ul class="archive">
-      <li><span><span class="ko">발표자료집 · 초록집</span><span class="en">Abstracts</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
-      <li><span><span class="ko">프로시딩</span><span class="en">Proceedings</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
+      <li><span><span class="ko">발표자료집 · 초록집</span><span class="en">Abstracts</span></span><span class="soon"><span class="ko">행사 당일 현장에서만 제공</span><span class="en">Available on site only</span></span></li>
       <li><span><span class="ko">행사 사진</span><span class="en">Photos</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
-      <li><span><span class="ko">발표 영상</span><span class="en">Videos</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
     </ul>
   </div>
 </section>
@@ -761,9 +771,8 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
   <!-- 바닥글: 행사 이름·문의 한 줄 + 학과 주소 한 줄(한국어 화면은 한국어만, 영어 화면은 영어만). 영문 명칭은 학과 공식 명칭 -->
   <div class="wrap">
     <div class="foot-event"><b><span class="ko">2027 서울대학교 음악교육 국제 심포지엄 - 포스트휴먼 시대의 음악교육 재구상</span><span class="en">SNU International Symposium on Music Education 2027 - Reimagining Music Education in the Posthuman Era</span></b><a class="foot-link" href="#contact"><span class="ko">문의 (Contact us)</span><span class="en">Contact us</span></a></div>
-    <p class="foot-addr ko"><b>서울대학교 사범대학 협동과정 음악교육전공</b> · Add. 08826 서울시 관악구 관악로 1 서울대학교 사범대학 9동 213호<br><span class="tel">Tel. 02-880-9052</span></p>
-    <p class="foot-addr en"><b>Interdisciplinary Program of Music Education at College of Education, Seoul National University</b> · Bldg #9, 1 Gwanak-ro, Gwanak-gu, Seoul 08826, Republic of KOREA<br><span class="tel">Tel. +82-2-880-9052</span></p>
-  </div>
+    <p class="foot-addr ko"><b>서울대학교 사범대학 협동과정 음악교육전공</b> · Add. 08826 서울시 관악구 관악로 1 서울대학교 사범대학 9동 213호<br><a class="tel" href="tel:+8228809052">Tel. 02-880-9052</a></p>
+    <p class="foot-addr en"><b>Interdisciplinary Program of Music Education at College of Education, Seoul National University</b> · Bldg #9, 1 Gwanak-ro, Gwanak-gu, Seoul 08826, Republic of KOREA<br><a class="tel" href="tel:+8228809052">Tel. +82-2-880-9052</a></p>  </div>
 </footer>
 
 <script>
@@ -827,21 +836,6 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
   document.addEventListener('click',function(e){
     var a=e.target.closest('[data-jump]'); if(!a) return;
     e.preventDefault(); document.getElementById(a.getAttribute('data-jump')).scrollIntoView({behavior:'smooth'});
-  });
-
-  // 연사 이력: 이름 옆 화살표를 누르면 펼치고 접는다. 프로그램의 이름(data-bio)은 연사 페이지로 가서 펼친다
-  function openBio(id,open){
-    var panel=document.getElementById(id), btn=document.querySelector('[aria-controls="'+id+'"]');
-    if(!panel||!btn) return;
-    panel.hidden=!open; btn.setAttribute('aria-expanded',open);
-    return btn;
-  }
-  document.addEventListener('click',function(e){
-    var b=e.target.closest('.bio-btn');
-    if(b){ openBio(b.getAttribute('aria-controls'), b.getAttribute('aria-expanded')!=='true'); return; }
-    var l=e.target.closest('[data-bio]'); if(!l) return;
-    e.preventDefault(); location.hash='speakers';
-    setTimeout(function(){ var t=openBio(l.getAttribute('data-bio'),true); if(t) t.scrollIntoView({behavior:'smooth',block:'center'}); },60);
   });
 
   var saved=null;try{saved=localStorage.getItem('sym-lang')}catch(e){}
