@@ -236,6 +236,16 @@ footer .foot-link:hover,footer .foot-link:focus-visible{text-decoration:underlin
 .poster-frame a::after{content:"";position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(10,29,77,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6'/%3E%3Cpath d='M15 15l5 5M10.5 8v5M8 10.5h5'/%3E%3C/svg%3E") center/20px no-repeat;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:transform .25s ease}
 .poster-frame a:hover::after{transform:scale(1.12)}
 @media (max-width:720px){.poster-frame a::after{width:30px;height:30px;background-size:16px;right:6px;bottom:6px}}
+/* 포스터 크게 보기 창 */
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(8,18,44,.94)}
+.lb[hidden]{display:none}
+.lb-stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:none;cursor:zoom-in}
+.lb.zoomed .lb-stage{cursor:grab}.lb.drag.zoomed .lb-stage{cursor:grabbing}
+.lb img{max-width:94vw;max-height:88vh;transform-origin:center center;user-select:none;-webkit-user-drag:none;box-shadow:0 10px 40px rgba(0,0,0,.5);background:#fff}
+.lb-bar{position:absolute;top:12px;right:12px;display:flex;gap:8px;z-index:1}
+.lb-bar button,.lb-bar a{width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);font-size:22px;font-weight:700;line-height:42px;text-align:center;text-decoration:none;cursor:pointer;padding:0}
+.lb-bar button:hover,.lb-bar a:hover{background:#fff}
+.lb-hint{position:absolute;left:0;right:0;bottom:12px;margin:0;text-align:center;color:#cfd7ee;font-size:13px;pointer-events:none}
 @media (prefers-reduced-motion:reduce){.poster-frame{transition:none}.poster-frame a:hover::before{animation:none}}
 .poster-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px}
 .poster-note{margin:14px 0 0}
@@ -846,6 +856,45 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     m.querySelector('.zin').addEventListener('click',function(){r.stepUp();go()});
     m.querySelector('.zout').addEventListener('click',function(){r.stepDown();go()});
   });
+
+  // 포스터 크게 보기: 누르면 화면 가득 띄운다. 마우스 휠·+/− 버튼·두 손가락으로 확대, 끌어서 이동, 두 번 누르면 확대/원래대로. Esc·×로 닫기
+  (function(){
+    var box=document.createElement('div'); box.className='lb'; box.hidden=true; box.setAttribute('role','dialog'); box.setAttribute('aria-label','포스터 크게 보기 / Poster viewer');
+    box.innerHTML='<div class="lb-stage"><img alt=""></div>'+
+      '<div class="lb-bar"><button type="button" data-z="out" title="축소 / Zoom out" aria-label="축소 / Zoom out">−</button><button type="button" data-z="in" title="확대 / Zoom in" aria-label="확대 / Zoom in">+</button>'+
+      '<a class="lb-open" target="_blank" rel="noopener" title="새 창에서 열기 / Open in new tab" aria-label="새 창에서 열기 / Open in new tab">↗</a><button type="button" class="lb-x" title="닫기 / Close" aria-label="닫기 / Close">×</button></div>'+
+      '<p class="lb-hint"><span class="ko">마우스 휠·두 손가락으로 확대, 끌어서 이동</span><span class="en">Scroll or pinch to zoom, drag to move</span></p>';
+    document.body.appendChild(box);
+    var stage=box.querySelector('.lb-stage'), img=box.querySelector('img'), open=box.querySelector('.lb-open'), s=1, x=0, y=0, pts={}, last=null, moved=false;
+    function apply(){img.style.transform='translate('+x+'px,'+y+'px) scale('+s+')';box.classList.toggle('zoomed',s>1)}
+    function zoomAt(ns,cx,cy){
+      ns=Math.max(1,Math.min(6,ns)); var r=stage.getBoundingClientRect(), px=cx-r.left-r.width/2, py=cy-r.top-r.height/2;
+      x=px-(px-x)*ns/s; y=py-(py-y)*ns/s; s=ns; if(s===1){x=0;y=0} apply();
+    }
+    function center(){var r=stage.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}
+    function show(src,alt){img.src=src;img.alt=alt||'';open.href=src;s=1;x=0;y=0;apply();box.hidden=false;document.documentElement.style.overflow='hidden';box.querySelector('.lb-x').focus()}
+    function hide(){box.hidden=true;document.documentElement.style.overflow=''}
+    [].forEach.call(document.querySelectorAll('.poster-frame a'),function(a){
+      a.addEventListener('click',function(e){e.preventDefault();var i=a.querySelector('img');show(a.getAttribute('href'),i&&i.alt)});
+    });
+    box.querySelector('.lb-x').addEventListener('click',hide);
+    [].forEach.call(box.querySelectorAll('[data-z]'),function(b){b.addEventListener('click',function(){var c=center();zoomAt(s*(b.getAttribute('data-z')==='in'?1.5:1/1.5),c[0],c[1])})});
+    document.addEventListener('keydown',function(e){if(box.hidden)return;if(e.key==='Escape')hide();if(e.key==='+'||e.key==='='){var c=center();zoomAt(s*1.5,c[0],c[1])}if(e.key==='-'){var c2=center();zoomAt(s/1.5,c2[0],c2[1])}});
+    stage.addEventListener('wheel',function(e){e.preventDefault();zoomAt(s*(e.deltaY<0?1.2:1/1.2),e.clientX,e.clientY)},{passive:false});
+    stage.addEventListener('dblclick',function(e){zoomAt(s>1?1:2.5,e.clientX,e.clientY)});
+    // 끌기(한 손가락·마우스)와 두 손가락 확대
+    stage.addEventListener('pointerdown',function(e){pts[e.pointerId]=[e.clientX,e.clientY];last=null;moved=false;stage.setPointerCapture(e.pointerId);box.classList.add('drag')});
+    stage.addEventListener('pointermove',function(e){
+      if(!pts[e.pointerId])return; var p=pts[e.pointerId], ids=Object.keys(pts);
+      if(ids.length===1){ if(s>1){x+=e.clientX-p[0];y+=e.clientY-p[1];apply()} if(Math.abs(e.clientX-p[0])+Math.abs(e.clientY-p[1])>3)moved=true }
+      pts[e.pointerId]=[e.clientX,e.clientY];
+      if(ids.length===2){ var a=pts[ids[0]], b=pts[ids[1]], d=Math.hypot(a[0]-b[0],a[1]-b[1]); if(last)zoomAt(s*d/last,(a[0]+b[0])/2,(a[1]+b[1])/2); last=d; moved=true }
+    });
+    function up(e){delete pts[e.pointerId];last=null;if(!Object.keys(pts).length)box.classList.remove('drag')}
+    stage.addEventListener('pointerup',up); stage.addEventListener('pointercancel',up);
+    // 확대하지 않은 상태에서 포스터 바깥 어두운 곳을 누르면 닫힌다
+    stage.addEventListener('click',function(e){if(!moved&&s===1&&e.target===stage)hide()});
+  })();
 
   // 가는 길 사진: 썸네일이나 큰 사진 좌우 화살표를 누르면 사진과 캡션이 바뀐다. 휴대폰은 좌우로 밀어도 넘어간다. 사진 파일이 없으면 줄무늬 칸만 보인다
   [].forEach.call(document.querySelectorAll('[data-slider]'),function(s){
