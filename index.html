@@ -193,9 +193,6 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 @media (max-width:640px){.stay{grid-template-columns:1fr}}
 
 /* Archive */
-.archive{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.archive li{border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;justify-content:space-between;gap:8px}
-.archive .soon{font-size:12px;color:var(--muted);white-space:nowrap}
 /* 보도자료 카드: 섬네일(16:9) + 매체·날짜 + 제목 + 요약 */
 .press{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .press-card{display:flex;flex-direction:column;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
@@ -215,14 +212,25 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 footer .foot-link{color:#fff;font-weight:500}
 
 /* Home: 포스터 + 공지사항 */
+.home-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:760px;margin-top:16px}
+@media (max-width:640px){.home-two{grid-template-columns:1fr;gap:0}}
 .posters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:760px;align-items:start}
 .poster{margin:0}
 .poster-frame{position:relative;aspect-ratio:1/1.414;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:repeating-linear-gradient(135deg,var(--navy-tint) 0 8px,#f7f9fd 8px 16px)}
 .poster-frame:has(img){aspect-ratio:auto}
-.poster-frame a{display:block;position:relative;z-index:1}
+.poster-frame a{display:block;position:relative;z-index:1;overflow:hidden}
 .poster-frame img{display:block;width:100%;height:auto}
+/* 포스터에 마우스를 올리면: 위로 살짝 뜨고 그림자 + 빛이 한 번 지나감. 오른쪽 아래 돋보기는 항상 보여서(휴대폰은 마우스가 없음) 누르면 커진다는 것을 알린다 */
+.poster-frame{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.poster-frame:has(a:hover),.poster-frame:has(a:focus-visible){transform:translateY(-6px);box-shadow:0 14px 30px rgba(10,29,77,.22);border-color:var(--navy)}
+.poster-frame a::before{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-12deg);pointer-events:none}
+.poster-frame a:hover::before{animation:poster-shine .8s ease}
+@keyframes poster-shine{to{left:130%}}
+.poster-frame a::after{content:"";position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(10,29,77,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6'/%3E%3Cpath d='M15 15l5 5M10.5 8v5M8 10.5h5'/%3E%3C/svg%3E") center/20px no-repeat;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:transform .25s ease}
+.poster-frame a:hover::after{transform:scale(1.12)}
+@media (max-width:720px){.poster-frame a::after{width:30px;height:30px;background-size:16px;right:6px;bottom:6px}}
+@media (prefers-reduced-motion:reduce){.poster-frame{transition:none}.poster-frame a:hover::before{animation:none}}
 .poster-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px}
-.click-hint{font-size:.62em;font-weight:500;color:var(--muted)}
 .poster-note{margin:14px 0 0}
 .poster-note:has(> .chip[hidden]:only-child){display:none}
 @media (max-width:720px){.posters{gap:12px}}
@@ -296,6 +304,16 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 .place-card h3{margin:0;font-size:20px;color:var(--accent)}
 .place-card p{margin:4px 0 0;color:var(--muted);font-size:15px}
 .place-card .map{margin-top:16px}
+/* For Speakers 관악02-1 정류장 순서: 세로 노선도 */
+.stops{list-style:none;margin:4px 0 14px;padding:0}
+.stops li{position:relative;display:flex;align-items:center;gap:10px;padding:5px 0 5px 26px;font-size:15px;color:var(--muted)}
+.stops li::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:3px;background:#3f8d33}
+.stops li:first-child::before{top:50%}
+.stops li:last-child::before{bottom:50%}
+.stops li::after{content:"";position:absolute;left:4px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:#fff;border:2px solid #3f8d33;box-sizing:border-box}
+.stops li.on{color:var(--fg);font-weight:700}
+.stops li.on::after{left:1px;width:17px;height:17px;margin-top:-8.5px;background:#3f8d33;border-color:#3f8d33}
+.stops em{flex:none;white-space:nowrap;font-style:normal;font-size:12px;font-weight:700;color:#fff;background:#3f8d33;border-radius:4px;padding:1px 8px}
 /* For Speakers 도착지 강조 사진(12동 간판) */
 .dest{margin:16px 0 0}
 .dest img{display:block;width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:8px;border:3px solid var(--accent)}
@@ -310,8 +328,12 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 .chain .badge{font-size:15px;line-height:1.5;padding:1px 8px;border-radius:4px}
 .chain .b-vil{font-size:16px;padding:2px 10px}
 .pill-rec{background:#d23b2f;color:#fff;font-size:13px;padding:2px 9px;vertical-align:2px}
-.link-big{display:inline-flex;align-items:center;gap:8px;margin-top:8px;background:var(--navy);color:#fff;text-decoration:none;font-size:16px;font-weight:700;border-radius:999px;padding:12px 22px}
-.link-big:hover{background:var(--navy-deep)}
+.to-guide{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:36px;padding:16px 20px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--muted);font-size:15px;line-height:1.6}
+.to-guide b{color:var(--navy);margin-right:8px}
+.to-guide [lang="en"]{font-size:14px}
+.to-guide:hover{border-color:var(--navy);background:var(--navy-tint)}
+.link-big{display:inline-flex;align-items:center;gap:8px;margin-top:8px;background:var(--navy-tint);color:var(--navy);border:1.5px solid var(--navy);text-decoration:none;font-size:16px;font-weight:700;border-radius:999px;padding:11px 22px}
+.link-big:hover{background:#fff}
 /* 경로 상자 안 사진: 휴대폰에서는 왼쪽 번호 칸(36px+간격 16px)까지 넓혀 쓴다 */
 @media (max-width:560px){.opt .slider{margin-left:-52px}}
 .step:last-child{background:var(--navy);color:#fff;font-weight:500}
@@ -334,7 +356,6 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
       <a href="#speakers" data-nav="speakers"><span class="ko">연사</span><span class="en">Speakers</span></a>
       <a href="#venue" data-nav="venue"><span class="ko">오시는 길</span><span class="en">Venue &amp; Travel</span></a>
       <a href="#guide" data-nav="guide" lang="en">For Speakers</a>
-      <a href="#archive" data-nav="archive"><span class="ko">자료실</span><span class="en">Archive</span></a>
       <a href="#contact" data-nav="contact"><span class="ko">문의</span><span class="en">Contact</span></a>
     </nav>
     <div class="lang" role="group" aria-label="Language">
@@ -377,7 +398,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <a href="#guide" lang="en"><b>For Speakers</b><span>Airport, Hoam Faculty House, the day</span></a>
       </div>
       <!-- 포스터: 한국어 poster/poster.jpg, 영어 poster/poster-en.jpg를 나란히(두 언어 화면 모두). 미리캔버스에서 내려받아 같은 이름으로 바꿔 넣는다. 누르면 새 창에서 크게 보인다. PDF를 올리면 내려받기 버튼의 hidden을 지운다 -->
-      <h2 class="sub"><span class="ko">포스터 <small class="click-hint">(클릭해서 확대)</small></span><span class="en">Posters <small class="click-hint">(click to enlarge)</small></span></h2>
+      <h2 class="sub"><span class="ko">포스터</span><span class="en">Posters</span></h2>
       <div class="posters">
         <figure class="poster">
           <div class="poster-frame"><a href="poster/poster.jpg" target="_blank" rel="noopener"><img src="poster/poster.jpg" alt="심포지엄 포스터(한국어)" onerror="this.parentNode.remove()"></a><span class="poster-empty"><span class="ko">포스터 준비 중</span><span class="en">Poster coming soon</span></span></div>
@@ -385,6 +406,31 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <figure class="poster">
           <div class="poster-frame"><a href="poster/poster-en.jpg" target="_blank" rel="noopener"><img src="poster/poster-en.jpg" alt="Symposium poster (English)" onerror="this.parentNode.remove()"></a><span class="poster-empty"><span class="ko">포스터 준비 중</span><span class="en">Poster coming soon</span></span></div>
         </figure>
+      </div>
+      <div class="home-two">
+        <!-- 보도자료 1칸: 기사가 나오면 href를 기사 주소로 바꾸고 target="_blank" rel="noopener"를 붙인다. 섬네일은 press/press-1.jpg -->
+        <div>
+          <h2 class="sub"><span class="ko">보도자료</span><span class="en">Press</span></h2>
+          <a class="press-card" href="#home">
+            <div class="press-thumb"><img src="press/press-1.jpg" alt="" onerror="this.remove()"><span class="press-empty"><span class="ko">섬네일</span><span class="en">Thumbnail</span></span></div>
+            <div class="press-body">
+              <span class="press-src"><span class="ph">매체 ooo</span> · <span class="ph">0000.00.00.</span></span>
+              <b class="press-title"><span class="ph">기사 제목 ooo</span></b>
+              <span class="press-more"><span class="ko">기사 보기</span><span class="en">Read article</span></span>
+            </div>
+          </a>
+        </div>
+        <!-- 행사 사진 1칸: 행사 후 photos/event-1.jpg를 넣으면 보인다 -->
+        <div>
+          <h2 class="sub"><span class="ko">행사 사진</span><span class="en">Photos</span></h2>
+          <div class="press-card">
+            <div class="press-thumb"><img src="photos/event-1.jpg" alt="" onerror="this.remove()"><span class="press-empty"><span class="ko">행사 후 공개</span><span class="en">After the symposium</span></span></div>
+            <div class="press-body">
+              <b class="press-title"><span class="ko">2027 음악교육 국제 심포지엄 현장</span><span class="en">Symposium photos</span></b>
+              <span class="press-sum"><span class="ko">행사가 끝나면 사진을 올립니다.</span><span class="en">Photos will be posted after the symposium.</span></span>
+            </div>
+          </div>
+        </div>
       </div>
       <p class="poster-note"><a class="chip" href="poster/poster.pdf" download hidden><span class="ko">포스터 내려받기 (PDF)</span><span class="en">Download poster (PDF)</span></a></p>
     </div>
@@ -584,8 +630,8 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
       <div class="opts">
         <div class="opt"><div class="n">1</div><div>
           <h3><span class="ko">낙성대역 + 마을버스</span><span class="en">Nakseongdae Stn. + Village Bus</span> <span class="pill pill-rec"><span class="ko">추천 경로</span><span class="en">Recommended</span></span></h3>
-          <div class="chain"><span class="step"><span class="badge b-l2">2</span> <span class="ko">낙성대역 4번 출구</span><span class="en">Nakseongdae Stn. Exit 4</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-vil">관악02-1</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">노천강당 하차</span><span class="en">Nocheon Gangdang stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
-          <div class="meta"><span><span class="ko">노천강당 정류장에 서는 버스는 관악02-1뿐입니다 (관악02-2는 서지 않음)</span><span class="en">Only bus 02-1 stops at Nocheon Gangdang (02-2 does not)</span></span></div>
+          <div class="chain"><span class="step"><span class="badge b-l2"><span class="ko">2호선</span><span class="en">Line 2</span></span> <span class="ko">낙성대역 4번 출구</span><span class="en">Nakseongdae Stn. Exit 4</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="badge b-vil">관악(Gwanak) 02-1</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">노천강당 하차</span><span class="en">Nocheon Gangdang stop</span></span><span class="arr" aria-hidden="true">→</span><span class="step"><span class="ko">12동 401호</span><span class="en">Bldg. 12, Room 401</span></span></div>
+          <div class="meta"><span><span class="ko">노천강당 정류장에 서는 버스는 관악02-1뿐입니다 (관악02-2는 서지 않음)</span><span class="en">Only bus 관악(Gwanak) 02-1 stops at Nocheon Gangdang (02-2 does not)</span></span></div>
           <!-- 가는 길 사진: photos/route-1.jpg ~ route-3.jpg(순서 번호·표시를 사진에 그려 넣음). 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
           <div class="slider" data-slider style="margin-top:18px">
             <div class="main"><img src="photos/route-1.jpg" alt=""><span class="cap"></span></div>
@@ -598,17 +644,17 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         </div></div>
         <div class="opt"><div class="n">2</div><div>
           <h3><span class="ko">그 외의 노선</span><span class="en">Other Routes</span></h3>
-          <p><span class="ko">다른 노선으로 오시는 분은 서울대학교 공식 홈페이지의 대중교통 안내를 참고하세요. 서울대입구역(5511·5513), 관악산(서울대)역(5516)에서 오는 버스는 노천강당이 아니라 기숙사삼거리에 섭니다.</span><span class="en">For other routes, see the public transportation guide on the official Seoul National University website. Buses from Seoul Nat'l Univ. Stn. (5511, 5513) and Gwanaksan (SNU) Stn. (5516) stop at Gisuksa Samgeori, not Nocheon Gangdang.</span></p>
+          <p><span class="ko">다른 노선으로 오시는 분은 서울대학교 공식 홈페이지의 대중교통 안내를 참고하세요.</span><span class="en">For other routes, see the public transportation guide on the official Seoul National University website.</span></p>
+          <p><span class="ko"><span class="badge b-l2">2호선</span> 서울대입구역(5511·5513), <span class="badge b-sl">신림선</span> 관악산(서울대)역(5516)에서 오는 버스는 노천강당이 아니라 기숙사삼거리에 섭니다.</span><span class="en">Buses from <span class="badge b-l2">Line 2</span> Seoul Nat'l Univ. Stn. (5511, 5513) and <span class="badge b-sl">Sillim Line</span> Gwanaksan (SNU) Stn. (5516) stop at Gisuksa Samgeori, not Nocheon Gangdang.</span></p>
           <a class="link-big" href="https://www.snu.ac.kr/about/gwanak/transportation/public" target="_blank" rel="noopener"><span class="ko">서울대학교 공식 홈페이지 대중교통 안내</span><span class="en">SNU official website: Public Transportation</span><span aria-hidden="true">↗</span></a>
         </div></div>
       </div>
     </div>
 
-    <div class="stay" style="margin-top:36px">
-      <div><h3>For Speakers</h3>
-        <p><span class="ko">해외 연사 안내(인천공항 → 호암교수회관, 행사 당일 이동)는 별도 페이지에 있습니다.</span><span class="en">Airport transfer, accommodation and the day's route for overseas speakers.</span></p></div>
-      <div class="links"><a class="chip" href="#guide">For Speakers</a></div>
-    </div>
+    <!-- For Speakers로 가는 한 줄 링크: 해외 연사가 보도록 한국어·영어를 함께 보인다 -->
+    <a class="to-guide" href="#guide">
+      <span><b>For Speakers</b> 해외 연사 안내: 인천공항 → 호암교수회관, 행사 당일 이동<br><span lang="en">Guide for overseas speakers: airport → Hoam Faculty House, and the symposium day</span></span>
+    </a>
   </div>
 </section>
 
@@ -653,7 +699,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <div class="opt"><div class="n">2</div><div>
           <h3>Airport Railroad + Subway + Village Bus <span class="pill">AREX · Line 2 · Bus</span></h3>
           <p>Take the AREX all-stop train to <b>Hongik Univ. Station</b> <small lang="ko">홍대입구역</small>. Change to Line 2 toward Sindorim and get off at <b>Nakseongdae Station</b> <small lang="ko">낙성대역</small>.</p>
-          <p>From Exit 4, take village bus Gwanak 02-1 or 02-2 <small lang="ko">관악02-1 · 02-2</small> to the Hoam Faculty House stop, or walk 20 minutes uphill.</p>
+          <p>From Exit 4, take village bus <b>관악(Gwanak) 02-1</b> or <b>관악(Gwanak) 02-2</b> to the Hoam Faculty House stop, or walk 20 minutes uphill.</p>
           <div class="meta"><span>100–120 min</span><span>About KRW 5,000 with a T-money card</span></div>
         </div></div>
         <div class="opt"><div class="n">3</div><div>
@@ -694,8 +740,17 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
           <div class="meta"><span>About 25–30 min · 1.2 km</span></div>
         </div></div>
         <div class="opt"><div class="n">B</div><div>
-          <h3>Village Bus <span class="pill">Bus 02-1</span></h3>
-          <p>At the stop in front of Hoam, take village bus <b>Gwanak 02-1</b> <small lang="ko">관악02-1</small>. Bus 02-2 goes to another part of campus. Get off at <b>Nocheon Gangdang</b> <small lang="ko">노천강당</small>.</p>
+          <h3>Village Bus <span class="pill">관악(Gwanak) 02-1</span></h3>
+          <p>At the stop in front of Hoam, take village bus <b>관악(Gwanak) 02-1</b>. Bus 02-2 goes to another part of campus. Get off at <b>Nocheon Gangdang</b> <small lang="ko">노천강당</small>.</p>
+          <!-- 관악02-1 정류장 순서: 서울대 공식 대중교통 안내(호암교수회관(22) ▶ 가족생활동(21) ▶ 후문(20) ▶ 관악학생생활관(19) ▶ 기숙사삼거리(15) ▶ 노천강당(14-1)) -->
+          <ol class="stops" aria-label="Bus 02-1 stops">
+            <li class="on"><span>Hoam Faculty House <small lang="ko">호암교수회관</small></span><em>Get on</em></li>
+            <li><span>Family Housing <small lang="ko">가족생활동</small></span></li>
+            <li><span>SNU Back Gate <small lang="ko">후문</small></span></li>
+            <li><span>Gwanak Residence Halls <small lang="ko">관악학생생활관</small></span></li>
+            <li><span>Gisuksa Samgeori <small lang="ko">기숙사삼거리</small></span></li>
+            <li class="on"><span>Nocheon Gangdang <small lang="ko">노천강당</small></span><em>Get off</em></li>
+          </ol>
           <p>Building 12 is a short walk from the stop. Room 401 is on the 4th floor.</p>
           <div class="meta"><span>About 7 min (bus 4 min) · KRW 1,200</span><span>Tap your T-money card when you board</span></div>
           <!-- 가는 길 사진: photos/route-1.jpg ~ route-3.jpg(순서 번호·표시를 사진에 그려 넣음). 썸네일을 누르면 큰 사진이 바뀐다. 캡션은 .c 안에 쓴다 -->
@@ -714,44 +769,6 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     <p class="note">* Times and fares are approximate.</p>
   </div>
 </section>
-
-<!-- ============ ARCHIVE ============ -->
-<section class="view" data-view="archive" hidden>
-  <div class="wrap">
-    <div class="page-head"><h1><span class="ko">자료실 <small class="h-en">Archive</small></span><span class="en">Archive</span></h1>
-      <p><span class="ko">보도자료와 행사 기록을 이곳에 올립니다.</span><span class="en">Press coverage and symposium records are posted here.</span></p></div>
-
-    <!-- 보도자료: 카드 하나에 섬네일(press/press-1.jpg …) + 매체·날짜 + 제목 + 기사 링크. 기사가 나오면 href와 ooo를 채우고, 섬네일 파일을 press 폴더에 넣는다. 카드는 복사해서 늘린다 -->
-    <h2 class="sub" style="margin-top:0"><span class="ko">보도자료</span><span class="en">Press</span></h2>
-    <div class="press">
-      <a class="press-card" href="#archive">
-        <div class="press-thumb"><img src="press/press-1.jpg" alt="" onerror="this.remove()"><span class="press-empty"><span class="ko">섬네일</span><span class="en">Thumbnail</span></span></div>
-        <div class="press-body">
-          <span class="press-src"><span class="ph">매체 ooo</span> · <span class="ph">0000.00.00.</span></span>
-          <b class="press-title"><span class="ph">기사 제목 ooo</span></b>
-          <span class="press-sum"><span class="ph">기사 요약 한두 줄 ooo</span></span>
-          <span class="press-more"><span class="ko">기사 보기</span><span class="en">Read article</span></span>
-        </div>
-      </a>
-      <a class="press-card" href="#archive">
-        <div class="press-thumb"><img src="press/press-2.jpg" alt="" onerror="this.remove()"><span class="press-empty"><span class="ko">섬네일</span><span class="en">Thumbnail</span></span></div>
-        <div class="press-body">
-          <span class="press-src"><span class="ph">매체 ooo</span> · <span class="ph">0000.00.00.</span></span>
-          <b class="press-title"><span class="ph">기사 제목 ooo</span></b>
-          <span class="press-sum"><span class="ph">기사 요약 한두 줄 ooo</span></span>
-          <span class="press-more"><span class="ko">기사 보기</span><span class="en">Read article</span></span>
-        </div>
-      </a>
-    </div>
-
-    <h2 class="sub"><span class="ko">행사 기록</span><span class="en">Records</span></h2>
-    <ul class="archive">
-      <li><span><span class="ko">발표자료집 · 초록집</span><span class="en">Abstracts</span></span><span class="soon"><span class="ko">행사 당일 현장에서만 제공</span><span class="en">Available on site only</span></span></li>
-      <li><span><span class="ko">행사 사진</span><span class="en">Photos</span></span><span class="soon"><span class="ko">준비 중</span><span class="en">Coming soon</span></span></li>
-    </ul>
-  </div>
-</section>
-
 
 <!-- ============ CONTACT ============ -->
 <!-- 문의: 구글 설문을 페이지에 바로 넣는다(행사 공식 이메일은 없음). 응답은 드라이브 '2027 심포지엄 문의 응답' 시트 -->
