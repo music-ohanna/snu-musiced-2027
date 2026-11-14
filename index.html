@@ -99,7 +99,7 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .reg{display:inline-flex;align-items:center;gap:10px;background:#d9bd7a;color:var(--navy);text-decoration:none;font-size:17px;font-weight:700;border-radius:999px;padding:12px 26px}
 .reg:hover{background:#e6cf96}
 .reg svg{width:20px;height:20px;flex:none}
-.dday{display:block;width:max-content;margin:12px auto 0;font-family:var(--f-mono);font-size:14px;color:#d9bd7a;border:1px solid rgba(217,189,122,.5);border-radius:999px;padding:3px 12px}
+.dday{display:inline-block;margin-left:10px;vertical-align:2px;font-family:var(--f-mono);font-size:13px;color:#f3d98e;border:1px solid rgba(217,189,122,.6);border-radius:999px;padding:1px 11px;white-space:nowrap}
 .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
 @media (max-width:960px){.quick{grid-template-columns:repeat(2,1fr)}}
 .quick a{display:block;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:20px}
@@ -398,26 +398,38 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 <!-- ============ HOME ============ -->
 <div data-view="home">
   <section class="hero">
-    <!-- 장식 그림: 왼쪽은 AI 신경망(점과 선) 사이에 음표, 오른쪽은 소리 파형. 글자 뒤로 흐리게 깔리고 휴대폰에서는 숨긴다 -->
+    <!-- 장식 그림: 왼쪽 정간보(한국음악) → 가운데로 이어지는 신경망 점·선(AI)과 뉴런(뇌과학) ← 오른쪽 오선보(서양음악). 글자 뒤로 흐리게 깔리고 휴대폰에서는 숨긴다 -->
     <svg class="hero-art" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <g stroke="#d9bd7a" stroke-width="1.2" opacity=".35">
-        <path d="M70 120L170 90M70 120L170 170M70 120L170 250M70 200L170 90M70 200L170 170M70 200L170 250M70 200L170 330M70 280L170 170M70 280L170 250M70 280L170 330M170 90L270 150M170 170L270 150M170 170L270 250M170 250L270 150M170 250L270 250M170 330L270 250"/>
+      <!-- 정간보: 세로 3줄 × 6칸, 가운데 굵은 선은 대강 -->
+      <g fill="none" stroke="#d9bd7a" opacity=".45">
+        <rect x="40" y="80" width="120" height="240" stroke-width="1.4"/>
+        <path d="M80 80V320M120 80V320M40 120H160M40 160H160M40 240H160M40 280H160" stroke-width="1"/>
+        <path d="M40 200H160" stroke-width="2.2"/>
       </g>
-      <g fill="#d9bd7a" opacity=".55">
-        <circle cx="70" cy="120" r="5"/><circle cx="70" cy="200" r="5"/>
-        <circle cx="170" cy="90" r="5"/><circle cx="170" cy="170" r="5"/><circle cx="170" cy="250" r="5"/><circle cx="170" cy="330" r="5"/>
-        <circle cx="270" cy="250" r="5"/>
-        <!-- 음표 두 개: 신경망의 점 자리에 -->
-        <ellipse cx="270" cy="150" rx="9" ry="6.5" transform="rotate(-20 270 150)"/>
-        <path d="M278 146V96c10 4 16 12 14 24" fill="none" stroke="#d9bd7a" stroke-width="2.4" stroke-linecap="round"/>
-        <ellipse cx="70" cy="280" rx="9" ry="6.5" transform="rotate(-20 70 280)"/>
-        <path d="M78 276V228" fill="none" stroke="#d9bd7a" stroke-width="2.4" stroke-linecap="round"/>
+      <g fill="#d9bd7a" opacity=".6" font-family="'Noto Serif KR','Batang',serif" font-size="19" text-anchor="middle">
+        <text x="140" y="107">黃</text><text x="140" y="187">太</text><text x="100" y="147">仲</text><text x="100" y="267">林</text><text x="60" y="227">南</text><text x="60" y="307">潢</text>
       </g>
-      <g fill="none" stroke-linecap="round">
-        <path d="M900 200C915 175 925 175 940 200S965 228 980 200S1005 140 1020 200S1045 262 1060 200S1085 118 1100 200S1125 272 1140 200S1165 176 1180 200" stroke="#d9bd7a" stroke-width="2" opacity=".45"/>
-        <path d="M900 214C918 196 930 196 945 214S972 236 990 214S1015 168 1032 214S1058 256 1075 214S1100 150 1118 214S1145 252 1162 214" stroke="#ffffff" stroke-width="1.2" opacity=".18"/>
+      <!-- 정간보에서 신경망으로 -->
+      <g stroke="#d9bd7a" stroke-width="1" opacity=".35" fill="none">
+        <path d="M160 140L225 110M160 140L225 190M160 220L225 110M160 220L225 190M160 220L225 270M160 300L225 190M160 300L225 270M225 110L285 165M225 190L285 165M225 190L285 245M225 270L285 245"/>
       </g>
-      <g fill="#ffffff" opacity=".22"><circle cx="960" cy="120" r="2.5"/><circle cx="1050" cy="300" r="2.5"/><circle cx="1130" cy="110" r="2"/><circle cx="330" cy="300" r="2"/><circle cx="120" cy="60" r="2"/></g>
+      <g fill="#d9bd7a" opacity=".6"><circle cx="160" cy="140" r="3.5"/><circle cx="160" cy="220" r="3.5"/><circle cx="160" cy="300" r="3.5"/><circle cx="225" cy="110" r="4.5"/><circle cx="225" cy="190" r="4.5"/><circle cx="225" cy="270" r="4.5"/></g>
+      <!-- 뉴런 -->
+      <g stroke="#d9bd7a" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".5">
+        <path d="M285 165l14-10m-14 10l16 4m-16-4l6 14M285 245l15-8m-15 8l13 10m-13-10l3 16"/>
+      </g>
+      <g fill="#d9bd7a" opacity=".65"><circle cx="285" cy="165" r="6.5"/><circle cx="285" cy="245" r="6.5"/></g>
+      <!-- 오선보: 왼쪽 끝은 신경망·뉴런에서 이어진다 -->
+      <g stroke="#d9bd7a" stroke-width="1" opacity=".35" fill="none">
+        <path d="M915 165L975 120M915 165L975 200M915 245L975 200M915 245L975 280M975 120L1020 166M975 200L1020 166M975 200L1020 194M975 280L1020 194"/>
+        <path d="M915 165l-14-10m14 10l-16 4m16-4l-6 14M915 245l-15-8m15 8l-13 10m13-10l-3 16" stroke-width="1.3" stroke-linecap="round" opacity="1.3"/>
+      </g>
+      <g fill="#d9bd7a" opacity=".65"><circle cx="915" cy="165" r="6.5"/><circle cx="915" cy="245" r="6.5"/><circle cx="975" cy="120" r="4.5"/><circle cx="975" cy="200" r="4.5"/><circle cx="975" cy="280" r="4.5"/></g>
+      <g stroke="#d9bd7a" stroke-width="1.1" opacity=".45"><path d="M1020 152H1170M1020 166H1170M1020 180H1170M1020 194H1170M1020 208H1170"/></g>
+      <g fill="#d9bd7a" opacity=".6">
+        <ellipse cx="1050" cy="201" rx="6.5" ry="4.8" transform="rotate(-20 1050 201)"/><ellipse cx="1085" cy="187" rx="6.5" ry="4.8" transform="rotate(-20 1085 187)"/><ellipse cx="1120" cy="173" rx="6.5" ry="4.8" transform="rotate(-20 1120 173)"/><ellipse cx="1150" cy="159" rx="6.5" ry="4.8" transform="rotate(-20 1150 159)"/>
+      </g>
+      <g stroke="#d9bd7a" stroke-width="1.5" opacity=".6"><path d="M1056 199V165M1091 185V151M1126 171V137M1156 157V123"/></g>
     </svg>
     <div class="wrap">
       <div class="eyebrow"><span class="ko">2027 서울대학교 음악교육 국제 심포지엄</span><span class="en">SNU International Symposium on Music Education 2027</span></div>
@@ -425,13 +437,12 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
       <p class="tag"><span class="ko">실천을 위한 함의</span><span class="en">Implications for Practice</span></p>
       <p class="en-line ko">Reimagining Music Education in the Posthuman Era: Implications for Practice</p>
       <dl class="facts">
-        <div><dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) 09:30–16:00</span><span class="en">Fri, 8 January 2027, 09:30–16:00</span></dd></div>
+        <div><dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) 09:30–16:00</span><span class="en">Fri, 8 January 2027, 09:30–16:00</span><span class="dday" id="dday" hidden></span></dd></div>
         <div><dt><span class="ko">장소</span><span class="en">Venue</span></dt><dd><span class="ko">서울대학교 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Bldg. 12, College of Education, SNU</span></dd></div>
         <div><dt><span class="ko">언어</span><span class="en">Language</span></dt><dd><span class="ko">한국어 · 영어</span><span class="en">Korean · English</span></dd></div>
       </dl>
       <!-- 사전 신청: 구글 설문(joo.is/snuform 짧은 주소) -->
       <div class="hero-cta"><a class="reg" href="https://joo.is/snuform" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 11h6M9 15h4"/></svg><span class="ko">사전 신청하기</span><span class="en">Pre-register</span></a></div>
-      <span class="dday" id="dday"></span>
     </div>
   </section>
   <section class="view" style="padding-top:48px">
@@ -871,9 +882,9 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
   function dday(){
     var el=document.getElementById('dday');
     var days=Math.ceil((new Date('2027-01-08T00:00:00+09:00')-new Date())/86400000);
-    var l=body.getAttribute('data-lang');
+    // 행사 전에는 D-n, 당일은 D-DAY, 끝나면 숨긴다
     if(days>0){el.hidden=false;el.textContent='D-'+days}
-    else if(days===0){el.hidden=false;el.textContent=(l==='en'?'Today':'오늘 개최')}
+    else if(days===0){el.hidden=false;el.textContent='D-DAY'}
     else el.hidden=true;
   }
   // 지도 확대·축소: 구글 지도 iframe은 Ctrl 없이 휠 확대가 안 되므로 z 값을 바꿔 다시 불러온다
