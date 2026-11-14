@@ -138,6 +138,10 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .slim{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);color:var(--muted)}
 .slim .time{font-family:var(--f-mono);font-size:13px;min-width:96px}
 .slim b{color:var(--fg);font-weight:500}
+/* 휴식: 노란 띠로 눈에 띄게 */
+.slim.brk{background:#fff4cc;border-top-color:#f1d77a;padding-left:14px;padding-right:14px;border-radius:6px;margin:6px 0}
+.slim.brk b{font-size:18px;font-weight:700;color:#7a5a12}
+.slim.brk .time{color:#7a5a12}
 @media (max-width:560px){.talk{grid-template-columns:72px 1fr;gap:14px}}
 
 /* Speakers */
@@ -505,21 +509,21 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     <div class="session">
       <h2 class="session-title"><span class="ko">세션 1</span><span class="en">Session 1</span><small>10:00–11:00</small></h2>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers"><span class="ko">장개림</span><span class="en">Kailin Zhang</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <div class="who"><span class="ko">장개림</span><span class="en">Kailin Zhang</span><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
         <p class="title">A Posthumanist Reconsideration of AI and Music Education: Insights from a Review of Chinese Research</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">10:00–10:20</div></article>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers">Otsubo Risako</a><span class="aff">(Tokyo University of the Arts, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
+        <div class="who">Otsubo Risako<span class="aff">(Tokyo University of the Arts, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
         <p class="title">The Effective Teaching Strategies and Learning Environments for Developing Piano Students’ Expertise and Motivation</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">10:20–10:40</div></article>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers">Wei-Ming, Low</a><span class="aff">(Taiwan Normal University, <span class="ko">대만</span><span class="en">Taiwan</span>)</span></div>
+        <div class="who">Wei-Ming, Low<span class="aff">(Taiwan Normal University, <span class="ko">대만</span><span class="en">Taiwan</span>)</span></div>
         <p class="title">Beyond the Classroom: Exploring Professional Service among Music Teachers in Taiwan</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">10:40–11:00</div></article>
-      <div class="slim"><span class="time">11:00–11:10</span><b><span class="ko">휴식</span><span class="en">Break</span></b></div>
+      <div class="slim brk"><span class="time">11:00–11:10</span><b><span class="ko">휴식</span><span class="en">Break</span></b></div>
     </div>
     <div class="session">
       <h2 class="session-title"><span class="ko">환영 및 기조강연</span><span class="en">Welcome &amp; Keynote Address</span><small>11:10–12:00</small></h2>
@@ -529,37 +533,37 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <p class="title"><span class="kind"><span class="ko">기조강연</span><span class="en">Keynote</span></span><span class="ph">발표 제목 ooo</span></p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">11:20–12:00</div></article>
-      <div class="slim"><span class="time">12:00–13:10</span><span><b><span class="ko">점심식사</span><span class="en">Lunch</span></b> <span class="ko">(<a href="https://joo.is/snuform" target="_blank" rel="noopener">사전 신청</a> 시 런치박스 제공)</span><span class="en">(lunch box provided with <a href="https://joo.is/snuform" target="_blank" rel="noopener">pre-registration</a>)</span><br><b><span class="ko">포스터 발표</span><span class="en">Poster Session</span></b> · <span class="ko">포스터 목록은 <a href="#speakers">연사</a> 페이지 참고</span><span class="en">See the <a href="#speakers">Speakers</a> page for the posters</span></span></div>
+      <div class="slim"><span class="time">12:00–13:10</span><span><b><span class="ko">점심식사</span><span class="en">Lunch</span></b> <span class="ko">(<a class="pl" href="https://joo.is/snuform" target="_blank" rel="noopener">사전 신청</a> 시 런치박스 제공)</span><span class="en">(lunch box provided with <a class="pl" href="https://joo.is/snuform" target="_blank" rel="noopener">pre-registration</a>)</span><br><b><span class="ko">포스터 발표</span><span class="en">Poster Session</span></b> · <span class="ko">포스터 목록은 <a class="pl" href="#speakers">연사</a> 페이지 참고</span><span class="en">See the <a class="pl" href="#speakers">Speakers</a> page for the posters</span></span></div>
       <div class="slim"><span class="time">13:10–13:30</span><span><b><span class="ko">연주</span><span class="en">Performance</span></b> · <span class="ko"><a class="pl" href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">수제천</a> &amp; <a class="pl" href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">최옥삼류 가야금 산조</a> · 서울대학교 국악과</span><span class="en"><a class="pl" href="https://www.gugak.go.kr/ency/topic/view/202" target="_blank" rel="noopener">Su Je Cheon</a> &amp; <a class="pl" href="https://www.gugak.go.kr/ency/topic/view/1019" target="_blank" rel="noopener">Choi Ok-sam Style Gayageum Sanjo</a> · Dept. of Korean Traditional Music, SNU</span></span></div>
     </div>
     <div class="session">
       <h2 class="session-title"><span class="ko">세션 2</span><span class="en">Session 2</span><small>13:30–14:30</small></h2>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers"><span class="ko">이리비</span><span class="en">Ri Bi Lee</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <div class="who"><span class="ko">이리비</span><span class="en">Ri Bi Lee</span><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
         <p class="title"><span class="ko">개념적 은유를 활용한 초등 장단 교수 학습 방안 연구: 호흡과 움직임을 중심으로</span><span class="en">A Study on Teaching and Learning Korean Traditional Rhythmic Patterns in Elementary Schools Using Conceptual Metaphors: Focusing on Breathing and Movement</span></p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">13:30–13:50</div></article>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers">Mayuko Sato</a><span class="aff">(Hiroshima University, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
+        <div class="who">Mayuko Sato<span class="aff">(Hiroshima University, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
         <p class="title">Development of Experience from Instrument-Making to Music-Making: An Analysis of Teachers’ Narratives Based on Affordance Theory</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">13:50–14:10</div></article>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers">Zhilin Zhan</a><span class="aff">(Eastman School of Music, <span class="ko">미국</span><span class="en">USA</span>)</span></div>
+        <div class="who">Zhilin Zhan<span class="aff">(Eastman School of Music, <span class="ko">미국</span><span class="en">USA</span>)</span></div>
         <p class="title">Music Teachers’ Voices on Professional Development Experiences and Satisfaction Across Diverse Student Demographic Profiles</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">14:10–14:30</div></article>
-      <div class="slim"><span class="time">14:30–14:40</span><b><span class="ko">휴식</span><span class="en">Break</span></b></div>
+      <div class="slim brk"><span class="time">14:30–14:40</span><b><span class="ko">휴식</span><span class="en">Break</span></b></div>
     </div>
     <div class="session">
       <h2 class="session-title"><span class="ko">세션 3</span><span class="en">Session 3</span><small>14:40–15:20</small></h2>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers">Sawa Tsunoda</a><span class="aff">(Tokyo University of the Arts, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
+        <div class="who">Sawa Tsunoda<span class="aff">(Tokyo University of the Arts, <span class="ko">일본</span><span class="en">Japan</span>)</span></div>
         <p class="title">The Meaning of Musical Experiences in Japanese High School Choir Clubs: An Analysis of Narratives from Former Choir Club Members</p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">14:40–15:00</div></article>
       <article class="talk">
-        <div class="who"><a class="pl" href="#speakers"><span class="ko">문현경</span><span class="en">HyunKyung Moon</span></a><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <div class="who"><span class="ko">문현경</span><span class="en">HyunKyung Moon</span><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
         <p class="title"><span class="ko">음악 감상문 작성에서 학습지원조건에 따른 차이 분석</span><span class="en">Analysis of Differences in Music Appreciation Writing by Learning Support Conditions</span></p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">15:00–15:20</div></article>
