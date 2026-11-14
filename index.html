@@ -85,8 +85,6 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 /* Home hero */
 .hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;text-align:center}
 .hero .wrap{position:relative;z-index:1;padding-block:40px 36px}
-.hero-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-@media (max-width:720px){.hero-art{display:none}}
 .hero .eyebrow{font-family:var(--f-body);color:#d9bd7a;font-size:clamp(16px,2vw,21px);letter-spacing:.06em;font-weight:700}
 .hero h1{font-size:clamp(30px,5.4vw,52px);line-height:1.25;margin:10px auto 6px;font-weight:700;text-wrap:balance;max-width:15em}
 .hero .tag{font-size:clamp(18px,2.4vw,23px);color:#c7d0ea;margin:0}
@@ -398,46 +396,13 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 <!-- ============ HOME ============ -->
 <div data-view="home">
   <section class="hero">
-    <!-- 장식 그림: 왼쪽 정간보(한국음악) → 가운데로 이어지는 신경망 점·선(AI)과 뉴런(뇌과학) ← 오른쪽 오선보(서양음악). 글자 뒤로 흐리게 깔리고 휴대폰에서는 숨긴다 -->
-    <svg class="hero-art" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <!-- 정간보: 세로 3줄 × 6칸, 가운데 굵은 선은 대강 -->
-      <g fill="none" stroke="#d9bd7a" opacity=".45">
-        <rect x="40" y="80" width="120" height="240" stroke-width="1.4"/>
-        <path d="M80 80V320M120 80V320M40 120H160M40 160H160M40 240H160M40 280H160" stroke-width="1"/>
-        <path d="M40 200H160" stroke-width="2.2"/>
-      </g>
-      <g fill="#d9bd7a" opacity=".6" font-family="'Noto Serif KR','Batang',serif" font-size="19" text-anchor="middle">
-        <text x="140" y="107">黃</text><text x="140" y="187">太</text><text x="100" y="147">仲</text><text x="100" y="267">林</text><text x="60" y="227">南</text><text x="60" y="307">潢</text>
-      </g>
-      <!-- 정간보에서 신경망으로 -->
-      <g stroke="#d9bd7a" stroke-width="1" opacity=".35" fill="none">
-        <path d="M160 140L225 110M160 140L225 190M160 220L225 110M160 220L225 190M160 220L225 270M160 300L225 190M160 300L225 270M225 110L285 165M225 190L285 165M225 190L285 245M225 270L285 245"/>
-      </g>
-      <g fill="#d9bd7a" opacity=".6"><circle cx="160" cy="140" r="3.5"/><circle cx="160" cy="220" r="3.5"/><circle cx="160" cy="300" r="3.5"/><circle cx="225" cy="110" r="4.5"/><circle cx="225" cy="190" r="4.5"/><circle cx="225" cy="270" r="4.5"/></g>
-      <!-- 뉴런 -->
-      <g stroke="#d9bd7a" stroke-width="1.3" stroke-linecap="round" fill="none" opacity=".5">
-        <path d="M285 165l14-10m-14 10l16 4m-16-4l6 14M285 245l15-8m-15 8l13 10m-13-10l3 16"/>
-      </g>
-      <g fill="#d9bd7a" opacity=".65"><circle cx="285" cy="165" r="6.5"/><circle cx="285" cy="245" r="6.5"/></g>
-      <!-- 오선보: 왼쪽 끝은 신경망·뉴런에서 이어진다 -->
-      <g stroke="#d9bd7a" stroke-width="1" opacity=".35" fill="none">
-        <path d="M915 165L975 120M915 165L975 200M915 245L975 200M915 245L975 280M975 120L1020 166M975 200L1020 166M975 200L1020 194M975 280L1020 194"/>
-        <path d="M915 165l-14-10m14 10l-16 4m16-4l-6 14M915 245l-15-8m15 8l-13 10m13-10l-3 16" stroke-width="1.3" stroke-linecap="round" opacity="1.3"/>
-      </g>
-      <g fill="#d9bd7a" opacity=".65"><circle cx="915" cy="165" r="6.5"/><circle cx="915" cy="245" r="6.5"/><circle cx="975" cy="120" r="4.5"/><circle cx="975" cy="200" r="4.5"/><circle cx="975" cy="280" r="4.5"/></g>
-      <g stroke="#d9bd7a" stroke-width="1.1" opacity=".45"><path d="M1020 152H1170M1020 166H1170M1020 180H1170M1020 194H1170M1020 208H1170"/></g>
-      <g fill="#d9bd7a" opacity=".6">
-        <ellipse cx="1050" cy="201" rx="6.5" ry="4.8" transform="rotate(-20 1050 201)"/><ellipse cx="1085" cy="187" rx="6.5" ry="4.8" transform="rotate(-20 1085 187)"/><ellipse cx="1120" cy="173" rx="6.5" ry="4.8" transform="rotate(-20 1120 173)"/><ellipse cx="1150" cy="159" rx="6.5" ry="4.8" transform="rotate(-20 1150 159)"/>
-      </g>
-      <g stroke="#d9bd7a" stroke-width="1.5" opacity=".6"><path d="M1056 199V165M1091 185V151M1126 171V137M1156 157V123"/></g>
-    </svg>
     <div class="wrap">
       <div class="eyebrow"><span class="ko">2027 서울대학교 음악교육 국제 심포지엄</span><span class="en">SNU International Symposium on Music Education 2027</span></div>
       <h1><span class="ko">포스트휴먼 시대의 음악교육 재구상</span><span class="en">Reimagining Music Education in the Posthuman Era</span></h1>
       <p class="tag"><span class="ko">실천을 위한 함의</span><span class="en">Implications for Practice</span></p>
       <p class="en-line ko">Reimagining Music Education in the Posthuman Era: Implications for Practice</p>
       <dl class="facts">
-        <div><dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) 09:30–16:00</span><span class="en">Fri, 8 January 2027, 09:30–16:00</span><span class="dday" id="dday" hidden></span></dd></div>
+        <div><dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027.01.08(금) 09:30–16:00</span><span class="en">2027.01.08 (Fri) 09:30–16:00</span><span class="dday" id="dday" hidden></span></dd></div>
         <div><dt><span class="ko">장소</span><span class="en">Venue</span></dt><dd><span class="ko">서울대학교 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Bldg. 12, College of Education, SNU</span></dd></div>
         <div><dt><span class="ko">언어</span><span class="en">Language</span></dt><dd><span class="ko">한국어 · 영어</span><span class="en">Korean · English</span></dd></div>
       </dl>
@@ -502,7 +467,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     <div class="info-card">
       <h2 class="sub"><span class="ko">행사 정보</span><span class="en">Details</span></h2>
       <dl class="kv">
-        <dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027년 1월 8일(금) 09:30–16:00</span><span class="en">Friday, 8 January 2027, 09:30–16:00</span></dd>
+        <dt><span class="ko">일시</span><span class="en">Date</span></dt><dd><span class="ko">2027.01.08(금) 09:30–16:00</span><span class="en">2027.01.08 (Fri) 09:30–16:00</span></dd>
         <dt><span class="ko">장소</span><span class="en">Venue</span></dt><dd><span class="ko">서울대학교 사범대학 사범교육협력센터(12동) 401호</span><span class="en">Room 401, Building 12, College of Education, Seoul National University</span></dd>
         <dt><span class="ko">언어</span><span class="en">Language</span></dt><dd><span class="ko">한국어 · 영어</span><span class="en">Korean · English</span></dd>
         <dt><span class="ko">주최</span><span class="en">Host</span></dt><dd><span class="ko">서울대학교 사범대학 협동과정 음악교육전공</span><span class="en">Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></dd>
@@ -535,7 +500,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 <section class="view" data-view="program" hidden>
   <div class="wrap">
     <div class="page-head"><h1><span class="ko">프로그램 <small class="h-en">Program</small></span><span class="en">Program</span></h1>
-      <p><span class="ko">2027년 1월 8일(금) 09:30–16:00 · 사범교육협력센터(12동) 401호</span><span class="en">Friday, 8 January 2027, 09:30–16:00 · Room 401, Bldg. 12</span></p></div>
+      <p><span class="ko">2027.01.08(금) 09:30–16:00 · 사범교육협력센터(12동) 401호</span><span class="en">2027.01.08 (Fri) 09:30–16:00 · Room 401, Bldg. 12</span></p></div>
     <!-- 시간표는 프로그램 포스터(poster/poster.jpg) 기준. 이름은 연사 페이지로, 정다샘 교수는 개인 홈페이지로 연결 -->
     <div class="session" style="margin-bottom:32px">
       <div class="slim"><span class="time">09:30–10:00</span><b><span class="ko">등록</span><span class="en">Registration</span></b></div>
@@ -573,7 +538,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     <div class="session">
       <h2 class="session-title"><span class="ko">세션 2</span><span class="en">Session 2</span><small>13:30–14:30</small></h2>
       <article class="talk">
-        <div class="who"><span class="ko">이리비</span><span class="en">Ri Bi Lee</span><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <div class="who"><span class="ko">이리비</span><span class="en">Ribi Lee</span><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
         <p class="title"><span class="ko">개념적 은유를 활용한 초등 장단 교수 학습 방안 연구: 호흡과 움직임을 중심으로</span><span class="en">A Study on Teaching and Learning Korean Traditional Rhythmic Patterns in Elementary Schools Using Conceptual Metaphors: Focusing on Breathing and Movement</span></p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">13:30–13:50</div></article>
@@ -597,7 +562,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">14:40–15:00</div></article>
       <article class="talk">
-        <div class="who"><span class="ko">문현경</span><span class="en">HyunKyung Moon</span><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
+        <div class="who"><span class="ko">문현경</span><span class="en">Hyunkyung Moon</span><span class="aff">(<span class="ko">서울대학교</span><span class="en">Seoul National University</span>)</span></div>
         <p class="title"><span class="ko">음악 감상문 작성에서 학습지원조건에 따른 차이 분석</span><span class="en">Analysis of Differences in Music Appreciation Writing by Learning Support Conditions</span></p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">15:00–15:20</div></article>
@@ -630,8 +595,8 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     <table class="ptable">
       <thead><tr><th><span class="ko">과정</span><span class="en">Degree</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">발표 제목</span><span class="en">Title</span></th></tr></thead>
       <tbody>
-        <tr><td class="aff" rowspan="3"><span class="ko">박사과정</span><span class="en">Ph.D.</span></td><td class="nm"><span class="ko">문현경</span><span class="en">HyunKyung Moon</span></td><td class="tt"><span class="ko">음악 감상문 작성에서 학습지원조건에 따른 차이 분석</span><span class="en">Analysis of Differences in Music Appreciation Writing by Learning Support Conditions</span></td></tr>
-        <tr><td class="nm"><span class="ko">이리비</span><span class="en">Ri Bi Lee</span></td><td class="tt"><span class="ko">개념적 은유를 활용한 초등 장단 교수 학습 방안 연구: 호흡과 움직임을 중심으로</span><span class="en">A Study on Teaching and Learning Korean Traditional Rhythmic Patterns in Elementary Schools Using Conceptual Metaphors: Focusing on Breathing and Movement</span></td></tr>
+        <tr><td class="aff" rowspan="3"><span class="ko">박사과정</span><span class="en">Ph.D.</span></td><td class="nm"><span class="ko">문현경</span><span class="en">Hyunkyung Moon</span></td><td class="tt"><span class="ko">음악 감상문 작성에서 학습지원조건에 따른 차이 분석</span><span class="en">Analysis of Differences in Music Appreciation Writing by Learning Support Conditions</span></td></tr>
+        <tr><td class="nm"><span class="ko">이리비</span><span class="en">Ribi Lee</span></td><td class="tt"><span class="ko">개념적 은유를 활용한 초등 장단 교수 학습 방안 연구: 호흡과 움직임을 중심으로</span><span class="en">A Study on Teaching and Learning Korean Traditional Rhythmic Patterns in Elementary Schools Using Conceptual Metaphors: Focusing on Breathing and Movement</span></td></tr>
         <tr><td class="nm"><span class="ko">장개림</span><span class="en">Kailin Zhang</span></td><td class="tt">A Posthumanist Reconsideration of AI and Music Education: Insights from a Review of Chinese Research</td></tr>
       </tbody>
     </table>
