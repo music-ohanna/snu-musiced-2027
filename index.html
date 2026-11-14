@@ -261,8 +261,9 @@ footer .tel{display:inline-block;margin-top:4px;white-space:nowrap;color:#fff;fo
 footer .tel:hover{text-decoration:underline}footer b{color:#fff;font-weight:500}
 .h-en{font-size:.5em;font-weight:500;color:var(--brass);margin-left:.35em;letter-spacing:.02em}
 /* 연사 이름 링크: 프로그램 → 연사 페이지, 정다샘 교수 → 개인 홈페이지 */
-.pl{color:var(--navy);text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(10,29,77,.25);text-underline-offset:4px;border-radius:3px;padding:0 2px;margin:0 -2px}
-.pl:hover,.pl:focus-visible{background:var(--navy-tint);text-decoration-color:var(--navy)}
+.pl{color:var(--navy);text-decoration:underline dotted;text-decoration-thickness:1px;text-decoration-color:rgba(10,29,77,.45);text-underline-offset:4px}
+.pl:hover,.pl:focus-visible{color:var(--brass);text-decoration:underline solid;text-decoration-color:var(--brass)}
+.h-note{font-size:.6em;font-weight:500;color:var(--muted);margin-left:4px}
 
 .lang button{display:inline-flex;align-items:center;gap:6px}
 .flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
@@ -585,7 +586,7 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
       <li><div class="p-name">Mayuko Sato</div><div class="p-aff">Hiroshima University <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title">Development of Experience from Instrument-Making to Music-Making: An Analysis of Teachers’ Narratives Based on Affordance Theory</div></li>
       <li><div class="p-name">Sawa Tsunoda</div><div class="p-aff">Tokyo University of the Arts <span class="ko">(일본) · 박사과정</span><span class="en">(Japan) · Ph.D. Student</span></div><div class="p-title">The Meaning of Musical Experiences in Japanese High School Choir Clubs: An Analysis of Narratives from Former Choir Club Members</div></li>
     </ul>
-    <h2 class="sub"><span class="ko">구두 발표</span><span class="en">Oral Presentations</span></h2>
+    <h2 class="sub"><span class="ko">구두 발표 <small class="h-note">(가나다 순)</small></span><span class="en">Oral Presentations <small class="h-note">(in Korean alphabetical order)</small></span></h2>
     <p class="pt-aff"><span class="ko">소속: 서울대학교 사범대학 협동과정 음악교육전공</span><span class="en">Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></p>
     <!-- 같은 과정끼리 소속 칸을 합친다(rowspan). 이름은 가나다순 -->
     <table class="ptable">
@@ -596,22 +597,22 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
         <tr><td class="nm"><span class="ko">장개림</span><span class="en">Kailin Zhang</span></td><td class="tt">A Posthumanist Reconsideration of AI and Music Education: Insights from a Review of Chinese Research</td></tr>
       </tbody>
     </table>
-    <h2 class="sub"><span class="ko">포스터 발표</span><span class="en">Poster Presentations</span></h2>
+    <h2 class="sub"><span class="ko">포스터 발표 <small class="h-note">(가나다 순)</small></span><span class="en">Poster Presentations <small class="h-note">(in Korean alphabetical order)</small></span></h2>
     <p class="pt-aff"><span class="ko">소속: 서울대학교 사범대학 협동과정 음악교육전공</span><span class="en">Interdisciplinary Program of Music Education at College of Education, Seoul National University</span></p>
     <table class="ptable">
       <thead><tr><th><span class="ko">과정</span><span class="en">Degree</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">포스터 제목</span><span class="en">Title</span></th></tr></thead>
       <tbody>
-        <tr><td class="aff" rowspan="5"><span class="ko">석사과정</span><span class="en">M.A.</span></td><td class="nm"><span class="ko">김단비</span><span class="en">Danbi Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
-        <tr><td class="nm"><span class="ko">김희진</span><span class="en">Heejin Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
-        <tr><td class="nm"><span class="ko">오한나</span><span class="en">Hanna Oh</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
-        <tr><td class="nm"><span class="ko">임수아</span><span class="en">Sua Lim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
-        <tr><td class="nm"><span class="ko">황현지</span><span class="en">Hyunji Hwang</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="aff" rowspan="6"><span class="ko">박사과정</span><span class="en">Ph.D.</span></td><td class="nm"><span class="ko">김지원</span><span class="en">Jiwon Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">문주영</span><span class="en">Juyoung Moon</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">박시준</span><span class="en">Sijun Park</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">이단아</span><span class="en">Dana Lee</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">이지예</span><span class="en">Jiye Lee</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
         <tr><td class="nm"><span class="ko">홍상희</span><span class="en">Sanghee Hong</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="aff" rowspan="5"><span class="ko">석사과정</span><span class="en">M.A.</span></td><td class="nm"><span class="ko">김단비</span><span class="en">Danbi Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">김희진</span><span class="en">Heejin Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">오한나</span><span class="en">Hanna Oh</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">임수아</span><span class="en">Sua Lim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">황현지</span><span class="en">Hyunji Hwang</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
       </tbody>
     </table>
   </div>
