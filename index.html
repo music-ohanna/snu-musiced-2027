@@ -83,21 +83,23 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .prose p{margin:0 0 1em}
 
 /* Home hero */
-.hero{background:var(--navy);color:#fff;text-align:center}
-.hero .wrap{padding-block:72px 64px}
+.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;text-align:center}
+.hero .wrap{position:relative;z-index:1;padding-block:40px 36px}
+.hero-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+@media (max-width:720px){.hero-art{display:none}}
 .hero .eyebrow{font-family:var(--f-body);color:#d9bd7a;font-size:clamp(16px,2vw,21px);letter-spacing:.06em;font-weight:700}
-.hero h1{font-size:clamp(30px,5.4vw,54px);line-height:1.25;margin:16px auto 8px;font-weight:700;text-wrap:balance;max-width:15em}
+.hero h1{font-size:clamp(30px,5.4vw,52px);line-height:1.25;margin:10px auto 6px;font-weight:700;text-wrap:balance;max-width:15em}
 .hero .tag{font-size:clamp(18px,2.4vw,23px);color:#c7d0ea;margin:0}
 .hero .en-line{font-size:15px;color:#aab6dc;margin:10px 0 0}
-.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 48px;margin:36px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);max-width:900px}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 48px;margin:22px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);max-width:900px}
 .facts div{min-width:0}
 .facts dt{font-size:12px;color:#aab6dc;letter-spacing:.06em}
 .facts dd{margin:2px 0 0;font-size:17px;font-weight:500}
-.hero-cta{margin-top:32px}
+.hero-cta{margin-top:20px}
 .reg{display:inline-flex;align-items:center;gap:10px;background:#d9bd7a;color:var(--navy);text-decoration:none;font-size:17px;font-weight:700;border-radius:999px;padding:12px 26px}
 .reg:hover{background:#e6cf96}
 .reg svg{width:20px;height:20px;flex:none}
-.dday{display:block;width:max-content;margin:20px auto 0;font-family:var(--f-mono);font-size:14px;color:#d9bd7a;border:1px solid rgba(217,189,122,.5);border-radius:999px;padding:3px 12px}
+.dday{display:block;width:max-content;margin:12px auto 0;font-family:var(--f-mono);font-size:14px;color:#d9bd7a;border:1px solid rgba(217,189,122,.5);border-radius:999px;padding:3px 12px}
 .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
 @media (max-width:960px){.quick{grid-template-columns:repeat(2,1fr)}}
 .quick a{display:block;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:20px}
@@ -396,6 +398,27 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
 <!-- ============ HOME ============ -->
 <div data-view="home">
   <section class="hero">
+    <!-- 장식 그림: 왼쪽은 AI 신경망(점과 선) 사이에 음표, 오른쪽은 소리 파형. 글자 뒤로 흐리게 깔리고 휴대폰에서는 숨긴다 -->
+    <svg class="hero-art" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g stroke="#d9bd7a" stroke-width="1.2" opacity=".35">
+        <path d="M70 120L170 90M70 120L170 170M70 120L170 250M70 200L170 90M70 200L170 170M70 200L170 250M70 200L170 330M70 280L170 170M70 280L170 250M70 280L170 330M170 90L270 150M170 170L270 150M170 170L270 250M170 250L270 150M170 250L270 250M170 330L270 250"/>
+      </g>
+      <g fill="#d9bd7a" opacity=".55">
+        <circle cx="70" cy="120" r="5"/><circle cx="70" cy="200" r="5"/>
+        <circle cx="170" cy="90" r="5"/><circle cx="170" cy="170" r="5"/><circle cx="170" cy="250" r="5"/><circle cx="170" cy="330" r="5"/>
+        <circle cx="270" cy="250" r="5"/>
+        <!-- 음표 두 개: 신경망의 점 자리에 -->
+        <ellipse cx="270" cy="150" rx="9" ry="6.5" transform="rotate(-20 270 150)"/>
+        <path d="M278 146V96c10 4 16 12 14 24" fill="none" stroke="#d9bd7a" stroke-width="2.4" stroke-linecap="round"/>
+        <ellipse cx="70" cy="280" rx="9" ry="6.5" transform="rotate(-20 70 280)"/>
+        <path d="M78 276V228" fill="none" stroke="#d9bd7a" stroke-width="2.4" stroke-linecap="round"/>
+      </g>
+      <g fill="none" stroke-linecap="round">
+        <path d="M900 200C915 175 925 175 940 200S965 228 980 200S1005 140 1020 200S1045 262 1060 200S1085 118 1100 200S1125 272 1140 200S1165 176 1180 200" stroke="#d9bd7a" stroke-width="2" opacity=".45"/>
+        <path d="M900 214C918 196 930 196 945 214S972 236 990 214S1015 168 1032 214S1058 256 1075 214S1100 150 1118 214S1145 252 1162 214" stroke="#ffffff" stroke-width="1.2" opacity=".18"/>
+      </g>
+      <g fill="#ffffff" opacity=".22"><circle cx="960" cy="120" r="2.5"/><circle cx="1050" cy="300" r="2.5"/><circle cx="1130" cy="110" r="2"/><circle cx="330" cy="300" r="2"/><circle cx="120" cy="60" r="2"/></g>
+    </svg>
     <div class="wrap">
       <div class="eyebrow"><span class="ko">2027 서울대학교 음악교육 국제 심포지엄</span><span class="en">SNU International Symposium on Music Education 2027</span></div>
       <h1><span class="ko">포스트휴먼 시대의 음악교육 재구상</span><span class="en">Reimagining Music Education in the Posthuman Era</span></h1>
