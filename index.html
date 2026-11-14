@@ -124,7 +124,7 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 /* Program (talk list) */
 .session{margin-bottom:48px}
 .session-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;font-size:22px;color:var(--navy);margin:0 0 4px}
-.session-title small{font-family:var(--f-mono);font-size:13px;color:var(--muted);font-weight:400}
+.session-title small{font-size:15px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
 .session-desc{color:var(--muted);margin:0 0 16px;font-size:15px}
 .talk{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
 .talk>*{min-width:0}
@@ -134,9 +134,9 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .talk .title{margin:4px 0 0;font-size:17px;color:var(--navy);font-weight:500}
 .talk .kind{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--navy);border-radius:3px;padding:0 7px;margin-right:6px;vertical-align:2px}
 .talk .abs{margin:8px 0 0;color:var(--muted);font-size:15px}
-.talk .time{display:inline-block;margin-top:6px;font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.talk .time{display:inline-block;margin-top:6px;font-size:15px;font-weight:500;color:var(--fg);font-variant-numeric:tabular-nums}
 .slim{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);color:var(--muted)}
-.slim .time{font-family:var(--f-mono);font-size:13px;min-width:96px}
+.slim .time{font-size:15px;font-weight:500;color:var(--fg);min-width:104px;font-variant-numeric:tabular-nums}
 .slim b{color:var(--fg);font-weight:500}
 /* 휴식: 노란 띠로 눈에 띄게 */
 .slim.brk{background:#fff4cc;border-top-color:#f1d77a;padding-left:14px;padding-right:14px;border-radius:6px;margin:6px 0}
@@ -526,9 +526,9 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     </div>
     <div class="session">
       <h2 class="session-title"><span class="ko">환영 및 기조강연</span><span class="en">Welcome &amp; Keynote Address</span><small>11:10–12:00</small></h2>
-      <div class="slim"><span class="time">11:10–11:20</span><span><b><span class="ko">환영 인사</span><span class="en">Welcome Remarks</span></b> · <span class="ko">이민정 교수(서울대학교 음악교육 전공주임)</span><span class="en">Prof. Min Jung Lee (College of Music, Seoul National University)</span></span></div>
+      <div class="slim"><span class="time">11:10–11:20</span><span><b><span class="ko">환영 인사</span><span class="en">Welcome Remarks</span></b> · <span class="ko">이민정 (서울대학교 음악교육 전공주임 교수)</span><span class="en">Min Jung Lee (Professor, College of Music, Seoul National University)</span></span></div>
       <article class="talk">
-        <div class="who"><a class="pl" href="https://jdasam.github.io/" target="_blank" rel="noopener"><span class="ko">정다샘 교수</span><span class="en">Prof. Dasaem Jeong</span></a><span class="aff">(<span class="ko">서강대학교</span><span class="en">Sogang University</span>)</span></div>
+        <div class="who"><a class="pl" href="https://jdasam.github.io/" target="_blank" rel="noopener"><span class="ko">정다샘</span><span class="en">Dasaem Jeong</span></a><span class="aff">(<span class="ko">서강대학교 교수</span><span class="en">Professor, Sogang University</span>)</span></div>
         <p class="title"><span class="kind"><span class="ko">기조강연</span><span class="en">Keynote</span></span><span class="ph">발표 제목 ooo</span></p>
         <p class="abs"><span class="ko">초록</span><span class="en">Abstract</span>: <span class="ph">ooo</span></p>
         <div class="time">11:20–12:00</div></article>
