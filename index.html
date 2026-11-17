@@ -133,15 +133,16 @@ h2.sub{font-size:21px;color:var(--navy);margin:48px 0 16px;text-wrap:balance}
 .talk .who span.aff{font-weight:400;color:var(--muted)}
 .talk .title{margin:4px 0 0;font-size:17px;color:var(--navy);font-weight:500}
 .talk .kind{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--navy);border-radius:3px;padding:0 7px;margin-right:6px;vertical-align:2px}
-.talk .time{display:inline-block;margin-top:6px;font-size:15px;font-weight:500;color:var(--fg);font-variant-numeric:tabular-nums}
+/* 발표 칸도 시간은 왼쪽 칸(.slim과 같은 104px)에 둔다. 시간은 남색 굵게 */
+.talk .time{grid-area:time;padding-top:2px;font-size:15px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.talk .who{grid-area:who}.talk .title{grid-area:title}
 .slim{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);color:var(--muted)}
-.slim .time{font-size:15px;font-weight:500;color:var(--fg);min-width:104px;font-variant-numeric:tabular-nums}
+.slim .time{font-size:15px;font-weight:700;color:var(--navy);min-width:104px;flex:none;font-variant-numeric:tabular-nums}
 .slim b{color:var(--fg);font-weight:500}
 /* 휴식: 노란 띠로 눈에 띄게 */
 .slim.brk{background:#fff4cc;border-top-color:#f1d77a;padding-left:14px;padding-right:14px;border-radius:6px;margin:6px 0}
 .slim.brk b{font-size:18px;font-weight:700;color:#7a5a12}
 .slim.brk .time{color:#7a5a12}
-@media (max-width:560px){.talk{grid-template-columns:72px 1fr;gap:14px}}
 
 /* Speakers */
 .keynote{display:grid;grid-template-columns:180px 1fr;gap:28px;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:8px;padding:24px}
@@ -270,7 +271,9 @@ footer .tel:hover{text-decoration:underline}footer b{color:#fff;font-weight:500}
 
 .lang button{display:inline-flex;align-items:center;gap:6px}
 .flag{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12);flex:none}
-.talk{grid-template-columns:1fr}
+.talk{grid-template-columns:104px minmax(0,1fr);grid-template-areas:"time who" "time title";gap:0 16px;align-items:start}
+/* 휴대폰: 시간을 맨 위 한 줄로 올려 제목이 전체 폭을 쓰게 한다 */
+@media (max-width:560px){.talk{grid-template-columns:minmax(0,1fr);grid-template-areas:"time" "who" "title"}.talk .time{padding-top:0;margin-bottom:4px}.slim{flex-wrap:wrap;gap:4px 16px}.slim .time{flex-basis:100%}}
 .talk .who span.aff{margin-left:.35em}
 .people{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .people li{display:grid;grid-template-columns:minmax(90px,140px) minmax(0,1fr) minmax(0,1.4fr);gap:6px 24px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
