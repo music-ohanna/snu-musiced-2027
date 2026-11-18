@@ -598,12 +598,12 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
     <table class="ptable">
       <thead><tr><th><span class="ko">과정</span><span class="en">Degree</span></th><th><span class="ko">이름</span><span class="en">Name</span></th><th><span class="ko">포스터 제목</span><span class="en">Title</span></th></tr></thead>
       <tbody>
-        <tr><td class="aff" rowspan="6"><span class="ko">박사과정</span><span class="en">Ph.D. Student</span></td><td class="nm"><span class="ko">김지원</span><span class="en">Jiwon Kim</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="aff" rowspan="6"><span class="ko">박사과정</span><span class="en">Ph.D. Student</span></td><td class="nm"><span class="ko">김지원</span><span class="en">Jiwon Kim</span></td><td class="tt"><span class="ko">추임새의 행위와 교육적 가치에 관한 교육철학적 당위 제언 - 거트 비에스타(Gert J. J. Biesta)의 주체성과 가르침 개념을 중심으로 -</span><span class="en">A Normative Proposal from the Philosophy of Education on the Act and Educational Value of Chuimsae (Exclamatory Calls in Korean Music): Focusing on Gert J. J. Biesta's Concepts of Subjectification and Teaching</span></td></tr>
         <tr><td class="nm"><span class="ko">문주영</span><span class="en">Juyoung Moon</span></td><td class="tt"><span class="ko">음악교육 연구에서 포스트휴먼 및 관련 개념의 사용 양상: 국내외 학술논문의 비교 분석</span><span class="en">The Use of Posthuman and Related Concepts in Music Education Research: A Comparative Analysis of Korean and International Journal Articles</span></td></tr>
         <tr><td class="nm"><span class="ko">박시준</span><span class="en">Sijun Park</span></td><td class="tt"><span class="ko">통합적 음악 감상 단계를 활용한 종묘제례악 개념 기반 탐구 수업의 실천 – IB MYP 단원 설계를 중심으로</span><span class="en">Implementing Concept-Based Inquiry Lessons on Jongmyo Jeryeak Using Integrated Music Listening Stages: Focusing on IB MYP Unit Design</span></td></tr>
         <tr><td class="nm"><span class="ko">이단아</span><span class="en">Dana Lee</span></td><td class="tt"><span class="ko">연변 조선족 자치주 초등학교 음악교육의 교재 언어 전환과 다문화 요소의 재편: 2024년판 음악 교과서를 중심으로</span><span class="en">Textbook Language Shift and the Reorganization of Multicultural Elements in Elementary Music Education in the Yanbian Korean Autonomous Prefecture: Focusing on the 2024 Music Textbooks</span></td></tr>
-        <tr><td class="nm"><span class="ko">이지예</span><span class="en">Jiye Lee</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
-        <tr><td class="nm"><span class="ko">홍상희</span><span class="en">Sanghee Hong</span></td><td class="tt"><span class="ph">포스터 제목 ooo</span></td></tr>
+        <tr><td class="nm"><span class="ko">이지예</span><span class="en">Jiye Lee</span></td><td class="tt"><span class="ko">대학 교양 국악 학습자를 위한 AI 기반 감상 지원 도구 개발</span><span class="en">Development of an AI-Based Listening Support Tool for Learners in University Liberal Arts Gugak (Korean Traditional Music) Courses</span></td></tr>
+        <tr><td class="nm"><span class="ko">홍상희</span><span class="en">Sanghee Hong</span></td><td class="tt"><span class="ko">포스트휴먼 시대 음악학습 방식의 재구성: 음악교육 수요자의 온라인 학습 선택과 디지털 참여 경험</span><span class="en">Reconfiguring Ways of Music Learning in the Posthuman Era: Online Learning Choices and Digital Participation Experiences of Music Education Consumers</span></td></tr>
         <tr><td class="aff" rowspan="5"><span class="ko">석사과정</span><span class="en">M.A. Student</span></td><td class="nm"><span class="ko">김단비</span><span class="en">Danbi Kim</span></td><td class="tt"><span class="ko">디벗 환경에 최적화된 초등학생 음악 창작 수업 설계원리 개발 및 적용</span><span class="en">Development and Application of Design Principles for Elementary Music Composition Lessons Optimized for the Dibeot (Student Digital Device) Environment</span></td></tr>
         <tr><td class="nm"><span class="ko">김희진</span><span class="en">Heejin Kim</span></td><td class="tt"><span class="ko">리듬감 신장을 위한 4F 프로세스 기반의 전자드럼패드 활용 수업 지도 방안 연구</span><span class="en">A Study on Teaching Methods Using Electronic Drum Pads Based on the 4F Process to Enhance Rhythmic Sense</span></td></tr>
         <tr><td class="nm"><span class="ko">오한나</span><span class="en">Hanna Oh</span></td><td class="tt"><span class="ko">손으로 쓰고, 앱으로 확인하고, 다시 연주하기: 아날로그-AI 하이브리드 리듬 창작 수업의 설계</span><span class="en">Write by Hand, Check with an App, Play Again: Designing an Analog–AI Hybrid Rhythm Composition Lesson</span></td></tr>
@@ -866,8 +866,12 @@ small[lang="ko"]{font-size:12px;color:var(--muted);font-weight:400;margin-left:2
       x=px-(px-x)*ns/s; y=py-(py-y)*ns/s; s=ns; if(s===1){x=0;y=0} apply();
     }
     function center(){var r=stage.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}
-    function show(src,alt){img.src=src;img.alt=alt||'';open.href=src;s=1;x=0;y=0;apply();box.hidden=false;document.documentElement.style.overflow='hidden';box.querySelector('.lb-x').focus()}
-    function hide(){box.hidden=true;document.documentElement.style.overflow=''}
+    // 열 때 방문 기록을 하나 더해 브라우저 뒤로 가기(휴대폰 뒤로 버튼 포함)로 닫히고, 앞으로 가기로 다시 열린다
+    function show(src,alt,fromHistory){img.src=src;img.alt=alt||'';open.href=src;s=1;x=0;y=0;apply();box.hidden=false;document.documentElement.style.overflow='hidden';box.querySelector('.lb-x').focus();
+      if(!fromHistory)history.pushState({lb:src,alt:alt||''},'',location.href)}
+    function close(){box.hidden=true;document.documentElement.style.overflow=''}
+    function hide(){if(history.state&&history.state.lb)history.back();else close()}
+    window.addEventListener('popstate',function(e){var st=e.state; if(st&&st.lb)show(st.lb,st.alt,true); else if(!box.hidden)close()});
     [].forEach.call(document.querySelectorAll('.poster-frame a'),function(a){
       a.addEventListener('click',function(e){e.preventDefault();var i=a.querySelector('img');show(a.getAttribute('href'),i&&i.alt)});
     });
